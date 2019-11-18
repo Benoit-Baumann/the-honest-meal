@@ -1,7 +1,7 @@
 class CreateRestaurants < ActiveRecord::Migration[5.2]
   def change
     create_table :restaurants do |t|
-      t.references :owner, foreign_key: true
+      t.references :owner, foreign_key: { to_table: :users }
       t.string :name
       t.string :type
       t.string :address
