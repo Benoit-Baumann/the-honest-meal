@@ -1,18 +1,18 @@
 #----- Destroying existing data -----
+puts "Destroying existing coupons..."
+Coupon.destroy_all
+
+puts "Destroying existing favorites..."
+Favorite.destroy_all
+
+puts "Destroying existing reviews..."
+Review.destroy_all
+
 puts "Destroying existing restaurants..."
 Restaurant.destroy_all
 
 puts "Destroying existing users..."
 User.destroy_all
-
-puts "Destroying existing coupons..."
-Coupon.destroy_all
-
-puts "Destroying existing reviews..."
-Review.destroy_all
-
-puts "Destroying existing favorites..."
-Favorite.destroy_all
 
 
 #----- Creating new users -----
@@ -22,7 +22,7 @@ def create_new_user
     username: Faker::Internet.username,
     email: Faker::Internet.email ,
     password: 'password',
-    status: rand(1..2)
+    status: rand(0..1)
   )
 end
 
@@ -40,8 +40,8 @@ def create_new_restaurant
 end
 
 def create_new_review
-  Review.new=(
-    content: Faker::Restaurant.review
+  Review.new(
+    content: Faker::Restaurant.review,
     rating: rand(0..5)
   )
 end
@@ -98,10 +98,11 @@ rand(20-40).times {
   rand(3..5).times {
     review = create_new_review
     review.restaurant = Restaurant.order('RANDOM()').first
-    if [true, false].sample 
+    # if [true, false].sample
+    if Faker::Boolean.boolean
       review.user = User.order('RANDOM()').first
     else
-      review.username = Faker::Internet.username,
+      review.username = Faker::Internet.username
     end
     review.save!
   }
