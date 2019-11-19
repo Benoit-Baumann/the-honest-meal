@@ -1,1 +1,13 @@
-// Specific CSS for your home-page
+.home-header {
+    height: 680px;
+    width: 100%;
+}
+
+.home-title h1 {
+  font-family: $main-title;
+  color: black;
+  text-align: center;
+  font-size: 56px;
+  padding-top: 40px;
+  margin-bottom: 70px;
+}
