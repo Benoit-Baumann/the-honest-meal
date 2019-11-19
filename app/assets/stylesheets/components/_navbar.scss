@@ -1,12 +1,69 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: $green;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  overflow: visible;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-link {
+  color: white;
+  font-size: 16px;
+  font-family: $body-font;
+  padding-left: 0rem !important;
+  padding-right: 0,1rem !important;
+}
+
+.nav-item a:visited {
+  text-decoration: none, !important;
+}
+
+.nav-item a:hover {
+  color: white !important;
+  transform:scale(1.2);
+
+}
+
+.nav-logo p {
+  display: inline-block;
+  color: white;
+  margin-bottom: 0rem;
+  font-family: $main-title;
+  font-size: 20px;
+}
+
+.collapse p {
+  color: white;
+  margin-top: 6px;
+  padding: 0 16px;
+}
+
+.logo {
+  height: 72px;
+}
+
+.dropdown-item:hover {
+  color:#cc2121;
+}
+
+.dropdown-menu {
+  opacity: 0.9;
+  border-radius: 6px;
+  border: none;
+}
+
+#navbarDropdown {
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
 }
