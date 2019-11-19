@@ -4,6 +4,7 @@ User.destroy_all
 # 1) seed des users
 john = User.new(
 email: "john@hotmail.fr",
+password: "password"
   )
 
 # 2) seed des restos

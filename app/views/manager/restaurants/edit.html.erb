@@ -1,0 +1,19 @@
+<%= simple_form_for [:manager, @restaurant] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :hours %>
+  <%= f.text_field :hours %>
+  <%= f.label :pricing %>
+  <%= f.text_field :pricing %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+  <%= f.submit %>
+<% end %>
