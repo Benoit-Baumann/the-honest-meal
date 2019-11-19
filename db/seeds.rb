@@ -1,34 +1,44 @@
-# 1) seed des restos
- ChezPaulBocuse = Restaurant.new (name: 'Paul Bocuse',
-    type: "Gastronomique",
+Restaurant.destroy_all
+User.destroy_all
+
+# 1) seed des users
+john = User.new(
+email: "john@hotmail.fr",
+  )
+
+# 2) seed des restos
+
+ chezpaulbocuse = Restaurant.new(name: 'Paul Bocuse',
+    category: "Gastronomique",
     address: "Colonges au Mont d'or",
     description: "Le Restaurant du célèbre chef étoilé Lyonnais Paul Bocuse",
     pricing: "de 75 a 120€ le menu",
     rating: 4,
-    phone_number: "04-12-34-56-78")
+    phone_number: "04-12-34-56-78",
+    owner: john)
 
-  McdoBellecours = Restaurant.new (name: 'Mcdo de la place Bellecours',
-    type: "Fast-food",
+ chezpaulbocuse.save!
+
+  mcdobellecours = Restaurant.new(name: 'Mcdo de la place Bellecours',
+    category: "Fast-food",
     address: "Place bellecours, Lyon",
     description: "Un des nombreux restaurants de la chaine",
     pricing: "de 2 a 12€",
     rating: 3,
-    phone_number: "04-12-34-56-78")
+    phone_number: "04-12-34-56-78",
+    owner: john)
 
+  mcdobellecours.save!
 
-  ChezNino = Restaurant.new (name: 'Chez Nino',
-    type: "Italien",
+  cheznino = Restaurant.new(name: 'Chez Nino',
+    category: "Italien",
     address: "Place Bellecours, Lyon",
     description: "Pizza et auttres spécialités italiennes au menu dans une ambiance agréable a 2 pas de la place bellecours",
     pricing: "de 10 a 20€ le menu",
     rating: 4,
-    phone_number: "04-12-34-56-78")
+    phone_number: "04-12-34-56-78",
+    owner: john)
 
-
-
-# 2) seed des users
-John = User.new (
-email: "john@hotmail.fr",
-  )
+  cheznino.save!
 
 # 3) seed des reviews
