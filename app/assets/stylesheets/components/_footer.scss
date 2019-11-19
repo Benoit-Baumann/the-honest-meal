@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 160px;
+  min-height: 100%;
+}
+
+#footer {
+  background: white;
+  font-size : 12px;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: $light-black;
+  border-top: 1px solid $light-black;
+  padding : 12px 50px;
+  position: absolute;
+  bottom: 0;
+}
+
+#footer h4 {
+  font-size:14px;
+}
+// .footer-links {
+//   display: flex;
+//   align-items: center;
+// }
+.footer-links a {
+  color: $light-black;
+//   opacity: 1;
+//   text-decoration: none;
+  font-size: 20px;
+//   padding: 0px 10px;
+}
+// .footer-links a:hover {
+//   opacity: 0.5;
+// }
+
+// Ligne copyright
+.footer-copyright {
+  color:$light-black;
+  border-top: 1px solid $light-black;
+  padding-top: 4px;
+}
+
+// Couleurs des logos
+#footer .fa-trello {
+  color: #6DC06B;
+}
+
+#footer .fa-heart {
+  color: #D23333;
+}
+
+#footer .fa-twitter {
+  color:#43A1F2;
+}
+
+#footer .fa-linkedin {
+  color:#2E73B0
+}
+
+#footer-category {
+  list-style: none;
+  margin: 8px;
+
+}
