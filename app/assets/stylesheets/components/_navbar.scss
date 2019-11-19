@@ -19,6 +19,7 @@
   font-family: $body-font;
   padding-left: 0rem !important;
   padding-right: 0,1rem !important;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-item a:visited {
@@ -27,7 +28,7 @@
 
 .nav-item a:hover {
   color: white !important;
-  transform:scale(1.2);
+  transform:scale(1.12);
 
 }
 
