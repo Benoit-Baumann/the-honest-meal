@@ -22,7 +22,17 @@ class RestaurantsController < ApplicationController
       Favorite.create(user: current_user, restaurant: @restaurant, value: true)
     else
       userfavorite.toggle("value")
-      userfavorite.save!
+      if userfavorite.save
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/toggle_favorites.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.js  # <-- idem
+      end
+    end
     end
   end
 end
