@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   namespace :manager do
     resources :restaurants, only: [:new, :create, :edit, :update, :destroy, :index, :show]
   end
-  
+
 end
