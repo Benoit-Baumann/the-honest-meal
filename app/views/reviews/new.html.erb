@@ -4,9 +4,8 @@
 
     <div class="sign-up form-inputs">
       <%= simple_form_for [@review] do |f| %>
-        <% unless user_signed_in? %>
-            <%= f.input :username %>
-        <% end %>
+        <%= f.input :restaurant_id, as: :hidden %>
+        <%= f.input :username, required: true unless user_signed_in? %>
         <%= f.input :content %>
         <%= f.input :rating %>
         <%= f.submit "Publier", class: "btn btn-primary" %>
