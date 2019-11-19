@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'coupons/index'
+  get 'profile/show'
   get 'reviews/index'
   get 'reviews/new'
   get 'reviews/create'
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
   resources :coupons, only: :index
 
   namespace :manager do
-    resources :restaurants, only: [:new, :create, :edit, :update, :destroy, :index, :show]
+    resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 
 end
