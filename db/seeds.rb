@@ -1,45 +1,108 @@
+#----- Destroying existing data -----
+puts "Destroying existing restaurants..."
 Restaurant.destroy_all
+
+puts "Destroying existing users..."
 User.destroy_all
 
-# 1) seed des users
+puts "Destroying existing coupons..."
+Coupon.destroy_all
+
+puts "Destroying existing reviews..."
+Review.destroy_all
+
+puts "Destroying existing favorites..."
+Favorite.destroy_all
+
+
+#----- Creating new users -----
+
+def create_new_user
+  User.new(
+    username: Faker::Internet.username,
+    email: Faker::Internet.email ,
+    password: 'password',
+    status: rand(1..2)
+  )
+end
+
+def create_new_restaurant
+  Restaurant.new(
+    name: Faker::Restaurant.name,
+    category: Faker::Restaurant.type,
+    address: Faker::Address.full_address,
+    description: Faker::Restaurant.description,
+    pricing: rand(1..3),
+    rating: rand(0..5),
+    phone_number: Faker::PhoneNumber.phone_number,
+    website: Faker::Internet.domain_name
+  )
+end
+
+def create_new_review
+  Review.new=(
+    content: Faker::Restaurant.review
+    rating: rand(0..5)
+  )
+end
+
+
 john = User.new(
-email: "john@hotmail.fr",
-password: "password"
+  username: "John",
+  email: "john@hotmail.fr",
+  password: "password",
+  status: 1
   )
 
-# 2) seed des restos
+ben = User.new(
+  username: 'Ben',
+  email: "ben@hotmail.fr",
+  password: 'password',
+  status: 1
+)
 
- chezpaulbocuse = Restaurant.new(name: 'Paul Bocuse',
-    category: "Gastronomique",
-    address: "Colonges au Mont d'or",
-    description: "Le Restaurant du célèbre chef étoilé Lyonnais Paul Bocuse",
-    pricing: "de 75 a 120€ le menu",
-    rating: 4,
-    phone_number: "04-12-34-56-78",
-    owner: john)
+juju = User.new(
+  username: 'Juju',
+  email: "juju@hotmail.fr",
+  password: 'password',
+  status: 0
+)
 
- chezpaulbocuse.save!
+axel = User.new(
+  username: 'axel',
+  email: "axel@hotmail.fr",
+  password: 'password',
+  status: 0
+)
 
-  mcdobellecours = Restaurant.new(name: 'Mcdo de la place Bellecours',
-    category: "Fast-food",
-    address: "Place bellecours, Lyon",
-    description: "Un des nombreux restaurants de la chaine",
-    pricing: "de 2 a 12€",
-    rating: 3,
-    phone_number: "04-12-34-56-78",
-    owner: john)
+[john, ben].each do |owner| 
+  resto = create_new_restaurant
+  resto.owner = owner
+  resto.save!
+end
 
-  mcdobellecours.save!
 
-  cheznino = Restaurant.new(name: 'Chez Nino',
-    category: "Italien",
-    address: "Place Bellecours, Lyon",
-    description: "Pizza et auttres spécialités italiennes au menu dans une ambiance agréable a 2 pas de la place bellecours",
-    pricing: "de 10 a 20€ le menu",
-    rating: 4,
-    phone_number: "04-12-34-56-78",
-    owner: john)
+rand(10..20).times {
+  owner = create_new_user
+  resto = create_new_restaurant
+  resto.owner = owner
+  owner.save!
+  resto.save!
+}
 
-  cheznino.save!
+rand(20-40).times {
 
-# 3) seed des reviews
+  customer = create_new_user
+  customer.save!
+
+  rand(3..5).times {
+    review = create_new_review
+    review.restaurant = Restaurant.order('RANDOM()').first
+    if [true, false].sample 
+      review.user = User.order('RANDOM()').first
+    else
+      review.username = Faker::Internet.username,
+    end
+    review.save!
+  }
+}
