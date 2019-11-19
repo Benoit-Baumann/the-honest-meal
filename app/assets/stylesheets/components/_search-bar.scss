@@ -1,7 +1,6 @@
 .search-bar {
-  display: table-cell;
-  vertical-align: middle;
-  height: 250px;
+  overflow: auto;
+  padding: 20px;
   width: 300px;
   background-color: $light-white;
   margin: 0 auto;
@@ -16,7 +15,7 @@
   padding: 10px 20px;
   margin: 16px;
   background-color: white;
-  font-size: 14px;
+  font-size: 10px;
   text-align: center;
   margin-top: 20px;
 }
@@ -30,5 +29,4 @@
   width: 100px;
   text-align: center;
   margin-top: 20px;
-
 }

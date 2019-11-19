@@ -9,9 +9,9 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
+@import "components/*";
 @import "pages/index";
 
 body {
-  padding-top: 84px;
+  padding-top: 80px;
 }
