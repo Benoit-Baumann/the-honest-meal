@@ -3,6 +3,6 @@
 <br>
 <% @coupons.each do |coupon| %>
     <%= coupon.restaurant.name %>
-    <%= coupon.value %>
-    <%= coupon.isUsed? %>
+    <%= coupon.details %>
+    <%= coupon.is_valid? %>
 <% end %>
