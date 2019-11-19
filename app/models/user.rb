@@ -1,14 +1,14 @@
 class User < ApplicationRecord
 
+  mount_uploader :photo, PhotoUploader
+
   before_save :set_random_avatar
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  # mount_uploader :photo, PhotoUploader
-
+  
   has_many :restaurants, foreign_key: :owner_id
   has_many :reviews
   has_many :coupons
