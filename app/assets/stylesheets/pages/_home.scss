@@ -33,5 +33,26 @@
   font-family: $headers-font;
   color: black;
   font-size: 32px;
+  margin-bottom: 40px;
+}
 
+.block-text-image {
+  display: flex;
+}
+
+.text-main-page {
+  width: 70%;
+  margin-right: 100px;
+}
+
+.images-main-page p {
+  text-align: center;
+  line-height: 30px;
+  margin-left: 40px;
+}
+
+.images-main-page img {
+  height: 75px;
+  width: 75px;
+  vertical-align: middle;
 }
