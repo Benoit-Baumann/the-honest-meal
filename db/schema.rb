@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 2019_11_19_111006) do
     t.index ["owner_id"], name: "index_restaurants_on_owner_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "restaurant_id"
+    t.string "username"
+    t.text "content"
+    t.float "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,4 +59,6 @@ ActiveRecord::Schema.define(version: 2019_11_19_111006) do
   end
 
   add_foreign_key "restaurants", "users", column: "owner_id"
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end

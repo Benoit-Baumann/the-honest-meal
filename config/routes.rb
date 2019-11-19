@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/new'
+  get 'reviews/create'
   devise_for :users
 
   root to: 'pages#home'
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:index]
-  resources :reviews, only: [:new, :create, :index] #index for my_reviews
+  resources :reviews, only: [:index, :new, :create] #index for my_reviews
   resource :profile, only: :show
   resources :coupons, only: :index
 
