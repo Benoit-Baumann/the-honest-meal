@@ -1,2 +1,17 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="custom-container">
+  <div class="sign-title">
+    <h2>Ajouter une nouvelle critique</h2>
+
+    <div class="sign-up form-inputs">
+      <%= simple_form_for [@review] do |f| %>
+        <% unless user_signed_in? %>
+            <%= f.input :username %>
+        <% end %>
+        <%= f.input :content %>
+        <%= f.input :rating %>
+        <%= f.submit "Publier", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
