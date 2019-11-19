@@ -53,6 +53,7 @@ john = User.new(
   password: "password",
   status: 1
   )
+john.save!
 
 ben = User.new(
   username: 'Ben',
@@ -60,6 +61,7 @@ ben = User.new(
   password: 'password',
   status: 1
 )
+ben.save!
 
 juju = User.new(
   username: 'Juju',
@@ -67,6 +69,7 @@ juju = User.new(
   password: 'password',
   status: 0
 )
+juju.save!
 
 axel = User.new(
   username: 'axel',
@@ -74,6 +77,7 @@ axel = User.new(
   password: 'password',
   status: 0
 )
+axel.save!
 
 [john, ben].each do |owner| 
   resto = create_new_restaurant
