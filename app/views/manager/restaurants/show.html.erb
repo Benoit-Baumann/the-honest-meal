@@ -1,0 +1,10 @@
+<h1>My Restaurant</h1>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.description %></p>
+<h2><%= link_to("EDIT", edit_manager_restaurant_path) %></h2>
+<h2><%= link_to "DELETE", manager_restaurant_path(@restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></h2>
+<br>
+<h2><%= link_to("Back to restaurants", manager_restaurants_path) %></h2>
