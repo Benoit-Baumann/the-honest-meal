@@ -7,4 +7,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   end
+
+  def toggle_favorites
+  end
 end
