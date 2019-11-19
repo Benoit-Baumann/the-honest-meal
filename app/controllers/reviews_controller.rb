@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:new, :create]
 
     def index
         @reviews = current_user.reviews
