@@ -1,4 +1,12 @@
-<h1>Restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-<h2><%= link_to(restaurant.name, restaurant_path(restaurant)) %></h2>
-<% end %>
+<div class="main-container">
+  <h1>Restaurants</h1>
+
+    <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-restaurant">
+        <%#= cl_image_tag restaurant.photo, height: 300, width: 400, crop: :fill %>
+        <h2><%= link_to(restaurant.name, restaurant_path(restaurant)) %></h2>
+      </div>
+    <% end %>
+  </div>
+</div>
