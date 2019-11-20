@@ -1,6 +1,6 @@
-<div class="search-bar" style="margin: 0 auto">
+<div class="search-bar-div" style="margin: 0 auto">
     <%= form_tag restaurants_path, class: "", method: :get do |f| %>
-        <div>
+        <div class="search-bar">
             <%= text_field_tag :name,
             params[:name],
             class: error ? "search-bar-city invalid-search-bar": "search-bar-city",
@@ -8,7 +8,7 @@
             %>
             <p class="invalid-search-message"><%= error %></p>
         </div>
-        <div>
+        <div class="search-bar">
             <%= text_field_tag :category,
             params[:category],
             class: error ? "search-bar-city invalid-search-bar": "search-bar-city",
@@ -17,7 +17,7 @@
             <p class="invalid-search-message"><%= error %></p>
         </div>
         <%= button_tag(type: "submit", class: "search-bar-button") do %>
-            Search
+            <p>Search</p>
         <% end %>
     <% end %>
 </div>
