@@ -22,7 +22,7 @@
          <% else %>
            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
              <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
-             <%= link_to "Mes restaurants", restaurants_path, class: "dropdown-item" %>
+             <%= link_to "Mes restaurants", manager_restaurants_path, class: "dropdown-item" %>
              <%= link_to "Mes favoris", favorites_path, class: "dropdown-item" %>
              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
            </div>
