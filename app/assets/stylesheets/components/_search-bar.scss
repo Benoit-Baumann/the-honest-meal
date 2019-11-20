@@ -1,8 +1,8 @@
 
 .search-bar-div {
   overflow: auto;
-  padding: 20px;
-  width: 450px;
+  padding: 40px;
+  width: 410px;
   background-color: $light-white;
   margin: 0 auto;
   border-radius: 16px;
@@ -11,19 +11,16 @@
 }
 
 .search-bar {
-  display: table;
   margin: 0 auto;
 }
 
 .search-bar-city {
-  width: 350px;
+  width: 100%;
   border-radius: 8px;
   padding: 10px 20px;
-  margin: 16px;
   background-color: white;
   font-size: 10px;
   text-align: center;
-  margin-top: 20px;
   border: none !important;
   display: flex;
 }
