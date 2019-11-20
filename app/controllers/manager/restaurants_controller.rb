@@ -16,7 +16,7 @@ class Manager::RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.owner = current_user
-    @restaurant.save!
+    @restaurant.save
     redirect_to manager_restaurant_path(@restaurant)
   end
 
