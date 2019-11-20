@@ -95,9 +95,22 @@
 }
 
 .city-cards {
+  display: flex;
   color :white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: red;
+  border: 2px solid white;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
 }
 
+.city-cards h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
 .cities {
-  padding-left: 24px !important;
+  padding: 16px 24px;
 }
