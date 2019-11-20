@@ -1,4 +1,4 @@
-<div class="card-grid">
+<div class="cards-grid">
     <% restaurants.each do |restaurant| %>
     <% if restaurant.restaurant_photos.first != nil %>
         <% background_url = cl_image_path restaurant.restaurant_photos.first.photo, crop: :fill %>
