@@ -1,1 +1,7 @@
-console.log(document.querySelector(""))
+if (document.querySelector(".fa-heart").className == "fas fa-heart valueoff") {
+  document.querySelector(".fa-heart").classList.remove("valueoff");
+  document.querySelector(".fa-heart").classList.add("valueon");
+} else {
+  document.querySelector(".fa-heart").classList.remove("valueon");
+  document.querySelector(".fa-heart").classList.add("valueoff");
+}

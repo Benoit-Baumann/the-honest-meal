@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -54,32 +54,32 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-reastaurant {
+.card-restaurant {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-reastaurant > img {
+.card-restaurant > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-reastaurant h2 {
+.card-restaurant h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-reastaurant p {
+.card-restaurant p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-reastaurant .card-reastaurant-infos {
+.card-restaurant .card-restaurant-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -87,9 +87,17 @@
   position: relative;
 }
 
-.card-reastaurant-infos .card-reastaurant-user {
+.card-restaurant-infos .card-restaurant-user {
   position: absolute;
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.city-cards {
+  color :white;
+}
+
+.cities {
+  padding-left: 24px !important;
 }

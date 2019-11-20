@@ -1,0 +1,24 @@
+<div class="row cards">
+    <% restaurants.each do |restaurant| %>
+    <% if restaurant.restaurant_photos.first != nil %>
+        <% background_url = cl_image_path restaurant.restaurant_photos.first.photo, crop: :fill %>
+    <% else %>
+        <% background_url = image_path 'restaurant1.jpg' %>
+    <% end %>
+    <div class="card-restaurant">
+        <%= link_to "", restaurant_path(restaurant), class: 'card-link' %>
+        <img src="<%= background_url %>" />
+        <div class="card-restaurant-infos">
+        <div>
+            <h2><%= restaurant.name %></h2>
+            <p class="restaurant-category"><%= restaurant.category %></p>
+            <p class="restaurant-location"><%= restaurant.address %></p>
+        </div>
+        <div>
+            <h2 class="card-restaurant-pricing"><%= restaurant.name %> €/j</h2>
+            <%= image_tag restaurant.owner.photo.url(:bright_face), class: "card-trip-user avatar-bordered" %>
+        </div>
+        </div>
+    </div>
+    <% end %>
+</div>

@@ -95,6 +95,7 @@ puts "Creating #{rand_nb} random restaurant owners and restaurants..."
 i =1
 rand_nb.times {
   owner = create_new_user
+  owner.status = 1
   resto = create_new_restaurant
   resto.owner = owner
   owner.save!
