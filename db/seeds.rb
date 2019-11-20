@@ -36,7 +36,8 @@ def create_new_restaurant
     pricing: rand(1..3),
     rating: rand(0..5),
     phone_number: Faker::PhoneNumber.phone_number,
-    website: Faker::Internet.domain_name
+    website: Faker::Internet.domain_name,
+    siret: rand(10**14)
   )
 end
 

@@ -1,7 +1,7 @@
 <div class="main-container">
   <h1>Restaurants près de XXX</h1>
   <br>
-
-  <%= render partial: 'shared/restaurant_cards', locals: {restaurants: @restaurants} %>
-
+  <div class="restaurant-grid">
+    <%= render partial: 'shared/restaurant_cards', locals: {restaurants: @restaurants} %>
+  </div>
 </div>

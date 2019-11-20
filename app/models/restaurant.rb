@@ -4,6 +4,8 @@ class Restaurant < ApplicationRecord
 
   belongs_to :owner, class_name: 'User'
   has_many :restaurant_photos
+  has_many :reviews
+  has_many :coupons
   
   validates :owner, presence: true
   validates :name, presence: true
