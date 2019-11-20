@@ -1,12 +1,7 @@
 <div class="main-container">
-  <h1>Restaurants</h1>
+  <h1>Restaurants près de XXX</h1>
+  <br>
 
-    <div class="cards">
-    <% @restaurants.each do |restaurant| %>
-      <div class="card-restaurant">
-        <%#= cl_image_tag restaurant.photo, height: 300, width: 400, crop: :fill %>
-        <h2><%= link_to(restaurant.name, restaurant_path(restaurant)) %></h2>
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: 'shared/restaurant_cards', locals: {restaurants: @restaurants} %>
+
 </div>
