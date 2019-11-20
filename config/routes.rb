@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resource :profile, only: :show
   resources :coupons, only: :index
 
+
   namespace :manager do
     resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end

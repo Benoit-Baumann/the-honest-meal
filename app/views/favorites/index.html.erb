@@ -1,0 +1,8 @@
+<h2>My favorites</h2>
+<% if @favorites.empty? %>
+  <h3>Sorry, you don't have any favorite restaurants yet :(</h3>
+<% else %>
+  <% @favorites.each do |favorite| %>
+    <h3><%= favorite.restaurant.name %></h3>
+  <% end %>
+<% end %>
