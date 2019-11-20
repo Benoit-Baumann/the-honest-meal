@@ -1,8 +1,10 @@
-<h1>Coupons#index</h1>
-<p>Find me in app/views/coupons/index.html.erb</p>
-<br>
-<% @coupons.each do |coupon| %>
-    <%= coupon.restaurant.name %>
-    <%= coupon.details %>
-    <%= coupon.is_valid? %>
-<% end %>
+<div class="main-container">
+
+  <h1>Mes coupons</h1>
+
+  <% @coupons.each do |coupon| %>
+      <%= coupon.restaurant.name %>
+      <%= coupon.details %>
+      <%= coupon.is_valid? %>
+  <% end %>
+</div>
