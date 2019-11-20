@@ -1,4 +1,4 @@
-<div class="row cards">
+<div class="card-grid">
     <% restaurants.each do |restaurant| %>
     <% if restaurant.restaurant_photos.first != nil %>
         <% background_url = cl_image_path restaurant.restaurant_photos.first.photo, crop: :fill %>
@@ -9,15 +9,17 @@
         <%= link_to "", restaurant_path(restaurant), class: 'card-link' %>
         <img src="<%= background_url %>" />
         <div class="card-restaurant-infos">
-        <div>
-            <h2><%= restaurant.name %></h2>
-            <p class="restaurant-category"><%= restaurant.category %></p>
-            <p class="restaurant-location"><%= restaurant.address %></p>
-        </div>
-        <div>
-            <h2 class="card-restaurant-pricing"><%= restaurant.name %> €/j</h2>
-            <%= image_tag restaurant.owner.photo.url(:bright_face), class: "card-trip-user avatar-bordered" %>
-        </div>
+            <div class="card-restaurant-infos-left">
+                <h2><%= restaurant.name %></h2>
+                <p class="restaurant-category"><%= restaurant.category %></p>
+            </div>
+            <div class="card-restaurant-infos-right">
+                <p class="restaurant-phone">Tél: <%= restaurant.phone_number %></p>
+                <div class="restaurant-rating">
+                    <%= render partial: 'shared/stars_rating', locals: {rating: restaurant.rating} %>
+                    <p><%= restaurant.reviews.count %> avis</p>
+                </div>
+            </div>
         </div>
     </div>
     <% end %>
