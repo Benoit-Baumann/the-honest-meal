@@ -3,11 +3,9 @@
     <h1>The Honest Meal</h1>
     <h3>Ne laissez pas les faux commentaires ruiner votre repas</h3>
   </div>
-  <div class="search-bar">
-    <p>Entrez une ville ou un restaurant</p>
-    <p>Entrez une catégorie</p>
-    <h3>Search</h3>
-  </div>
+  
+  <%= render partial: 'search_bar' %>
+
   <div class="cities">
     <div class="cards">
       <div class="city-cards" style="background-image: url('../images/cities/Lyon.jpg')">Lyon</div>
@@ -21,6 +19,7 @@
       <div class="city-cards">Bordeaux </div>
     </div>
   </div>
+
 </div>
 <div class="main-container">
   <div class="block-text-image">
