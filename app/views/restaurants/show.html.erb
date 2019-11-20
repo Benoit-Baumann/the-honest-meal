@@ -1,8 +1,17 @@
+<% if @toto %>
 <h1>Restaurant</h1>
 <h2><%= @restaurant.name %></h2>
 <p><%= @restaurant.category %></p>
 <p><%= @restaurant.description %></p>
-<%= link_to restaurant_favorites_path(@restaurant), method: :post, class: 'valueoff', :remote => true do %>
-  <i class="far fa-heart"></i>
-  <%=  @toto %>
+<%= link_to restaurant_favorites_path(@restaurant), method: :post, :remote => true do %>
+  <i class="fas fa-heart valueoff"></i>
+<% end %>
+<% else %>
+<h1>Restaurant</h1>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.description %></p>
+<%= link_to restaurant_favorites_path(@restaurant), method: :post, :remote => true do %>
+  <i class="fas fa-heart valueon"></i>
+<% end %>
 <% end %>
