@@ -1,16 +1,18 @@
 <div id="navbar" class="navbar navbar-expand-sm navbar-lewagon">
  <li class="nav-logo" style="list-style: none;">
    <%= link_to root_path, class: "navbar-brand" do %>
-     <%= image_tag "logo-honest-meal.png", class: "logo" %>
+     <%= image_tag "theHonestMeal.png", class: "logo" %>
    <% end %>
-   <p> The Honest Meal</p>
  </li>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
  </button>
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <ul class="navbar-nav mr-auto">
+   <ul class="navbar-nav mr-auto" style="align-items: baseline">
      <% if user_signed_in? %>
+         <%= link_to "Dashbord", new_user_session_path, class: "connected-btn" %>
+         <%= link_to "Mes Questionnaires", new_user_session_path, class: "connected-btn" %>
+         <%= link_to "Créer un Questionnaire", new_user_session_path, class: "connected-btn" %>
        <li class="nav-item dropdown">
          <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% if current_user.status == 'customer' %>
@@ -29,14 +31,8 @@
          <% end %>
        </li>
      <% else %>
-       <li class="nav-item" style="text-decoration: none">
-         <%= link_to "Laissez un avis", new_user_session_path, class: "nav-link" %>
-       </li><p> | </p>
        <li class="nav-item">
-         <%= link_to "Utilisateur", new_user_session_path, class: "nav-link" %>
-       </li><p> | </p>
-       <li class="nav-item">
-         <%= link_to "Restaurateur", new_user_registration_path, class: "nav-link" %>
+         <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
        </li>
      <% end %>
    </ul>

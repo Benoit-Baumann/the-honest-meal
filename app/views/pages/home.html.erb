@@ -1,28 +1,25 @@
 <%= render 'shared/login_form' %>
-
-<div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://www.lyonresto.com/contenu/photo_restaurant/0_photo_automatique/victoire_et_thomas/03_Victoire-et-selection-Thomas-restaurant-bar-a-vin-gastronomie-Lyon.jpg)">
+<div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://i.ibb.co/6mj3QjW/fonddd.jpg)">
   <div class="home-title">
     <h1>The Honest Meal</h1>
-    <h3>Ne laissez pas les faux commentaires ruiner votre repas</h3>
+    <h3>Votre business commence par des feedbacks</h3>
   </div>
-  <%= render partial: 'search_bar' %>
+  <div class="join-us-btn">
+    <%= link_to "Rejoignez-nous", new_user_registration_path, class: "" %>
+  </div>
 </div>
 
 <div class="main-container">
-
+  <h1>Pourquoi nous faire confiance?</h1>
   <div class="block-text-image">
     <div class="text-main-page">
-      <h1>Pourquoi nous faire confiance?</h1>
         <p>ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
          jvais coller des mandalle de forain si tu lis pas nos super reviews aller je fais copier-coller flemme
-         de tout ecrire encore.
-         ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
+         de tout ecrire encore.</p>
+         <p>ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
          jvais coller des mandalle de forain si tu lis pas nos super reviews aller je fais copier-coller flemme
-         de tout ecrire encore.
-         ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
-         jvais coller des mandalle de forain si tu lis pas nos super reviews aller je fais copier-coller flemme
-         de tout ecrire encore.
-         ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
+         de tout ecrire encore.</p>
+         <p>ouah ptn c ouf notre site c le meilleur ptn je comprend pas pk vous vnez pas dessus la tete de ma mere
          jvais coller des mandalle de forain si tu lis pas nos super reviews aller je fais copier-coller flemme
          de tout ecrire encore.</p>
     </div>
@@ -34,28 +31,4 @@
     </div>
 
   </div>
-
-    <div class="cities">
-    <div class="cards-grid">
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lyon.jpg' %>)">
-      <h2>Lyon</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Rennes.jpg' %>)">
-      <h2>Rennes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Toulouse.jpg' %>)">
-      <h2>Toulouse</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Paris.jpg' %>)">
-      <h2>Paris</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Nantes.jpg' %>)">
-      <h2>Nantes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Marseille.jpg' %>)">
-      <h2>Marseille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Strasbourg.jpg' %>)">
-      <h2>Strasbourg</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lille.jpg' %>)">
-      <h2>Lille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Bordeaux.jpg' %>)">
-      <h2>Bordeaux</h2></div>
-    </div>
-  </div>
-
 </div>
