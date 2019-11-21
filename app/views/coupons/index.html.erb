@@ -7,4 +7,34 @@
       <%= coupon.details %>
       <%= coupon.is_valid? %>
   <% end %>
+
+<!--   <div class="charts">
+  <canvas id="myRate" width="50" height="50"></canvas>
+  </div>> -->
+  <div class="charts">
+     <% @data = {
+        labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+        datasets: [{
+            label: '# de sondages envoyés',
+            data: [300, 257, 312, 420, 371, 305, 382, 375, 333, 307, 403, 324],
+            backgroundColor: 'rgba(143, 214, 148, 0.4)',
+            borderColor:'rgba(143, 214, 148, 0.4)',
+            borderWidth: 1
+        }]
+    } %>
+
+<% @options = {
+    responsive: true,
+    maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+          }]
+        }
+  } %>
+<%= doughnut_chart @data, @options %>
+  </div>
+
 </div>
