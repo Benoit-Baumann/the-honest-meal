@@ -1,4 +1,16 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
-<br>
-<%= current_user.username %>
+<div class="main-container">
+    <h1>Mon profil</h1>
+  <aside class="profile-card">
+    <header>
+      <%= image_tag current_user.photo.url(:bright_face), class: "avatar-extra-large" %>
+      <h1>blaze</h1>
+    </header>
+    <div class="profile-bio">
+      <h4>email</h4>
+      <h4>adresse</h4>
+    </div>
+  </aside>
+</div>
+  <div class="d-flex justify-content-center profile-links">
+</div>
+
