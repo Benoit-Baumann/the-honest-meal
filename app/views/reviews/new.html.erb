@@ -1,16 +1,23 @@
-<div class="main-container">
-  <div class="sign-title">
-     <div class="form-logo"><%= image_tag "logo-honest-meal.png", class: "logo" %>The Honest Meal</div>
-        <h2>Ecrire un nouvel avis</h2>
+<div class="restaurantrecap">
+  <div class="restaurant-photo"><%= image_tag "dinard-restaurant.jpg"%></div>
+  <div class="resto-info">
+    <div class="restoname">The famous Restaurant</div>
+    <div class="restoaddress">9 rue des capucins, Lyon</div>
+  </div>
+</div>
 
-        <div class="sign-up form-inputs">
-          <%= simple_form_for [@review] do |f| %>
-            <%= f.input :restaurant_id, as: :hidden %>
-            <%= f.input :username, label: "Nom d'utilisateur", required: true unless user_signed_in? %>
-            <%= f.input :content, label: 'Votre avis' %>
-            <%= f.input :rating, label: 'Note' %>
-            <%= f.submit "Publier", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-      </div>
+<div class="review">
+
+  <div class="reviewtitle"><h2>Ecrire un nouvel avis</h2></div>
+
+  <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
+    <div class="inputboxes">
+    <%= f.input :restaurant_id, as: :hidden %>
+    <%= f.input :username, label: "Nom d'utilisateur", required: true unless user_signed_in? %>
+    <%= f.input :content, label: 'Votre avis' %>
+    <%= f.input :rating, collection: (1..5).to_a, label: 'Note', class: "" %>
+    </div>
+    <%= f.submit "Publier", class: "btn btn-primary" %>
+  <% end %>
+
 </div>
