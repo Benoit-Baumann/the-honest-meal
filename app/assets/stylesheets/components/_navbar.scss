@@ -1,44 +1,41 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: $green;
+  background-color: white;
   position: fixed;
   z-index: 10;
   top: 0;
   width: 100%;
   overflow: visible;
-  height: 80px;
+  height: 56px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-nav {
+  margin: 0 auto;
 }
 
 .nav-link {
   color: white;
-  font-size: 16px;
+  font-size: 12px;
   font-family: $body-font;
-  padding-left: 0rem !important;
-  padding-right: 0,1rem !important;
+  background-color: $green;
+  padding: 10px;
   transition: 0.2s ease-in-out;
+  text-align: center;
+  border-radius: 8px;
 }
 
 .nav-item a:visited {
   text-decoration: none, !important;
 }
 
-.nav-item a:hover {
-  color: white !important;
-  transform:scale(1.12);
-
-}
-
 .nav-logo p {
   display: inline-block;
-  color: white;
+  color: black;
   margin-bottom: 0rem;
-  font-family: $main-title;
+  font-family: $headers-font;
   font-size: 20px;
 }
+
 
 .collapse p {
   color: white;
@@ -47,7 +44,7 @@
 }
 
 .logo {
-  height: 72px;
+  height: 50px;
 }
 
 
@@ -58,8 +55,12 @@
 }
 
 .dropdown-menu a:hover {
-  color: $green !important;
+  background-color: $green !important;
   transform:scale(1.02) !important;
   border-radius: 8px;
+}
+
+.avatar {
+  margin-left: 10px;
 }
 

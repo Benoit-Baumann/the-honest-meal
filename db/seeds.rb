@@ -17,7 +17,7 @@ puts "Destroying existing users..."
 User.destroy_all
 
 
-#----- Creating new data -----
+----- Creating new data -----
 def create_new_user
   User.new(
     username: Faker::Internet.username,
@@ -85,7 +85,7 @@ axel = User.new(
 axel.save!
 
 puts "Creating random restaurants for John and Ben..."
-[john, ben].each do |owner| 
+[john, ben].each do |owner|
   resto = create_new_restaurant
   resto.owner = owner
   resto.save!
@@ -143,7 +143,7 @@ rand_nb.times {
   }
 
   i += 1
-  
+
 }
 
 puts "Seed finished in #{ (Time.now - start_time).round(1) }s !"

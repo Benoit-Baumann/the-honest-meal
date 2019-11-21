@@ -6,7 +6,9 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.9.3",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "jquery-bar-rating": "^1.2.2",
+    "popper.js": "^1.16.0",
+    "typewriter-effect": "^2.12.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
