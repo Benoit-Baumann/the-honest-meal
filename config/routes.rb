@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'coupons/index'
-  get 'profile/show'
-  get 'reviews/index'
-  get 'reviews/new'
-  get 'reviews/create'
-  devise_for :users
+  # get 'coupons/index'
+  # get 'profile/show'
+  # get 'reviews/index'
+  # get 'reviews/new'
+  # get 'reviews/create'
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   root to: 'pages#home'
 

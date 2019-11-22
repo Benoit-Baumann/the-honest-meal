@@ -1,4 +1,7 @@
 import "bootstrap";
-import { initStarRating } from '../plugins/init_star_rating';
+import initLoadingAnimation from './loading_animation';
+import initStarRating from '../plugins/init_star_rating';
 
 initStarRating();
+
+initLoadingAnimation();
