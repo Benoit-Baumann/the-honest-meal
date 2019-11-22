@@ -1,5 +1,12 @@
 .dashbord-container {
 display: flex;
+border: 2px solid black;
+border-radius: 4px;
+width: 100%;
+height: 750px;
+padding:30px;
+background-color: $light-gray;
+flex-wrap: wrap;
 }
 
 
