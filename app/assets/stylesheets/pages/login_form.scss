@@ -1,62 +1,85 @@
 details summary {
-    // cursor: pointer;
-    // outline: none !important;
-    // display: inline-block;
-    // padding: 8px 12px;
-    // padding-top: 10px;
-    // border-radius: 4px;
-    // overflow: hidden;
-    // background: #F09825;
-    // color: white;
-    // font-family: Arial;
-    // font-weight: bold;
-    // font-size: 1.2em;
-    // letter-spacing: 0.025em;
-    // text-transform: uppercase;
-  }
-  
-  details[open] > summary::before {
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+details label {
+    font-size: 1.2em;
+}
+
+details[open] > summary::before {
     position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: block;
-      cursor: default;
-      content: " ";
-      z-index: 99;
-      background: rgba(27,31,35,0.5);
-  }
-  
-  details > div {
-      left: 50%;
-      margin: 10vh auto;
-      max-height: 80vh;
-      max-width: 90vw;
-      position: fixed;
-      top: 0;
-      transform: translateX(-50%);
-      width: 448px;
-      z-index: 999;
-      animation-name: fade-in;
-      animation-duration: 300ms;
-      animation-timing-function: ease-in-out;
-      background-color: #fff;
-      border: 1px solid #d1d5da;
-      border-radius: 3px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    cursor: default;
+    content: " ";
+    z-index: 99;
+    background: rgba(27,31,35,0.5);
+}
+
+details > .details-container {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10vh auto;
+    max-height: 80vh;
+    max-width: 90vw;
+    position: fixed;
+    top: 0;
+    width: 448px;
+    z-index: 999;
+    animation-name: fade-in;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    overflow: auto;
+}
+
+.tab-header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $green;
+}
+
+.tab-header h2 {
     font-size: 2em;
-      font-weight: bold;
-      font-family: Arial;
-      padding: 1em;
-      box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
-      border-top: 4px solid #F09825;
-    
-    .header {
-      
-    }
-  }
-  
-  @keyframes fade-in {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.tab-header {
+    cursor: pointer;
+    padding: 1em;
+}
+
+.tab-header.active {
+    background-color:rgb(1, 146, 1);
+}
+
+.tab-container {
+    padding: 1.2em;
+}
+
+.tab-content {
+    display: none;
+    border-radius: 6px;
+    padding: 1em;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+details > .tab-header-container {
+    border: 4px solid black;
+}
+
+@keyframes fade-in {
       from { opacity: 0; }
       to   { opacity: 1; }
   }
