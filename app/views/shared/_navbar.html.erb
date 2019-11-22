@@ -31,7 +31,7 @@
          <% end %>
        </li>
      <% else %>
-         <%= link_to "Se Connecter", new_user_session_path, class: "connected-btn" %>
+      <%= render partial: 'shared/login_form' %>
      <% end %>
    </ul>
  </div>
