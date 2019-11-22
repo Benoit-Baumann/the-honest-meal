@@ -1,0 +1,10 @@
+function refreshNavbar(newNavbar) {
+    const currentNavbar = document.querySelector('#navbar');
+    const htmlObject = document.createElement('div');
+    htmlObject.innerHTML = newNavbar;
+    currentNavbar.parentNode.replaceChild(htmlObject, currentNavbar);
+}
+
+refreshNavbar('<%= j render "shared/navbar" %>');
+
+location.reload() %>
