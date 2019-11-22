@@ -9,10 +9,6 @@
   height: 56px;
 }
 
-.navbar-nav {
-  margin: 0 auto;
-}
-
 .nav-link {
   color: white;
   font-size: 12px;
@@ -36,6 +32,9 @@
   font-size: 20px;
 }
 
+.collapse {
+  justify-content: flex-end;
+}
 
 .collapse p {
   color: white;
@@ -62,5 +61,13 @@
 
 .avatar {
   margin-left: 10px;
+}
+
+.alert-info {
+  background-color: $green;
+  color: white;
+  font-family: $body-font;
+  border-radius: 8px;
+  border: none !important;
 }
 
