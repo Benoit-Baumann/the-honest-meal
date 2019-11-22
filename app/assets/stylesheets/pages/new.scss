@@ -37,12 +37,15 @@
 .review {
   width: 1120px;
   margin: 0 auto;
+  margin-bottom: 50px;
+  opacity:0.6;
 }
 
 .reviewtitle {
-border-bottom: 1px solid black;
+border-bottom: 1px solid #4A4A4A;
 width:50%;
 margin-top:50px;
+margin-bottom:50px;
 }
 
 .form-review {
@@ -50,21 +53,43 @@ margin-top:50px;
 }
 
 .inputboxes input {
-  border: solid 1px black;
-  border-radius:6px;
+  border: 1px solid #4A4A4A;
+  border-radius:8px;
 }
 
 .inputboxes label {
-  font-family: helvetica-neue;
-  margin:0;
 }
 
 .inputboxes textarea {
-  border: solid 1px black;
-  border-radius:6px;
+  border: 1px solid #4A4A4A;
+  border-radius:8px;
 }
 
 .br-theme-css-stars .br-widget a {
   font-size: 40px !important;
   margin-right: 18px !important;
+}
+
+.btn-ghost {
+  margin-top:20px;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 150px;
+  height: 50px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+
+.inputtype {
+  margin-bottom: 50px;
 }

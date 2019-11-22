@@ -13,11 +13,12 @@
   <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
     <div class="inputboxes">
     <%= f.input :restaurant_id, as: :hidden %>
-    <%= f.input :username, label: "Nom d'utilisateur", required: true unless user_signed_in? %>
-    <%= f.input :content, label: 'Votre avis' %>
-    <%= f.input :rating, collection: (1..5).to_a, label: 'Note', class: "" %>
+    <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "inputtype" }, required: true unless user_signed_in? %>
+    <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "inputtype" } %>
+    <%= f.input :content, label: 'Votre avis', :input_html => { class: "inputtype" } %>
+    <%= f.input :rating, collection: (1..5).to_a, label: 'Note', :input_html => { class: "inputtype" } %>
     </div>
-    <%= f.submit "Publier", class: "btn btn-primary" %>
+    <%= f.submit "Publier", class: "btn btn-ghost" %>
   <% end %>
 
 </div>
