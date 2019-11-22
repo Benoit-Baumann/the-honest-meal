@@ -6,19 +6,19 @@ class Restaurant < ApplicationRecord
   has_many :restaurant_photos
   has_many :reviews
   has_many :coupons
-  
-  validates :owner, presence: true
-  validates :name, presence: true
-  validates :siret, presence: true, uniqueness: true
-  validates :address, presence: true
-  validates :pricing, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..3 }
+
+  # validates :owner, presence: true
+  # validates :name, presence: true
+  # validates :siret, presence: true, uniqueness: true
+  # validates :address, presence: true
+  # validates :pricing, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..3 }
   # validates :hours, presence: true
   # validates :description, presence: true
   # validates :category, presence: true
   # validates :phone_number, presence: true # regex numéro francais
   # validates :website, presence: true
 
-  private 
+  private
 
   def valid_siret?
     # self.siret
@@ -26,5 +26,5 @@ class Restaurant < ApplicationRecord
     return false if tmp.length != 14
 
   end
-  
+
 end
