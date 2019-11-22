@@ -44,7 +44,8 @@ def create_new_review
   Review.new(
     content: Faker::Restaurant.review,
     rating: rand(0..5),
-    content_title: 'Titre du contenu'
+    content_title: 'Titre du contenu',
+    created_at: rand(Date.civil(2019, 1, 1)..Date.civil(2019, 12, 31))
   )
 end
 
