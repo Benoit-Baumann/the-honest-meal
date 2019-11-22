@@ -36,6 +36,9 @@ class Manager::RestaurantsController < ApplicationController
     redirect_to manager_restaurants_path
   end
 
+  def dashboard
+  end
+
   private
 
   def restaurant_params

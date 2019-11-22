@@ -17,7 +17,6 @@ puts "Destroying existing users..."
 User.destroy_all
 
 
------ Creating new data -----
 def create_new_user
   User.new(
     username: Faker::Internet.username,
@@ -44,7 +43,8 @@ end
 def create_new_review
   Review.new(
     content: Faker::Restaurant.review,
-    rating: rand(0..5)
+    rating: rand(0..5),
+    content_title: 'Titre du contenu'
   )
 end
 

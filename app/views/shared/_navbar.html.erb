@@ -11,7 +11,7 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto" style="align-items: baseline">
      <% if user_signed_in? %>
-         <%= link_to "Dashboard", new_user_session_path, class: "connected-btn" %>
+         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn" %>
          <%= link_to "Mes Questionnaires", new_user_session_path, class: "connected-btn" %>
          <%= link_to "Créer un Questionnaire", new_user_session_path, class: "connected-btn" %>
        <li class="nav-item dropdown">
