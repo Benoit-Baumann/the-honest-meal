@@ -8,23 +8,25 @@
       <%= coupon.is_valid? %>
   <% end %>
 
+<% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
+
 <!--   <div class="charts">
   <canvas id="myRate" width="50" height="50"></canvas>
   </div>> -->
   <div class="charts">
-    <% @reviews = Review.all.group("DATE_TRUNC('month', created_at)").average(:rating) %>
+    <% @reviews = sorted_group_reviews.average(:rating).sort %>
      <% @data = {
         labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
         datasets: [{
             label: 'note moyenne',
-            data: [@reviews.values[7], @reviews.values[6], @reviews.values[4], @reviews.values[3], @reviews.values[2], @reviews.values[5], @reviews.values[10], @reviews.values[8], @reviews.values[11], @reviews.values[1], @reviews.values[0], @reviews.values[9]],
+            # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
+            data: [@reviews[0][1], @reviews[1][1], @reviews[2][1], @reviews[3][1], @reviews[4][1], @reviews[5][1], @reviews[6][1], @reviews[7][1], @reviews[8][1], @reviews[9][1], @reviews[10][1], @reviews[11][1]],
             backgroundColor: 'rgba(143, 214, 148, 0.4)',
             borderColor:'rgba(143, 214, 148, 0.4)',
             fill: false,
             borderWidth: 4
         }]
     } %>
-
 <% @options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -40,16 +42,22 @@
   </div>
 
     <div class="charts">
-    <% @number = Review.all.group("DATE_TRUNC('month', created_at)").count %>
+    <% @number = sorted_group_reviews.count.sort %>
      <% @data = {
         labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
         datasets: [{
             label: '# de reviews recues',
+<<<<<<< HEAD
             data: [@number.values[7], @number.values[6], @number.values[4], @number.values[3], @number.values[2], @number.values[5], @number.values[10], @number.values[8], @number.values[11], @number.values[1], @number.values[0], @number.values[9]],
             backgroundColor: ['rgba(255, 237, 33, 0.4)','rgba(237, 147, 20, 0.4)', 'rgba(227, 69, 27, 0.4)','rgba(227, 73, 79, 0.4)',
               'rgba(227, 79, 122, 0.4)','rgba(150, 60, 126, 0.4)','rgba(24, 43, 131,0.4)','rgba(36, 106, 179, 0.4)','rgba(70, 159, 224, 0.4)',
               'rgba(80, 152, 144, 0.4)','rgba(82, 146, 54, 0.4)','rgba(150, 191, 23, 0.4)'],
             borderColor:'rgba(143, 214, 148, 0.4)',
+=======
+            data: [@number[0][1], @number[1][1], @number[2][1], @number[3][1], @number[4][1], @number[5][1], @number[6][1], @number[7][1], @number[8][1], @number[9][1], @number[10][1], @number[11][1]],
+            backgroundColor: ['rgba(255, 237, 33, 0.4)','rgba(237, 147, 20, 0.4)'],
+            borderColor:'rgba(255, 237, 33, 0.4)',
+>>>>>>> 4322050... refacto du code
             borderWidth: 1
         }]
     } %>
