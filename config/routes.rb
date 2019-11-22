@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    get 'dashboard', to: 'restaurants#dashboard'
   end
 
 end
