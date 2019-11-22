@@ -28,18 +28,14 @@
   text-decoration: none, !important;
 }
 
-.nav-item a:hover {
-  color: white !important;
-  transform:scale(1.05);
+.nav-logo p {
+  display: inline-block;
+  color: black;
+  margin-bottom: 0rem;
+  font-family: $headers-font;
+  font-size: 20px;
 }
 
-// .nav-logo p {
-//   display: inline-block;
-//   color: black;
-//   margin-bottom: 0rem;
-//   font-family: $headers-font;
-//   font-size: 20px;
-// }
 
 .collapse p {
   color: white;
@@ -59,28 +55,12 @@
 }
 
 .dropdown-menu a:hover {
-  background-color: $green !important;
+  color: $green !important;
   transform:scale(1.02) !important;
   border-radius: 8px;
 }
 
-.connected-btn {
-  color: white;
-  font-size: 12px;
-  font-family: $body-font;
-  background-color: $green;
-  padding: 10px;
-  transition: 0.2s ease-in-out;
-  text-align: center;
-  border-radius: 8px;
-  margin-right: 16px;
-  margin-top:10px;
-  margin-bottom:10px;
-}
-
-.navbar-nav a:hover {
-  color: white !important;
-  transform:scale(0.95);
-  text-decoration: none !important;
+.avatar {
+  margin-left: 10px;
 }
 
