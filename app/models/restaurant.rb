@@ -6,6 +6,7 @@ class Restaurant < ApplicationRecord
   has_many :restaurant_photos
   has_many :reviews
   has_many :coupons
+
   has_one :question_pools
   has_many :questions, through: :question_pools
 
@@ -14,6 +15,7 @@ class Restaurant < ApplicationRecord
   validates :siret, presence: true, uniqueness: true
   validates :address, presence: true
   validates :pricing, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..3 }
+
   # validates :hours, presence: true
   # validates :description, presence: true
   # validates :category, presence: true

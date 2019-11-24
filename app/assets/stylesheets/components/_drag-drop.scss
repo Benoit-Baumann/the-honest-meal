@@ -1,0 +1,107 @@
+#drag-1 {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-color: white;
+  color: black;
+  border: 2px solid $green;
+  border-radius: 0.85em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('https://media.giphy.com/media/KpACNEh8jXK2Q/giphy.gif');
+  background-size: cover;
+}
+
+#drag-2 {
+  width: 500px;
+  height: 150px;
+  margin: 20px;
+  background-color: white;
+  border: 2px solid $green;
+  color: black;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('http://blog.simplybook.me/wp-content/uploads/2015/11/new-appointment-and-booking-statistical-information-in-a-graph.png');
+  background-size: cover;
+}
+
+#drag-3 {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  background-color: white;
+  border: 2px solid $green;
+  color: black;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('https://www.meme-arsenal.com/memes/d2ac49153402d3ca5033900f70983acc.jpg');
+  background-size: cover;
+}
+
+#drag-4 {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  background-color: white;
+  border: 2px solid $green;
+  color: black;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('https://img.memecdn.com/mia-khalifa-quote_fb_7247265.jpg');
+  background-size: cover;
+}
+
+#drag-5 {
+  width: 400px;
+  height: 250px;
+  margin: 20px;
+  background-color: white;
+  border: 2px solid $green;
+  color: black;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('https://i.pinimg.com/originals/c0/42/f4/c042f4c41a658fbe581537a136df1337.png');
+  background-size: cover;
+}
+
+#drag-6 {
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  background-color: white;
+  border: 2px solid $green;
+  color: black;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  background-image: url('https://media.giphy.com/media/l3Uct2K9N3CqxeCoU/giphy.gif');
+  background-size: cover;
+}
+
+.draggable {
+  position: relative;
+}
+
+.draggable-content {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 32px;
+    border: 1px solid $green;
+    border-bottom-right-radius: 0.6em;
+    border-bottom-left-radius: 0.6em;
+    text-align: center;
+    font-family: §body-font;
+    padding-top: 5px;
+}
