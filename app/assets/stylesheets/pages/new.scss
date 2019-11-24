@@ -57,6 +57,12 @@ margin-bottom:50px;
   border-radius:8px;
 }
 
+.questionboxes {
+  border: 1px solid #4A4A4A;
+  border-radius:8px;
+  width: 100%;
+}
+
 .inputboxes label {
 }
 
@@ -92,4 +98,13 @@ margin-bottom:50px;
 
 .inputtype {
   margin-bottom: 50px;
+}
+
+.questions {
+  border: 1px solid #4A4A4A;
+  border-radius:8px;
+  width:100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  display: flex;
+  text-align: center;
 }

@@ -12,13 +12,27 @@
 
   <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
     <div class="inputboxes">
-    <%= f.input :restaurant_id, as: :hidden %>
+    <%= f.input :restaurant_id, as: :hidden, input_html: { value: 155 } %>
     <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "inputtype" }, required: true unless user_signed_in? %>
     <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "inputtype" } %>
     <%= f.input :content, label: 'Votre avis', :input_html => { class: "inputtype" } %>
     <%= f.input :rating, collection: (1..5).to_a, label: 'Note', :input_html => { class: "inputtype" } %>
     </div>
     <%= f.submit "Publier", class: "btn btn-ghost" %>
+  <% end %>
+
+  <div class="reviewtitle"><h2>Répondez au sondage du restaurateur</h2></div>
+
+  <% QuestionPool.where(restaurant_id: 155).last.questions.each do |question| %>
+  <%= question.name %> (Optionel)
+  <%= simple_form_for [@answer], html: { class: "form-review"} do |f| %>
+  <div class="inputboxes">
+    <%= f.input :restaurant_id, as: :hidden,input_html: { value: 155 } %>
+    <%= f.input :question_id, as: :hidden, input_html: { value: question.id } %>
+    <%= f.input :content, label: '(Optionel)', :input_html => { class: "inputtype" } %>
+    </div>
+    <%= f.submit "Publier", class: "btn btn-ghost" %>
+  <% end %>
   <% end %>
 
 </div>

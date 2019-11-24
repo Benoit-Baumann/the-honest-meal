@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_163003) do
+ActiveRecord::Schema.define(version: 2019_11_24_183817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "content"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "coupons", force: :cascade do |t|
     t.bigint "user_id"
@@ -34,6 +42,21 @@ ActiveRecord::Schema.define(version: 2019_11_21_163003) do
     t.boolean "value"
     t.index ["restaurant_id"], name: "index_favorites_on_restaurant_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "question_pools", force: :cascade do |t|
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_question_pools_on_restaurant_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "question_pool_id"
+    t.index ["question_pool_id"], name: "index_questions_on_question_pool_id"
   end
 
   create_table "restaurant_photos", force: :cascade do |t|
@@ -92,10 +115,13 @@ ActiveRecord::Schema.define(version: 2019_11_21_163003) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "coupons", "restaurants"
   add_foreign_key "coupons", "users"
   add_foreign_key "favorites", "restaurants"
   add_foreign_key "favorites", "users"
+  add_foreign_key "question_pools", "restaurants"
+  add_foreign_key "questions", "question_pools"
   add_foreign_key "restaurant_photos", "restaurants"
   add_foreign_key "restaurants", "users", column: "owner_id"
   add_foreign_key "reviews", "restaurants"

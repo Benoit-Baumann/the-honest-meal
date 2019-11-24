@@ -1,0 +1,13 @@
+<div class="review">
+  <div class="reviewtitle"><h2>Réponses au sondage</h2></div>
+    <div class="form-review">
+      <% QuestionPool.where(restaurant: @restaurant).last.questions.each do |question| %>
+      <div class="questionboxes"><%= question.name %></div>
+        <% question.answers.each do |answer| %>
+        -<%= answer.content %>
+        <br>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

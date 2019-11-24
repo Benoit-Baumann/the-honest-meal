@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @answer = Answer.new
   end
 
   def create
@@ -23,6 +24,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:user, :restaurant, :username, :content_title,:content, :rating)
+    params.require(:review).permit(:user, :restaurant_id, :username, :content_title,:content, :rating)
   end
 end

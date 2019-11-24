@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :restaurant, optional: true
+  belongs_to :restaurant, optional: false
+  has_many :answers
 
   # validates :user, presence: true
   validates :username, uniqueness: { case_sensitive: false }, presence: true, unless: :user_id? #Username requis si user_id absent (user non connecté ou ne possédant pas de compte)
