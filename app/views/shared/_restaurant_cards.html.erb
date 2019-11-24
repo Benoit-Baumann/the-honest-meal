@@ -16,7 +16,6 @@
             <div class="card-restaurant-infos-right">
                 <p class="restaurant-phone">Tél: <%= restaurant.phone_number %></p>
                 <div class="restaurant-rating">
-                    <%= render partial: 'shared/stars_rating', locals: {rating: restaurant.rating} %>
                     <p><%= restaurant.reviews.count %> avis</p>
                 </div>
             </div>
