@@ -5,7 +5,7 @@
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: 0.2s ease;
   margin-left: 10px;
   font-size: 12px;
   font-family: $body-font;
@@ -16,4 +16,9 @@
   color: $green !important;
   transform:scale(1.05);
   text-decoration: none !important;
+}
+
+.connected-btn.active {
+  background-color: $green;
+  color: white;
 }

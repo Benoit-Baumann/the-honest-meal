@@ -1,7 +1,7 @@
 
 const initTabListener = () => {
-    const sessionTab = document.querySelector('#tab-session')
-    const registrationTab = document.querySelector('#tab-registration')
+    const sessionTab = document.querySelector('#tab-session');
+    const registrationTab = document.querySelector('#tab-registration');
 
     const sessionForm = document.querySelector('#session-form');
     const registrationForm = document.querySelector('#registration-form');
@@ -23,4 +23,4 @@ const initTabListener = () => {
     })
 }
 
-export default initTabListener
+export default initTabListener;
