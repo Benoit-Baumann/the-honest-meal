@@ -17,13 +17,16 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:index]
-  resources :reviews, only: [:index, :new, :create] #index for my_reviews
+  resources :answers, only: [:index, :new, :create]
+  resources :reviews, only: [:index, :new, :create]
   resource :profile, only: :show
   resources :coupons, only: :index
 
 
   namespace :manager do
-    resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :restaurants, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :question_pools, only: [:new, :create, :destroy, :index]
+    end
     get 'dashboard', to: 'restaurants#dashboard'
   end
 

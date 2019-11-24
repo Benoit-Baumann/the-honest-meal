@@ -7,11 +7,15 @@ class Restaurant < ApplicationRecord
   has_many :reviews
   has_many :coupons
 
-  # validates :owner, presence: true
-  # validates :name, presence: true
-  # validates :siret, presence: true, uniqueness: true
-  # validates :address, presence: true
-  # validates :pricing, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..3 }
+  has_one :question_pools
+  has_many :questions, through: :question_pools
+
+  validates :owner, presence: true
+  validates :name, presence: true
+  validates :siret, presence: true, uniqueness: true
+  validates :address, presence: true
+  validates :pricing, presence: true, numericality: { only_integer: true }, inclusion: { in: 1..3 }
+
   # validates :hours, presence: true
   # validates :description, presence: true
   # validates :category, presence: true
