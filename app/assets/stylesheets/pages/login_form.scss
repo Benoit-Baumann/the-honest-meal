@@ -3,7 +3,8 @@ details summary {
 }
 
 details label {
-    font-size: 1.2em;
+    font-size: 1em;
+    color: rgb(3, 177, 3);
 }
 
 details[open] > summary::before {
@@ -20,12 +21,12 @@ details[open] > summary::before {
 }
 
 details > .details-container {
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     margin: 10vh auto;
     max-height: 80vh;
     max-width: 90vw;
-    position: fixed;
     top: 0;
     width: 448px;
     z-index: 999;
@@ -45,7 +46,7 @@ details > .details-container {
 }
 
 .tab-header h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     color: white;
     margin: 0;
@@ -57,7 +58,7 @@ details > .details-container {
 }
 
 .tab-header.active {
-    background-color:rgb(1, 146, 1);
+    background-color:rgb(3, 177, 3);
 }
 
 .tab-container {
