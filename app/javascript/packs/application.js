@@ -12,15 +12,19 @@ import initNavbarButtons from './navbar_active_button'
 import '../components/chart';
 import '../components/drag-drop';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { initStarRating } from '../plugins/init_star_rating';
 >>>>>>> 49388bf... dashboard
 =======
 import '../components/hide';
 >>>>>>> 5a3b520... disparition du login successfully après 10s
+=======
+>>>>>>> 7963648... Add token column to review model
 
 // initNavbarButtons();
 initStarRating();
 initTabListener();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -32,5 +36,7 @@ import '../components/chart';
 //initLoadingAnimation();
 >>>>>>> 888f1d2... modif dashboard avec ajout charts
 =======
+=======
+>>>>>>> 7963648... Add token column to review model
 //initLoadingAnimation();
 >>>>>>> 5a3b520... disparition du login successfully après 10s
