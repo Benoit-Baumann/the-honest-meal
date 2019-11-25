@@ -63,11 +63,25 @@
   margin-left: 10px;
 }
 
+
+@keyframes disapear{
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
 .alert-info {
   background-color: $green;
   color: white;
   font-family: $body-font;
   border-radius: 8px;
   border: none !important;
+  animation-duration: 10s;
+  animation-name: disapear;
+  visibility: hidden;
 }
+
 
