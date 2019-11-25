@@ -1,6 +1,10 @@
 <div class="review">
 
-  <% QuestionPool.where(restaurant_id: params[:restaurant_id]).last.questions.each do |question| %>
+  <% if QuestionPool.where(user: current_user).empty? %>
+  <% binding.pry %>
+    <h2>There are currently no questions</h2>
+  <% else %>
+    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
@@ -11,18 +15,17 @@
     <% end %>
 
 
-  <%= link_to 'DELETE', manager_restaurant_question_pool_path(@restaurant, question),
+  <%= link_to '', manager_question_pool_path(question),
         method: :delete,
-        class: "deleteajax", remote:true %>
+        class: "deleteajax far fa-trash-alt", remote:true %>
   </p>
+  <% end %>
   <% end %>
 
   <div class="reviewtitle"><h2>Créer des questions</h2></div>
 
-  <%= simple_form_for [:manager, @restaurant, @question_pool], html: { class: "form-review"} do |f| %>
+  <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="inputboxes">
-        <%= f.input :restaurant_id, as: :hidden %>
-
         <%= f.simple_fields_for :questions do |q_form| %>
         <%= q_form.input :cat, label: 'Text', :input_html => { class: "inputtype" }, as: :boolean %>
         <%= q_form.input :cat, label: 'Rating', :input_html => { class: "inputtype" }, as: :boolean %>

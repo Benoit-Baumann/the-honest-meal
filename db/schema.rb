@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_103406) do
+ActiveRecord::Schema.define(version: 2019_11_25_143526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 2019_11_25_103406) do
   end
 
   create_table "question_pools", force: :cascade do |t|
-    t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_question_pools_on_restaurant_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_question_pools_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_103406) do
   add_foreign_key "coupons", "users"
   add_foreign_key "favorites", "restaurants"
   add_foreign_key "favorites", "users"
-  add_foreign_key "question_pools", "restaurants"
   add_foreign_key "questions", "question_pools"
   add_foreign_key "restaurant_photos", "restaurants"
   add_foreign_key "restaurants", "users", column: "owner_id"
