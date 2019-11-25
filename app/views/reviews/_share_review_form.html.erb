@@ -2,23 +2,21 @@
   <summary class="connected-btn">+</summary>
 
   <div class="details-container">
-    <div class="tab-header-container">
-      <div class="tab-header active" id="tab-session">
-        <h2>Se connecter</h2>
-      </div>
-      <div class="tab-header" id="tab-registration">
-        <h2>Créer un compte</h2>
-      </div>
-    </div>
 
-    <div class="tab-container">
-      <div class="tab-content active" id="session-form">
-        <%= render partial: 'devise/sessions/new' %>
-      </div>
-      <div class="tab-content" id="registration-form">
-        <%= render partial: 'devise/registrations/new' %> 
-      </div>
-    </div>
+    <%= form_tag restaurants_path, class: "", method: :get do |f| %>
+        <div class="search-bar">
+            <%= text_field_tag :name,
+            params[:name],
+            class: error ? "search-bar-city invalid-search-bar": "search-bar-city",
+            placeholder: "John.doe@example.com"
+            %>
+            <p class="invalid-search-message"><%= error %></p>
+        </div>
+        <%= button_tag(type: "submit", class: "search-bar-button") do %>
+            <p>Search</p>
+        <% end %>
+    <% end %>
+
   </div>
 
 </details>
