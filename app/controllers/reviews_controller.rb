@@ -23,12 +23,16 @@ class ReviewsController < ApplicationController
   
   def edit
     @review = Review.find_by(token: params[:id])
-    render :invalid_review if @review.nil?
-    render :expired_review, locals: { review: @review } if (Time.now - @review.created_at.to_time)/1.day > 7
-    if @review.restaurant.owner.question_pools.empty?
-      @questions = nil
+    if @review.nil?
+      render :invalid_review
+    elsif (Time.now - @review.created_at.to_time)/1.day > 7
+      render :expired_review, locals: { review: @review } 
     else
-      @questions = QuestionPool.find(user_id: @review.restaurant.owner).questions
+      if @review.restaurant.owner.question_pools.empty?
+        @questions = nil
+      else
+        @questions = QuestionPool.find(user_id: @review.restaurant.owner).questions
+      end
     end
   end
   
@@ -36,11 +40,16 @@ class ReviewsController < ApplicationController
     # @review = Review.find(params[review])
     @review.user = current_user
     # save answers to DB
+    p params
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:user, :restaurant_id, :username, :content_title,:content, :rating)
+    params.require(:review).permit(:user, :restaurant, :username, :content_title, :content, :rating, :token)
+  end
+
+  def answer_params
+    params.require(:answer).permit(:question, :content)
   end
 end

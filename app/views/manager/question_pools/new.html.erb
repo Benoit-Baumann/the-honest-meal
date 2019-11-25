@@ -1,11 +1,11 @@
 <div class="main-container">
 <div class="review">
 
-  <% if QuestionPool.where(user: current_user).empty? %>
+  <% if QuestionPool.find(user: current_user).empty? %>
     <h1 class="title-page">Créez votre Questionnaire</h1>
     <br>
   <% else %>
-    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
+    <% QuestionPool.find(user: current_user).questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
@@ -26,17 +26,16 @@
   <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
 
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
-      <div class="inputboxes">
+      <div class="input-boxes">
         <div class="questionnaire-nom">
           <h2> Nom du Questionnaire </h2>
         </div>
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
         <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
-        </div>
-        <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
+        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note', :input_html => { class: "input-type" }, as: :boolean %>
+        <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
         <% end %>
 
         <h2><%= link_to "+ ajoutez une question", '',class: "newq" , remote: true %></h2>
