@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_103406) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "question_pool_id"
+    t.string "cat"
     t.index ["question_pool_id"], name: "index_questions_on_question_pool_id"
   end
 
