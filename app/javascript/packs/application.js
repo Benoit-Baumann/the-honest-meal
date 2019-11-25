@@ -53,7 +53,11 @@ import '../components/chart';
 >>>>>>> 5a3b520... disparition du login successfully après 10s
 =======
 initStarRating2();
+<<<<<<< HEAD
 // initTabListener();
 
+=======
+initTabListener();
+>>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
