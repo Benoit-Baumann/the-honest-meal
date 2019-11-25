@@ -6,7 +6,6 @@ const initTabListener = () => {
     const registrationForm = document.querySelector('#registration-form');
 
     registrationTab.addEventListener('click', (event) => {
-        console.log(event);
         registrationTab.classList.add('active');
         registrationForm.classList.add('active');
         sessionTab.classList.remove('active');
@@ -14,7 +13,6 @@ const initTabListener = () => {
     })
 
     sessionTab.addEventListener('click', (event) => {
-        console.log(event);
         sessionTab.classList.add('active');
         sessionForm.classList.add('active');
         registrationTab.classList.remove('active');
