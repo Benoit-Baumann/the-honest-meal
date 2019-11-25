@@ -7,4 +7,11 @@ const initStarRating = () => {
   });
 };
 
-export default initStarRating;
+const initStarRating2 = () => {
+
+  $('.starquestion').barrating({
+    theme: 'css-stars'
+  });
+};
+
+export {initStarRating, initStarRating2};
