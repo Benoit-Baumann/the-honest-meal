@@ -2,6 +2,7 @@ import "bootstrap";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import initLoadingAnimation from './loading_animation';
 =======
 >>>>>>> eb54c2e... Delete unnecessary js files
@@ -23,6 +24,10 @@ import '../components/chart';
 >>>>>>> 84fd2b8... .
 =======
 >>>>>>> eb54c2e... Delete unnecessary js files
+=======
+import { initTabListener, initJoinUsBtn} from './modal_login_form';
+import { initStarRating, initStarRating2 } from '../plugins/init_star_rating';
+>>>>>>> fcc88e9... Fix login modal tab bug
 import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,8 +69,12 @@ initStarRating2();
 =======
 initTabListener();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
 =======
 >>>>>>> eb54c2e... Delete unnecessary js files
+=======
+initJoinUsBtn();
+>>>>>>> fcc88e9... Fix login modal tab bug

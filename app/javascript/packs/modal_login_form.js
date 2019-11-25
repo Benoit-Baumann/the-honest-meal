@@ -5,14 +5,14 @@ const initTabListener = () => {
     const sessionForm = document.querySelector('#session-form');
     const registrationForm = document.querySelector('#registration-form');
 
-    registrationTab.addEventListener('click', (event) => {
+    registrationTab.addEventListener('click', () => {
         registrationTab.classList.add('active');
         registrationForm.classList.add('active');
         sessionTab.classList.remove('active');
         sessionForm.classList.remove('active');
     })
 
-    sessionTab.addEventListener('click', (event) => {
+    sessionTab.addEventListener('click', () => {
         sessionTab.classList.add('active');
         sessionForm.classList.add('active');
         registrationTab.classList.remove('active');
@@ -20,4 +20,13 @@ const initTabListener = () => {
     })
 }
 
-export default initTabListener;
+const initJoinUsBtn = () => {
+    const mainModalOpener = document.querySelector('#main-login-opener')
+    const navbarModalOpener = document.querySelector('#navbar-login-opener')
+
+    mainModalOpener.addEventListener('click', () =>{
+        navbarModalOpener.click();
+    })
+}
+
+export { initTabListener, initJoinUsBtn }
