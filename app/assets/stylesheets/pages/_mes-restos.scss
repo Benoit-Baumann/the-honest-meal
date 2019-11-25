@@ -1,0 +1,26 @@
+.cards-grid .mes-restos {
+  justify-content: center;
+}
+
+.add-btn-resto {
+  width: 300px;
+  font-size: 16px;
+  font-family: $headers-font;
+  background-color: $green;
+  padding: 16px 20px;
+  transition: 0.2s ease-in-out;
+  margin: 0 auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.add-btn-resto a {
+  color: white !important;
+  text-decoration: none !important;
+
+}
+
+.add-btn-resto:hover {
+  transform:scale(1.05);
+  box-shadow: 2px 2px 200px 6px rgba(248, 248, 248, 0.4);
+}
