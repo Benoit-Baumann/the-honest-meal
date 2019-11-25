@@ -11,8 +11,8 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav" style="align-items: baseline">
      <% if user_signed_in? %>
-         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn" %>
-         <%= link_to "Mes Questionnaires", new_user_session_path, class: "connected-btn" %>
+         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard'}" %>
+         <%= link_to "Mes Questionnaires", new_user_session_path, class: "connected-btn #{'active' if params[:action] == 'home'}" %>
          <%= link_to "Créer un Questionnaire", new_user_session_path, class: "connected-btn" %>
        <li class="nav-item dropdown">
          <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -74,5 +74,12 @@
 
 .connected-btn.active {
   background-color: $green;
+  font-weight: bold;
   color: white;
+}
+
+.connected-btn.active:hover {
+  background-color: $green;
+  font-weight: bold;
+  color: white !important;
 }
