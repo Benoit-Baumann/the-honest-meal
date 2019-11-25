@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
     @review.save
     if @review.save
       ReviewMailer.with(review: @review).send_link.deliver_now
@@ -21,10 +20,22 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-
+  
   def edit
     @review = Review.find_by(token: params[:id])
-    render :review_expired, locals: { review: @review }  if (8.days.from_now - @review.created_at.to_time)/1.day > 7
+    render :invalid_review if @review.nil?
+    render :expired_review, locals: { review: @review } if (Time.now - @review.created_at.to_time)/1.day > 7
+    if @review.restaurant.owner.question_pools.empty?
+      @questions = nil
+    else
+      @questions = QuestionPool.find(user_id: @review.restaurant.owner).questions
+    end
+  end
+  
+  def update
+    # @review = Review.find(params[review])
+    @review.user = current_user
+    # save answers to DB
   end
 
   private

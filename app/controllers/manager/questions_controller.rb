@@ -9,18 +9,18 @@ class Manager::QuestionsController < ApplicationController
   #   @restaurant = Restaurant.find(params[:restaurant_id])
   # end
 
-  def create
-    @question = Question.new(question_params)
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @question.restaurant = @restaurant
-    @question.save!
-  end
+  # def create
+  #   @question = Question.new(question_params)
+  #   @restaurant = Restaurant.find(params[:restaurant_id])
+  #   @question.restaurant = @restaurant
+  #   @question.save!
+  # end
 
-  private
+  # private
 
-  def question_params
-    params.require(:question).permit(:name)
-  end
+  # def question_params
+  #   params.require(:question).permit(:name)
+  # end
 
 end
 
