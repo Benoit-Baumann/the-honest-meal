@@ -1,3 +1,9 @@
 // Reload window after sign-in
-//window.location.reload();
-console.log('<%= resource.errors.full_messages %>')
+<% if resource.errors.any? %>
+    errorMessage = document.querySelector('#sign-up-error')
+    <% resource.errors.full_messages.each do |message| %>
+        errorMessage.insertAdjacentHTML('afterbegin', '<li><%= message %></li>')
+    <% end %>
+<% else %>
+    window.location.reload();    
+<% end %>

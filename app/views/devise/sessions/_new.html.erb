@@ -1,6 +1,5 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
-  <div class="errors"></div>
-  <%= f.error_notification %>
+  <div class="login-msg errors" id="sign-in-error"></div>
 
   <div class="form-inputs">
     <%= f.input :email,
@@ -14,7 +13,7 @@
     <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Se connecter", id: "btn-connect" %>
+  <div class="form-actions submit">
+    <%= f.button :submit, "Se connecter", class: "btn-submit btn-flat" %>
   </div>
 <% end %>

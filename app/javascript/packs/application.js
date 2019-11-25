@@ -18,7 +18,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 import '../components/hide';
 >>>>>>> 5a3b520... disparition du login successfully après 10s
 
-initNavbarButtons();
+// initNavbarButtons();
 initStarRating();
 initTabListener();
 
