@@ -42,18 +42,42 @@
 }
 
 .reviewtitle {
-border-bottom: 1px solid #4A4A4A;
+border-bottom: 1px solid black;
 width:50%;
 margin-top:50px;
 margin-bottom:50px;
+margin: 0 auto;
+text-align: center;
+font-family: $headers-font;
+color: black !important;
 }
 
 .form-review {
   font-size:18px;
 }
 
+.inputboxes {
+  width: 500px;
+  border: 1px solid $light-blue;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px !important;
+  margin: 0 auto;
+}
+
+.inputboxes p {
+  font-family: $headers-font !important;
+  color: black !important;
+  font-size: 20px;
+}
+
+.string {
+  font-family: $headers-font !important;
+  color: black !important;
+  font-size: 20px !important;
+}
+
 .inputboxes input {
-  border: 1px solid #4A4A4A;
   border-radius:8px;
 }
 
@@ -76,35 +100,64 @@ margin-bottom:50px;
   margin-right: 18px !important;
 }
 
-.btn-ghost {
-  margin-top:20px;
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  width: 150px;
-  height: 50px;
-}
-
-.btn-ghost:hover {
-  opacity: 1;
-}
-
-
 .inputtype {
   margin-bottom: 50px;
 }
 
 .questions {
-  border: 1px solid #4A4A4A;
+  border: 1px solid black;
   border-radius:8px;
   width:100%;
   height: calc(1.5em + 0.75rem + 2px);
   display: flex;
   text-align: center;
 }
+
+.publier-questionnaire {
+  width: 150px;
+  font-size: 16px;
+  font-family: $headers-font;
+  background-color: $green;
+  padding: 16px 20px;
+  transition: 0.2s ease-in-out;
+  margin: 0 auto;
+  border-radius: 8px;
+  text-align: center;
+  border: none !important;
+  color: white;
+}
+
+.publier-questionnaire a {
+  color: white !important;
+  text-decoration: none !important;
+
+}
+
+.publier-questionnaire:hover {
+  transform:scale(1.05);
+  box-shadow: 2px 2px 300px 6px rgba(5, 5, 5, 0.2);
+}
+
+.publier-div {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.newq {
+  color: $light-blue;
+  font-family: $body-font;
+  font-size: 16px;
+}
+
+.newq:hover {
+  color: $light-blue;
+  font-family: $body-font;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.form-check-label {
+  font-family: $body-font !important;
+  font-size: 14px;
+}
+
