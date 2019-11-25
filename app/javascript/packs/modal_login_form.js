@@ -1,4 +1,3 @@
-
 const initTabListener = () => {
     const sessionTab = document.querySelector('#tab-session');
     const registrationTab = document.querySelector('#tab-registration');
