@@ -18,7 +18,11 @@ initNavbarButtons();
 initStarRating();
 initTabListener();
 
+<<<<<<< HEAD
 initLoadingAnimation();
 =======
 import '../components/chart';
 >>>>>>> a24a2fc... rajout des graphes dans la page coupon, rajout de la gemme chartjs_ror
+=======
+//initLoadingAnimation();
+>>>>>>> 888f1d2... modif dashboard avec ajout charts
