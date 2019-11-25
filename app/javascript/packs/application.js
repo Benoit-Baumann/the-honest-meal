@@ -7,7 +7,7 @@ import '../components/chart';
 import '../components/drag-drop';
 import '../components/hide';
 
-initNavbarButtons();
+// initNavbarButtons();
 initStarRating();
 initTabListener();
 
