@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   before_save :set_random_avatar
+  after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -26,6 +27,10 @@ class User < ApplicationRecord
         self.photo = Pathname.new(Rails.root.join(avatar_url)).open
         save
     end
+  end
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now if self.email.downcase == 'baumann.benoit@gmail.com'
   end
 
 end
