@@ -70,6 +70,7 @@ initStarRating2();
 initTabListener();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
@@ -78,3 +79,6 @@ initTabListener();
 =======
 initJoinUsBtn();
 >>>>>>> fcc88e9... Fix login modal tab bug
+=======
+initJoinUsBtn();
+>>>>>>> 10fdf06... "update"
