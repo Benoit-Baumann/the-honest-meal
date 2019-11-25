@@ -17,6 +17,7 @@ import '../components/chart';
 import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { initStarRating } from '../plugins/init_star_rating';
 >>>>>>> 49388bf... dashboard
 =======
@@ -24,6 +25,8 @@ import '../components/hide';
 >>>>>>> 5a3b520... disparition du login successfully après 10s
 =======
 >>>>>>> 7963648... Add token column to review model
+=======
+>>>>>>> 7e376f7... delete hide.js import
 
 // initNavbarButtons();
 initStarRating();
