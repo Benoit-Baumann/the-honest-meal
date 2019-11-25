@@ -6,6 +6,7 @@ import initNavbarButtons from './navbar_active_button'
 import '../components/drag-drop';
 
 // initNavbarButtons();
+initTabListener();
 initStarRating();
 initStarRating2();
 //initLoadingAnimation();
