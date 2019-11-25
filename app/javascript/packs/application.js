@@ -12,8 +12,11 @@ import initStarRating from '../plugins/init_star_rating';
 import {initStarRating, initStarRating2} from '../plugins/init_star_rating';
 >>>>>>> 19fc712... finish choice of text ou rating
 import initNavbarButtons from './navbar_active_button'
+<<<<<<< HEAD
 >>>>>>> 1eeece4... Login modal now functional
 import '../components/chart';
+=======
+>>>>>>> 84fd2b8... .
 import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
