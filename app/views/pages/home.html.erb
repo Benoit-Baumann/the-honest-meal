@@ -2,11 +2,18 @@
   <div class="home-title">
     <h1>The Honest Meal</h1>
     <h3>Votre business commence par des feedbacks</h3>
-  </div>
-    <details class="join-us-details">
+    <% if user_signed_in? %>
+
+    <% else %>
+      <details class="join-us-details">
       <summary class="join-us-btn">Rejoignez-nous</summary>
       <%= render partial: 'shared/login_form' %>
     </details>
+    <% end %>
+
+  </div>
+
+
 </div>
 
 
@@ -28,7 +35,7 @@
           <p><img src="https://www.repugen.com/Images/positive-review.png"></p>
         </div>
     </div>
-    
+
   </div>
 </div>
 
