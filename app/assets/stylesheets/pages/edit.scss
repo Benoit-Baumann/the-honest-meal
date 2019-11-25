@@ -114,6 +114,9 @@
   color: $light-blue;
   font-family: $body-font;
   font-size: 16px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
 }
 
 .newq:hover {
@@ -121,6 +124,8 @@
   font-family: $body-font;
   font-size: 16px;
   text-decoration: none;
+  transform:scale(1.03);
+  box-shadow: 2px 2px 300px 6px rgba(5, 5, 5, 0.2);
 }
 
 .form-check-label {
@@ -140,3 +145,22 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+.questionnaire-nom input {
+  border: none;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: $body-font;
+  font-size: 16px;
+}
+
+.question_pool_restaurant_id {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-group {
+  margin-bottom: 0rem !important;
+}
+
