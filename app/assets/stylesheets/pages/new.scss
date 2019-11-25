@@ -1,4 +1,4 @@
-.restaurantrecap {
+.restaurant-summary {
   width:410px;
   display: flex;
   margin: 0 auto;
@@ -6,19 +6,19 @@
   justify-content: space-between;
 }
 
-.resto-info {
+.restaurant-info {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
 
-.restoname {
+.restaurant-info > h2 {
   font-size: 18px;
   font-weight: bold;
 }
 
-.restoaddress{
+.restaurant-info > p {
   font-size: 14px;
 }
 
@@ -31,85 +31,54 @@
   max-width:100%;
   max-height:100%;
   border-radius: 5px;
-
 }
 
 .review {
   width: 1120px;
   margin: 0 auto;
-  margin-bottom: 50px;
-  opacity:0.6;
+  // opacity:0.8;
 }
 
-.reviewtitle {
-border-bottom: 1px solid black;
-width:40%;
-padding: 10px;
-margin-bottom:50px;
-font-family: $headers-font;
-color: black !important;
+.review-title {
+  border-bottom: 1px solid black;
+  width:40%;
+  padding: 10px;
+  margin-bottom:50px;
+  font-family: $headers-font;
+  color: black !important;
+}
+
+.italic-green-text {
+  font-style: italic;
+  color: $green;
 }
 
 .form-review {
   font-size:18px;
+  margin-bottom: 40px;
 }
 
-.inputboxes {
+.input-boxes {
   width: 600px;
   border: 1px solid $light-blue;
   border-radius: 8px;
-  padding: 20px;
-  margin-top: 40px !important;
-  margin: 0 auto;
+  padding: 20px 30px;
+  margin: 40px auto;
   background-color: $light-gray;
 }
 
-.inputboxes p {
-  font-family: $headers-font !important;
-  color: black !important;
-  font-size: 20px;
-}
-
-.string {
-  font-family: $headers-font !important;
-  color: black !important;
-  font-size: 20px !important;
-}
-
-.inputboxes input {
+.input-boxes input {
   border-radius:8px;
 }
 
-.questionboxes {
-  border: 1px solid #4A4A4A;
+.input-type {
   border-radius:8px;
-  width: 100%;
-}
-
-.inputboxes label {
-}
-
-.inputboxes textarea {
-  border: 1px solid #4A4A4A;
-  border-radius:8px;
+  margin-bottom: 50px;
 }
 
 .br-theme-css-stars .br-widget a {
   font-size: 40px !important;
   margin-right: 18px !important;
-}
-
-.inputtype {
-  margin-bottom: 50px;
-}
-
-.questions {
-  border: 1px solid black;
-  border-radius:8px;
-  width:100%;
-  height: calc(1.5em + 0.75rem + 2px);
-  display: flex;
-  text-align: center;
 }
 
 .publier-questionnaire {
@@ -162,6 +131,7 @@ color: black !important;
 .form-check-label {
   font-family: $body-font !important;
   font-size: 14px;
+}
   margin-left: 5px;
 }
 
@@ -190,9 +160,9 @@ color: black !important;
 .question_pool_restaurant_id {
   display: flex;
   justify-content: space-around;
-
 }
 
 .form-group {
   margin-bottom: 0rem !important;
 }
+

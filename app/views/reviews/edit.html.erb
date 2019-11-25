@@ -1,0 +1,63 @@
+<div class="restaurant-summary">
+  <div class="restaurant-photo">
+    <%= image_tag "dinard-restaurant.jpg"%>
+  </div>
+  <div class="restaurant-info">
+    <h2><%= @review.restaurant.name %></h2>
+    <p><%= @review.restaurant.address %></p>
+  </div>
+</div>
+
+<div class="review">
+
+  <div class="review-title">
+    <h2>Laissez un avis concernant le restaurant <span class='italic-green-text'><%= @review.restaurant.name %></span></h2>
+  </div>
+
+  <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
+    <div class="input-boxes">
+      <%= f.input :restaurant, as: :hidden, input_html: { value: @review.restaurant } %>
+      <%= f.input :token, as: :hidden, input_html: { value: @review.token } %>
+      <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "input-type" }, required: true unless user_signed_in? %>
+      <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "input-type" } %>
+      <%= f.input :content, label: 'Votre avis', :input_html => { class: "input-type" } %>
+      <%= f.input :rating, collection: (1..5).to_a, label: 'Votre note', :input_html => { class: "input-type" } %>
+    </div>
+    <div class="form-actions submit">
+      <%= f.submit "Publier", class: "btn-ghost" %>
+    </div>
+  <% end %>
+
+  <% unless @questions.nil? %>
+
+    <div class="reviewtitle">
+      <h2>Le restaurant <%= @review.restaurant.name %> aimerait aussi avoir votre retour sur les points suivants :</h2>
+      <p>(Les réponses à ces questions sont uniquement consultable par le restaurant <%= @review.restaurant.name %> et ne sont pas déstinées à etre publiées</p>
+    </div>
+
+    <% @questions.each do |question| %>
+      <% if question.cat == '0' %>
+          <%= question.name %> (Optionel)
+          <%= simple_form_for [@answer], html: { class: "form-review"} do |f| %>
+          <div class="input-boxes">
+            <%= f.input :question_id, as: :hidden, input_html: { value: question.id } %>
+            <%= f.input :content, label: '(Optionel)', :input_html => { class: "input-type" } %>
+          </div>
+          <%= f.submit "Publier", class: "btn btn-ghost" %>
+        <% end %>
+      <% else %>
+        <%= question.name %> (Optionel)
+        <%= simple_form_for [@answer], html: { class: "form-review"} do |f| %>
+          <div class="input-boxes">
+            <%= f.input :question_id, as: :hidden, input_html: { value: question.id } %>
+            <%= f.input :content, collection: (1..5).to_a, label: '', :input_html => { class: "input-type starquestion" } %>
+          </div>
+          <div class="form-actions submit">
+            <%= f.submit "Publier", class: "connected-btn" %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>

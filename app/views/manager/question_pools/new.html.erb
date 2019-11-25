@@ -1,11 +1,11 @@
 <div class="main-container">
 <div class="review">
 
-  <% if QuestionPool.where(user: current_user).empty? %>
+  <% if QuestionPool.find(user: current_user).empty? %>
     <h1 class="title-page">Créez votre Questionnaire</h1>
     <br>
   <% else %>
-    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
+    <% QuestionPool.find(user: current_user).questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
@@ -26,7 +26,7 @@
   <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
 
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
-      <div class="inputboxes">
+      <div class="input-boxes">
         <div class="questionnaire-nom">
         <%= f.simple_fields_for :questions do |q_form| %>
         <%= q_form.input :name, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
