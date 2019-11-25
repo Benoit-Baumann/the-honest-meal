@@ -31,7 +31,7 @@ import '../components/hide';
 =======
 >>>>>>> 7e376f7... delete hide.js import
 
-// initNavbarButtons();
+initNavbarButtons();
 initStarRating();
 <<<<<<< HEAD
 initTabListener();
