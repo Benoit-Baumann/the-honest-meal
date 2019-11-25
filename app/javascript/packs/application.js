@@ -8,6 +8,4 @@ import '../components/drag-drop';
 // initNavbarButtons();
 initStarRating();
 initStarRating2();
-// initTabListener();
-
 //initLoadingAnimation();
