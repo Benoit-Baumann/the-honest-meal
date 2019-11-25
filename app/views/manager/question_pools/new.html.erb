@@ -1,7 +1,6 @@
 <div class="review">
 
   <% if QuestionPool.where(user: current_user).empty? %>
-  <% binding.pry %>
     <h2>There are currently no questions</h2>
   <% else %>
     <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
