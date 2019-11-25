@@ -2,18 +2,10 @@
   <div class="home-title">
     <h1>The Honest Meal</h1>
     <h3>Votre business commence par des feedbacks</h3>
-    <% if user_signed_in? %>
-
-    <% else %>
-      <details class="join-us-details">
-      <summary class="join-us-btn">Rejoignez-nous</summary>
-      <%= render partial: 'shared/login_form' %>
-    </details>
+    <% unless user_signed_in? %>
+        <p class="join-us-btn" id="main-login-opener">Rejoignez-nous</p>
     <% end %>
-
   </div>
-
-
 </div>
 
 
