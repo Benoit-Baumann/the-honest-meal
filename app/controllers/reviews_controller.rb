@@ -13,12 +13,18 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user = current_user
-    @review.save!
-  #   if @review.save
-  #     redirect_to profile_path
-  #   else
-  #     render :new
-  #   end
+    @review.save
+    if @review.save
+      ReviewMailer.with(review: @review).send_link.deliver_now
+      redirect_to profile_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @review = Review.find_by(token: params[:id])
+    render :review_expired, locals: { review: @review }  if (8.days.from_now - @review.created_at.to_time)/1.day > 7
   end
 
   private
