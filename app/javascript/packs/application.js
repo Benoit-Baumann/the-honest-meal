@@ -6,7 +6,7 @@ import initNavbarButtons from './navbar_active_button'
 import '../components/chart';
 import '../components/drag-drop';
 
-initNavbarButtons();
+// initNavbarButtons();
 initStarRating();
 initTabListener();
 
