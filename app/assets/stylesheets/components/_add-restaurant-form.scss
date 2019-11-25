@@ -1,0 +1,35 @@
+.form-container {
+  width: 600px;
+  height: 700px;
+  padding: 32px;
+  border: 2px solid $light-blue;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: $light-gray;
+}
+
+.text-input-form {
+  text-align: center;
+}
+
+.text-input-form h4 {
+  font-family: $body-font;
+  font-size: 14px;
+}
+
+.text-input-form input {
+  width: 500px;
+  border-radius: 8px;
+  border: none !important;
+}
+
+.add-btn-resto input {
+  font-size: 16px;
+  font-family: $headers-font;
+  background-color: $green;
+  transition: 0.2s ease-in-out;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  border: none !important;
+}
