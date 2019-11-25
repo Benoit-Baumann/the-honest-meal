@@ -23,8 +23,7 @@
 
   <div class="reviewtitle"><h2>Répondez au sondage du restaurateur</h2></div>
 
-
-  <% QuestionPool.where(restaurant_id: 155).last.questions.each do |question| %>
+  <% QuestionPool.where(user_id: 247).last.questions.each do |question| %>
   <% if question.cat == '0' %>
       <%= question.name %> (Optionel)
       <%= simple_form_for [@answer], html: { class: "form-review"} do |f| %>
