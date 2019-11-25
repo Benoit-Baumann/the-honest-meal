@@ -11,6 +11,7 @@
   <div class="home-title">
     <h1>The Honest Meal</h1>
     <h3>Votre business commence par des feedbacks</h3>
+<<<<<<< HEAD
   </div>
 <<<<<<< HEAD
   <div class="join-us-btn">
@@ -64,6 +65,20 @@
       <%= render partial: 'shared/login_form' %>
     </details>
 >>>>>>> 35c01df... Home page button "join-us" calls the login modal
+=======
+    <% if user_signed_in? %>
+
+    <% else %>
+      <details class="join-us-details">
+      <summary class="join-us-btn">Rejoignez-nous</summary>
+      <%= render partial: 'shared/login_form' %>
+    </details>
+    <% end %>
+
+  </div>
+
+
+>>>>>>> c008df7... centrage de join us en fonction de connecté/pas connecté
 </div>
 
 
@@ -103,7 +118,7 @@
           <p><img src="https://www.repugen.com/Images/positive-review.png"></p>
         </div>
     </div>
-    
+
   </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
