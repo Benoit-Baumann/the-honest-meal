@@ -68,10 +68,28 @@
   margin-left: 10px;
 }
 
+
+@keyframes disapear{
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
 .alert-info {
   background-color: $green;
   color: white;
   font-family: $body-font;
   border-radius: 8px;
   border: none !important;
+  animation-duration: 10s;
+  animation-name: disapear;
+  visibility: hidden;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5a3b520... disparition du login successfully après 10s
