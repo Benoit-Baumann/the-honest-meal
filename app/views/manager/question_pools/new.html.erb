@@ -27,7 +27,11 @@
 
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="input-boxes">
+        <div class="questionnaire-nom">
+          <h2> Nom du Questionnaire </h2>
+        </div>
         <p>Type de réponse souhaité:</p>
+        <div class="check-input">
         <%= f.simple_fields_for :questions do |q_form| %>
         <%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %>
         <%= q_form.input :cat, label: 'Note', :input_html => { class: "input-type" }, as: :boolean %>
