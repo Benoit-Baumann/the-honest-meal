@@ -6,7 +6,6 @@ class Restaurant < ApplicationRecord
   has_many :restaurant_photos
   has_many :reviews
   has_many :coupons
-
   has_one :question_pools
   has_many :questions, through: :question_pools
 
