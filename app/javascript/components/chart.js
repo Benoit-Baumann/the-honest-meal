@@ -1,6 +1,6 @@
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
 
-// var ctx = document.getElementById('myRate');
+// var ctx = document.querySelector('#chartTest');
 // var myRate = new Chart(ctx, {
 //     type: 'line',
 //     data: {
