@@ -19,19 +19,22 @@
          <% if current_user.status == 'customer' %>
            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
              <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
+             <%= link_to "Mes favoris", favorites_path, class: "dropdown-item" %>
              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
            </div>
          <% else %>
            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
              <%= link_to "Mon profil", profile_path, class: "dropdown-item" %>
              <%= link_to "Mes restaurants", manager_restaurants_path, class: "dropdown-item" %>
-             <%= link_to "Mes favoris", favorites_path, class: "dropdown-item" %>
              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
            </div>
          <% end %>
        </li>
      <% else %>
-      <%= render partial: 'shared/login_form' %>
+      <details>
+        <summary class="connected-btn">S'identifier</summary>
+        <%= render partial: 'shared/login_form' %>
+      </details>
      <% end %>
    </ul>
  </div>

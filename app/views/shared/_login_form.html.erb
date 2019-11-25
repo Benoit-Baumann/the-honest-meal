@@ -1,24 +1,19 @@
-<details>
-  <summary class="connected-btn">S'identifier</summary>
-
-  <div class="details-container">
-    <div class="tab-header-container">
-      <div class="tab-header active" id="tab-session">
-        <h2>Se connecter</h2>
-      </div>
-      <div class="tab-header" id="tab-registration">
-        <h2>Créer un compte</h2>
-      </div>
+<div class="details-container">
+  <div class="tab-header-container">
+    <div class="tab-header active" id="tab-session">
+      <h2>Se connecter</h2>
     </div>
-
-    <div class="tab-container">
-      <div class="tab-content active" id="session-form">
-        <%= render partial: 'devise/sessions/new' %>
-      </div>
-      <div class="tab-content" id="registration-form">
-        <%= render partial: 'devise/registrations/new' %> 
-      </div>
+    <div class="tab-header" id="tab-registration">
+      <h2>Créer un compte</h2>
     </div>
   </div>
 
-</details>
+  <div class="tab-container">
+    <div class="tab-content active" id="session-form">
+      <%= render partial: 'devise/sessions/new' %>
+    </div>
+    <div class="tab-content" id="registration-form">
+      <%= render partial: 'devise/registrations/new' %> 
+    </div>
+  </div>
+</div>
