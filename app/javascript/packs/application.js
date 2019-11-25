@@ -5,7 +5,7 @@ import {initStarRating, initStarRating2} from '../plugins/init_star_rating';
 import initNavbarButtons from './navbar_active_button'
 import '../components/drag-drop';
 
-// initNavbarButtons();
+initNavbarButtons();
 initStarRating();
 initStarRating2();
 initTabListener();
