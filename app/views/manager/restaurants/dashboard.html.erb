@@ -1,5 +1,5 @@
 <div class="main-container">
-<h1>Mon Dashboard</h1>
+<h1 class="title-page">Mon Dashboard</h1>
 
 <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
 
