@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_25_103406) do
+=======
+ActiveRecord::Schema.define(version: 2019_11_25_085958) do
+>>>>>>> 19fc712... finish choice of text ou rating
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_103406) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "question_pool_id"
+    t.string "cat"
     t.index ["question_pool_id"], name: "index_questions_on_question_pool_id"
   end
 
