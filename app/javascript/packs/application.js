@@ -1,7 +1,10 @@
 import "bootstrap";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import initLoadingAnimation from './loading_animation';
+=======
+>>>>>>> eb54c2e... Delete unnecessary js files
 import initTabListener from './modal_login_form';
 <<<<<<< HEAD
 import initStarRating from '../plugins/init_star_rating';
@@ -10,6 +13,7 @@ import initStarRating from '../plugins/init_star_rating';
 =======
 =======
 import {initStarRating, initStarRating2} from '../plugins/init_star_rating';
+<<<<<<< HEAD
 >>>>>>> 19fc712... finish choice of text ou rating
 import initNavbarButtons from './navbar_active_button'
 <<<<<<< HEAD
@@ -17,6 +21,8 @@ import initNavbarButtons from './navbar_active_button'
 import '../components/chart';
 =======
 >>>>>>> 84fd2b8... .
+=======
+>>>>>>> eb54c2e... Delete unnecessary js files
 import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -31,7 +37,6 @@ import '../components/hide';
 =======
 >>>>>>> 7e376f7... delete hide.js import
 
-initNavbarButtons();
 initStarRating();
 <<<<<<< HEAD
 initTabListener();
@@ -58,6 +63,9 @@ initStarRating2();
 
 =======
 initTabListener();
+<<<<<<< HEAD
 >>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
+=======
+>>>>>>> eb54c2e... Delete unnecessary js files
