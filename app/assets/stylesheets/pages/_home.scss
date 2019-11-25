@@ -3,8 +3,14 @@
     width: 100%;
     background-size: cover;
     background-position: 10%;
+    display:flex;
+      align-items: center;
+  justify-content: center;
 }
-
+// .home-title {
+//   align-items: center;
+//   justify-content: center;
+// }
 .home-title h1 {
   font-family: $headers-font;
   color: white;
@@ -68,3 +74,4 @@
   width: 75px;
   vertical-align: middle;
 }
+
