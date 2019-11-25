@@ -1,34 +1,94 @@
 <div class="main-container">
 <h1>Mon Dashboard</h1>
+
+<% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
+
   <div class="dashbord-container">
      <div id="drag-1" class="draggable">
-      <div class="draggable-content">
-       <p>Depuis Mercredi!</p>
-       </div>
-     </div>
-     <div id="drag-2" class="draggable">
-       <div class="draggable-content">
-       <p>My sweet Sixteen</p>
-       </div>
+        <div class="charts-border">
+          <div class="charts">
+            <% @reviews = sorted_group_reviews.average(:rating).sort %>
+            <% @data = {
+                labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+                datasets: [{
+                    label: 'note moyenne',
+                    # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
+                    data: [@reviews[0][1], @reviews[1][1], @reviews[2][1], @reviews[3][1], @reviews[4][1], @reviews[5][1], @reviews[6][1], @reviews[7][1], @reviews[8][1], @reviews[9][1], @reviews[10][1], @reviews[11][1]],
+                    backgroundColor: 'rgba(143, 214, 148, 0.4)',
+                    borderColor:'rgba(143, 214, 148, 0.4)',
+                    fill: false,
+                    borderWidth: 4
+                }]
+            } %>
+            <% @options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                    scales: {
+                      yAxes: [{
+                          ticks: {
+                            beginAtZero: true
+                          }
+                      }]
+                    }
+              } %>
+            <%= line_chart @data, @options %>
+          </div>
+          <div class="draggable-content">
+            <p>Note moyenne des reviews</p>
+          </div>
+        </div>
      </div>
      <div id="drag-4" class="draggable">
-       <div class="draggable-content">
-       <p>Strong Women</p>
-       </div>
+        <div class="charts-border">
+          <div class="charts">
+          </div>
+          <div class="draggable-content">
+            <p>Nombre de questionnaire</p>
+          </div>
+        </div>
      </div>
      <div id="drag-3" class="draggable">
-       <div class="draggable-content">
-       <p>Ggrgrhrggg</p>
-       </div>
+        <div class="charts-border">
+          <div class="charts">
+          </div>
+          <div class="draggable-content">
+            <p>Dernière review</p>
+          </div>
+        </div>
      </div>
      <div id="drag-5" class="draggable">
-       <div class="draggable-content">
-       <p>Nice graph</p>
-       </div>
-     </div>
-     <div id="drag-6" class="draggable">
-       <div class="draggable-content">
-       <p>Go?</p>
+      <div class="charts-border">
+        <div class="charts">
+    <% @number = sorted_group_reviews.count.sort %>
+     <% @data = {
+        labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+        datasets: [{
+            label: '# de reviews recues',
+            backgroundColor: ['rgba(255, 237, 33, 0.4)','rgba(237, 147, 20, 0.4)', 'rgba(227, 69, 27, 0.4)','rgba(227, 73, 79, 0.4)',
+              'rgba(227, 79, 122, 0.4)','rgba(150, 60, 126, 0.4)','rgba(24, 43, 131,0.4)','rgba(36, 106, 179, 0.4)','rgba(70, 159, 224, 0.4)',
+              'rgba(80, 152, 144, 0.4)','rgba(82, 146, 54, 0.4)','rgba(150, 191, 23, 0.4)'],
+            borderColor:'rgba(143, 214, 148, 0.4)',
+            data: [@number[0][1], @number[1][1], @number[2][1], @number[3][1], @number[4][1], @number[5][1], @number[6][1], @number[7][1], @number[8][1], @number[9][1], @number[10][1], @number[11][1]],
+            borderWidth: 1
+        }]
+    } %>
+
+<% @options = {
+    responsive: true,
+    maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+          }]
+        }
+  } %>
+<%= bar_chart @data, @options %>
+      </div>
+         <div class="draggable-content">
+          <p>Nombre de reviews</p>
+         </div>
        </div>
      </div>
   </div>

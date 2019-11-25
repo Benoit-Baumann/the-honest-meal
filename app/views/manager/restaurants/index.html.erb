@@ -1,7 +1,26 @@
 <div class="main-container">
-    <h1>Mes Restaurants</h1>
+      <h1>Mes Restaurants</h1>
+      <br>
+  <div class="cards-grid mes-restos">
     <% @restaurants.each do |restaurant| %>
-      <h2><%= link_to(restaurant.name, manager_restaurant_path(restaurant)) %></h2>
-    <% end %>
-    <h2><%= link_to("Ajouter nouveau restaurant", new_manager_restaurant_path) %></h2>
+    <div class="card-restaurant">
+        <img src="https://images.sudouest.fr/2018/02/26/5a940e6b66a4bde56f80a0e1/widescreen/1000x500/le-wrap-a-ete-retire-au-drive-du-mcdo-de-la-sauve.jpg" />
+        <div class="card-restaurant-infos">
+            <div class="card-restaurant-infos-left">
+                <h2>name resto</h2>
+                <p class="restaurant-category">category</p>
+            </div>
+            <div class="card-restaurant-infos-right">
+                <p class="restaurant-phone">Tél: 0677</p>
+                  <div class="restaurant-rating">
+                    <p>40 avis</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="add-btn-resto" style="margin-top: 25px">
+    <%= link_to("Ajouter un nouveau restaurant", new_manager_restaurant_path) %>
+  </div>
 </div>

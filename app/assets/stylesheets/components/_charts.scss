@@ -1,9 +1,59 @@
-canvas {
-  height: 600px !important;
-  width: 100% !important;
-  font-size: 30px;
+.charts-border {
+  border: 1px solid $light-blue;
+  border-radius: 8px;
 }
 
-.charts {
-  padding-bottom: 36px;
+#drag-1 .charts {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  color: black;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
+
+#drag-5 .charts {
+  width: 450px;
+  height: 250px;
+  background-color: white;
+  color: black;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+#drag-3 .charts{
+  width: 400px;
+  height: 150px;
+  color: black;
+  border-radius: 8px;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+}
+
+#drag-3 .charts-border{
+  background-image: url('https://i.ibb.co/ZGqjZDm/review.jpg');
+  background-size: cover;
+}
+
+#drag-4 .charts{
+  width: 300px;
+  height: 300px;
+  color: black;
+  border-radius: 8px;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+}
+
+#drag-4 .charts-border{
+  background-image: url('https://i.ibb.co/Mg6PM8K/nb-de-survey.jpg');
+  background-size: cover;
+}
+
