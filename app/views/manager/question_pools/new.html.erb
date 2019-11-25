@@ -3,7 +3,14 @@
   <% QuestionPool.where(restaurant_id: params[:restaurant_id]).last.questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
-  <%= question.name %>
+    <%= question.name %>
+    <% if question.cat == '0' %>
+    (text)
+    <% else %>
+    (rating)
+    <% end %>
+
+
   <%= link_to 'DELETE', manager_restaurant_question_pool_path(@restaurant, question),
         method: :delete,
         class: "deleteajax", remote:true %>
@@ -17,6 +24,8 @@
         <%= f.input :restaurant_id, as: :hidden %>
 
         <%= f.simple_fields_for :questions do |q_form| %>
+        <%= q_form.input :cat, label: 'Text', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Rating', :input_html => { class: "inputtype" }, as: :boolean %>
         <%= q_form.input :name, label: 'Question', :input_html => { class: "inputtype" } %>
         <% end %>
 
