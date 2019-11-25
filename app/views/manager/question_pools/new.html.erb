@@ -1,7 +1,9 @@
+<div class="main-container">
 <div class="review">
 
   <% if QuestionPool.where(user: current_user).empty? %>
-    <h2>There are currently no questions</h2>
+    <h1>Créez votre Questionnaire</h1>
+    <br>
   <% else %>
     <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
   <p class="questions">
@@ -21,18 +23,22 @@
   <% end %>
   <% end %>
 
-  <div class="reviewtitle"><h2>Créer des questions</h2></div>
+  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
 
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="inputboxes">
+        <p>Type de réponse souhaité:</p>
         <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Text', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Rating', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :name, label: 'Question', :input_html => { class: "inputtype" } %>
+        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
         <% end %>
 
-        <h2><%= link_to "+", '',class: "newq" , remote: true %></h2>
+        <h2><%= link_to "+ ajoutez une question", '',class: "newq" , remote: true %></h2>
       </div>
-        <%= f.submit "Publier", class: "btn btn-ghost", remote: true %>
+      <div class="publier-div">
+        <%= f.submit "Publier", class: "publier-questionnaire", remote: true %>
+      </div>
   <% end %>
+</div>
 </div>
