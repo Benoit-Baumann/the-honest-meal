@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # get 'coupons/index'
-  # get 'profile/show'
-  # get 'reviews/index'
-  # get 'reviews/new'
-  # get 'reviews/create'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -18,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:index]
   resources :answers, only: [:index, :new, :create]
-  resources :reviews, only: [:index, :new, :create]
+  resources :reviews, only: [:index, :new, :create, :edit, :update]
   resource :profile, only: :show
   resources :coupons, only: :index
 

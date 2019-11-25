@@ -1,6 +1,16 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  config.action_mailer.default_url_options = { host: "www.thehonestmeal.com" }
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV.['SMTP_ADDRESS'], # example: 'smtp.sendgrid.net'
+    authentication: :plain,
+    domain: ENV.['SMTP_DOMAIN'], # example: 'toto.herokuapp.com'
+    enable_starttls_auto: true,
+    password: ENV.['SENDGRID_PASSWORD'],
+    port: '587',
+    user_name: ENV.['SENDGRID_USERNAME']
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
