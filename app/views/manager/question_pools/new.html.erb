@@ -2,6 +2,7 @@
 <div class="review">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   <% QuestionPool.where(restaurant_id: params[:restaurant_id]).last.questions.each do |question| %>
 =======
   <% if QuestionPool.where(user: current_user).empty? %>
@@ -10,6 +11,13 @@
   <% else %>
     <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
 >>>>>>> ef26b0c... modif faite avec john
+=======
+  <% if QuestionPool.find(user: current_user).empty? %>
+    <h1 class="title-page">Créez votre Questionnaire</h1>
+    <br>
+  <% else %>
+    <% QuestionPool.find(user: current_user).questions.each do |question| %>
+>>>>>>> 181263b... Add style to review edit form
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
@@ -28,18 +36,23 @@
 
   <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
 
+<<<<<<< HEAD
   <%= simple_form_for [:manager, @restaurant, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="inputboxes">
 <<<<<<< HEAD
         <%= f.input :restaurant_id, as: :hidden %>
 
 =======
+=======
+  <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
+      <div class="input-boxes">
+>>>>>>> 181263b... Add style to review edit form
         <p>Type de réponse souhaité:</p>
 >>>>>>> d9d881c... modif page création questionnaire
         <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
+        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note', :input_html => { class: "input-type" }, as: :boolean %>
+        <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
         <% end %>
 
         <h2><%= link_to "+ ajoutez une question", '',class: "newq" , remote: true %></h2>
