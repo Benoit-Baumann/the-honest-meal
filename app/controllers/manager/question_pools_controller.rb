@@ -1,6 +1,11 @@
 class Manager::QuestionPoolsController < ApplicationController
 
+<<<<<<< HEAD
     def new
+=======
+  def new
+    @user_id = current_user.id
+>>>>>>> 6a37bec... User can access review from link
     @question_pool = QuestionPool.new
     @questions = @question_pool.questions.build
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -10,6 +15,7 @@ class Manager::QuestionPoolsController < ApplicationController
     if QuestionPool.where(restaurant_id: params[:restaurant_id]).empty?
       @restaurant = Restaurant.find(params[:restaurant_id])
       @question_pool = QuestionPool.new(question_pool_params)
+<<<<<<< HEAD
       @question_pool.restaurant = @restaurant
       @question_pool.save!
     else
@@ -23,6 +29,15 @@ class Manager::QuestionPoolsController < ApplicationController
     else
       ''
     end
+=======
+      @question_pool.user = current_user
+      @question_pool.save
+      redirect_to new_manager_question_pool_path
+    else
+      @question_pool = QuestionPool.where(user: current_user)
+      @question_pool.update question_pool_params
+      redirect_to new_manager_question_pool_path
+>>>>>>> 6a37bec... User can access review from link
     end
   end
 

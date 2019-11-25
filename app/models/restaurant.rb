@@ -7,6 +7,9 @@ class Restaurant < ApplicationRecord
   has_many :reviews
   has_many :coupons
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6a37bec... User can access review from link
   has_one :question_pools
   has_many :questions, through: :question_pools
 

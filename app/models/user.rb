@@ -14,10 +14,11 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :coupons
   has_many :favorites
+  has_many :question_pools
 
   enum status: [:customer, :owner]
 
-  validates :username, uniqueness: { case_sensitive: false }#, presence: true
+  validates :username, uniqueness: { case_sensitive: false }, presence: true
 
   private
 
