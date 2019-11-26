@@ -6,7 +6,7 @@
       <div class="input-boxes" style="margin-top: 40px;">
   <% if QuestionPool.where(user: current_user).first.nil? %>
         <div class="questionnaire-nom">
-        <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
+        <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "input-type" } %>
         </div>
   <% else %>
         <div class="questionnaire-nom">
@@ -16,10 +16,10 @@
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
         <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note (1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note (1 à 5)', :input_html => { class: "input-type" }, as: :boolean %>
         </div>
-        <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
+        <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
         <% end %>
       </div>
       <div class="publier-div">
