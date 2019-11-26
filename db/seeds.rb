@@ -16,6 +16,15 @@ Restaurant.destroy_all
 puts "Destroying existing users..."
 User.destroy_all
 
+puts "Destroying answers..."
+Answer.destroy_all
+
+puts "Destroying questions..."
+Question.destroy_all
+
+puts "Destroying questionpools..."
+QuestionPool.destroy_all
+
 
 def create_new_user
   User.new(
