@@ -88,3 +88,42 @@
   animation-name: disapear;
   visibility: hidden;
 }
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar {
+  padding: 0 1rem;
+}
+
+li.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+
+// Responsive sur tablette
+@media all and (max-width: 768px) {
+  #navbar p {
+    visibility: hidden;
+  }
+
+  #navbar {
+    display :flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    height: 100%;
+    left: 0 !important;
+  }
+}
+
