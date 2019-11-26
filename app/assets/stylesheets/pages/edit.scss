@@ -58,7 +58,7 @@
 }
 
 .input-boxes {
-  width: 600px;
+  width: 500px;
   border: 1px solid $light-blue;
   border-radius: 8px;
   padding: 20px 30px;
@@ -174,7 +174,7 @@
 }
 
 .mes-questions {
-  width: 40%;
+  width: 50%;
 
 }
 
@@ -191,6 +191,7 @@
   padding: 10px;
   display: flex;
   justify-content: flex-end;
+  margin: 0 auto 16px auto;
 }
 
 .questions a {
@@ -199,7 +200,7 @@
 
 
 .mon-questionnaire {
-  width: 60%;
+  width: 50%;
 }
 
 .type-of-input {
