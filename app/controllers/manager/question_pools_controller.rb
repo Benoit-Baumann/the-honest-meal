@@ -30,6 +30,6 @@ class Manager::QuestionPoolsController < ApplicationController
   private
 
   def question_pool_params
-    params.require(:question_pool).permit(questions_attributes: [:name, :id, :cat])
+    params.require(:question_pool).permit(:nameq, questions_attributes: [:name, :id, :cat])
   end
 end

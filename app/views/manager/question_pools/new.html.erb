@@ -23,16 +23,17 @@
   <% end %>
   <% end %>
 
-  <div><h1 class="title-page">Créez votre Questionnaire</h1></div>
-  
+  <% if QuestionPool.where(user: current_user).first.nameq.nil? %>
+
+  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="input-boxes">
         <div class="questionnaire-nom">
-        <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :name, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
+        <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
         </div>
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
+        <%= f.simple_fields_for :questions do |q_form| %>
         <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
         <%= q_form.input :cat, label: 'Note (de 1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %>
         </div>
@@ -45,5 +46,32 @@
         <%= f.submit "Publier", class: "publier-questionnaire", remote: true %>
       </div>
   <% end %>
+
+  <% else %>
+
+  <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
+      <div class="input-boxes">
+        <div class="questionnaire-nom">
+        <%= QuestionPool.where(user: current_user).first.nameq %>
+        </div>
+        <p>Type de réponse souhaité:</p>
+        <div class="check-input">
+        <%= f.simple_fields_for :questions do |q_form| %>
+        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
+        </div>
+        <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
+        <% end %>
+
+        <h2><%= link_to "+ ajoutez une question", '', class: "newq" , remote: true %></h2>
+      </div>
+      <div class="publier-div">
+        <%= f.submit "Publier", class: "publier-questionnaire", remote: true %>
+      </div>
+  <% end %>
+
+  <% end %>
+
+
 </div>
 </div>
