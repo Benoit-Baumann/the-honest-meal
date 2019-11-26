@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     if @review.save
       ReviewMailer.with(review: @review, email: @email).send_link.deliver_now
     else
-      render :new
+      render :invalid_email
     end
   end
   

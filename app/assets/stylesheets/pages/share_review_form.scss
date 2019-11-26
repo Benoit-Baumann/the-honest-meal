@@ -28,5 +28,16 @@
 
 .success-or-error-msg {
     font-style: italic;
-    color: $green;
+    color: $green !important;
+    margin: 0 !important;
+    visibility: hidden;
+}
+
+#close-share-modal {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.link-text {
+    margin: 0;
 }
