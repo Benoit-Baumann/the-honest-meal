@@ -2,9 +2,10 @@
   <div class="reviewtitle"><h2>Réponses au sondage</h2></div>
     <div class="form-review">
       <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
-      <div class="questionboxes"><%= question.name %></div>
+      <div class="questionboxes"><h2><%= question.name %></h2></div>
         <% question.answers.each do |answer| %>
         -<%= answer.content %>
+        <br>
         <% end %>
       <% end %>
       </div>
