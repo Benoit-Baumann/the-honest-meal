@@ -1,12 +1,7 @@
 <div class="main-container">
 <h1 class="title-page">Mon Dashboard</h1>
 
-<div class="manager-actions">
-  <%= render partial: 'reviews/share_review_form', locals: { restaurants: @restaurants, review: @review} %>
-</div>
-
 <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
-<% @answerss = Question.last.answers %>
 
   <div class="dashbord-container">
      <div id="drag-1" class="draggable">
@@ -40,17 +35,18 @@
           </div>
           <div class="draggable-content">
             <p>Note moyenne des reviews</p>
+            <% @reviewss = current_user.restaurants.first.reviews %>
           </div>
         </div>
      </div>
      <div id="drag-4" class="draggable">
         <div class="charts-border">
           <div class="charts">
-            <% @answer1 = @answerss.where(content: '1').length %>
-            <% @answer2 = @answerss.where(content: '2').length %>
-            <% @answer3 = @answerss.where(content: '3').length %>
-            <% @answer4 = @answerss.where(content: '4').length %>
-            <% @answer5 = @answerss.where(content: '5').length %>
+            <% @answer1 = @reviewss.where(rating: 1).length %>
+            <% @answer2 = @reviewss.where(rating: 2).length %>
+            <% @answer3 = @reviewss.where(rating: 3).length %>
+            <% @answer4 = @reviewss.where(rating: 4).length %>
+            <% @answer5 = @reviewss.where(rating: 5).length %>
             <% @data = {
             labels: ['Mauvais', 'Moyen', 'Assez bien', 'Bien', 'Très bien'],
             datasets: [{
