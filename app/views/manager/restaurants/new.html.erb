@@ -1,36 +1,38 @@
 <div class="main-container">
-  <h1 class="title-page"> Ajouter un nouveau restaurant</h1>
-  <br>
-  <div class="form-container">
-    <%= simple_form_for [:manager, @restaurant] do |f| %>
-      <div class="text-input-form">
-        <h4><%= f.label :name, "Nom" %></h4>
-      <p><%= f.text_field :name %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :category, "Catégorie" %></h4>
-      <p><%= f.text_field :category %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :address, "Adresse" %></h4>
-      <p><%= f.text_field :address %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :description, "Description" %></h4>
-      <p><%= f.text_field :description %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :hours, "Horaires d'ouverture" %></h4>
-      <p><%= f.text_field :hours %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :pricing, "Gamme de prix (€, €€ ou €€€)"%></h4>
-      <p><%= f.text_field :pricing %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :phone_number, "Numéro de téléphone" %></h4>
-      <p><%= f.text_field :phone_number %></p></div>
-      <div class="text-input-form">
-        <h4><%= f.label :website, "Site web" %></h4>
-      <p><%= f.text_field :website %></p></div>
+  <div class="main-container-bis">
+    <h1 class="title-page"> Ajouter un nouveau restaurant</h1>
+    <br>
+    <div class="form-container">
+      <%= simple_form_for [:manager, @restaurant] do |f| %>
         <div class="text-input-form">
-        <h4><%= f.label :siret, "Numéro Siret" %></h4>
-      <p><%= f.text_field :siret %></p></div>
-      <div class="add-btn-resto"><%= f.submit %></div>
-    <% end %>
+          <h4><%= f.label :name, "Nom" %></h4>
+        <p><%= f.text_field :name %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :category, "Catégorie" %></h4>
+        <p><%= f.text_field :category %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :address, "Adresse" %></h4>
+        <p><%= f.text_field :address %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :description, "Description" %></h4>
+        <p><%= f.text_field :description %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :hours, "Horaires d'ouverture" %></h4>
+        <p><%= f.text_field :hours %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :pricing, "Gamme de prix (€, €€ ou €€€)"%></h4>
+        <p><%= f.text_field :pricing %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :phone_number, "Numéro de téléphone" %></h4>
+        <p><%= f.text_field :phone_number %></p></div>
+        <div class="text-input-form">
+          <h4><%= f.label :website, "Site web" %></h4>
+        <p><%= f.text_field :website %></p></div>
+          <div class="text-input-form">
+          <h4><%= f.label :siret, "Numéro Siret" %></h4>
+        <p><%= f.text_field :siret %></p></div>
+        <div class="add-btn-resto"><%= f.submit %></div>
+      <% end %>
+    </div>
   </div>
 </div>

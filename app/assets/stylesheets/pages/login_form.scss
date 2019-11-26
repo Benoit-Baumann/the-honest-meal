@@ -4,7 +4,7 @@ details summary {
 
 details label {
     font-size: 1em;
-    color: rgb(3, 177, 3);
+    color: $green;
 }
 
 details[open] > summary::before {
@@ -42,7 +42,7 @@ details .details-container {
 .tab-header-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: $green;
+    background-color: $brown;
 }
 
 .tab-header h2 {
@@ -58,7 +58,7 @@ details .details-container {
 }
 
 .tab-header.active {
-    background-color: #1BCB7F;
+    background-color: $green;
 }
 
 .tab-container {
@@ -92,6 +92,12 @@ details > .tab-header-container {
 .btn-submit {
     margin-top: 24px;
     font-size: 1.1em;
+    background-color: $green;
+}
+
+.btn-submit:hover {
+  transform: scale(1.03);
+  background-color: $green;
 }
 
 .form-actions.submit {

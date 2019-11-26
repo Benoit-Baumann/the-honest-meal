@@ -1,11 +1,11 @@
 <div class="main-container">
 <div class="review">
 
-  <% if QuestionPool.find(user: current_user).empty? %>
+  <% if QuestionPool.where(user: current_user).empty? %>
     <h1 class="title-page">Créez votre Questionnaire</h1>
     <br>
   <% else %>
-    <% QuestionPool.find(user: current_user).questions.each do |question| %>
+    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
@@ -23,18 +23,23 @@
   <% end %>
   <% end %>
 
-  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
-
+  <div><h1 class="title-page">Créez votre Questionnaire</h1></div>
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="input-boxes">
+  <% if QuestionPool.where(user: current_user).first.nil? %>
         <div class="questionnaire-nom">
-        <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :name, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
+        <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "inputtype" } %>
         </div>
+  <% else %>
+        <div class="questionnaire-nom">
+        <%= QuestionPool.where(user: current_user).first.nameq %>
+        </div>
+  <% end %>
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
+        <%= f.simple_fields_for :questions do |q_form| %>
         <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note (de 1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %>
         </div>
         <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
         <% end %>
@@ -45,5 +50,7 @@
         <%= f.submit "Publier", class: "publier-questionnaire", remote: true %>
       </div>
   <% end %>
+
+
 </div>
 </div>

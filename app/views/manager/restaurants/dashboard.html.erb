@@ -6,6 +6,7 @@
 </div>
 
 <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
+<% @answerss = Question.last.answers %>
 
   <div class="dashbord-container">
      <div id="drag-1" class="draggable">
@@ -45,9 +46,38 @@
      <div id="drag-4" class="draggable">
         <div class="charts-border">
           <div class="charts">
+            <% @answer1 = @answerss.where(content: '1').length %>
+            <% @answer2 = @answerss.where(content: '2').length %>
+            <% @answer3 = @answerss.where(content: '3').length %>
+            <% @answer4 = @answerss.where(content: '4').length %>
+            <% @answer5 = @answerss.where(content: '5').length %>
+            <% @data = {
+            labels: ['Mauvais', 'Moyen', 'Assez bien', 'Bien', 'Très bien'],
+            datasets: [{
+            label: 'note moyenne',
+            # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
+            data: [@answer1, @answer2, @answer3, @answer4, @answer5],
+            backgroundColor: ['rgba(143, 214, 148, 0.4)','rgba(255, 255, 148, 0.4)', 'rgba(0, 0, 120, 0.4)', 'rgba(50, 25, 255, 0.4)', 'rgba(50, 255, 255, 0.4)'],
+            borderColor:'rgba(143, 214, 148, 0.4)',
+            fill: false,
+            borderWidth: 4
+            }]
+           } %>
+           <% @options = {
+           responsive: true,
+           maintainAspectRatio: false,
+           scales: {
+           yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+          }]
+        }
+  } %>
+<%= pie_chart @data, @options %>
           </div>
           <div class="draggable-content">
-            <p>Nombre de questionnaire</p>
+            <p>Réponse dernier sondage</p>
           </div>
         </div>
      </div>
