@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="review">
   <div class="reviewtitle"><h2>Réponses au sondage</h2></div>
     <div class="form-review">
@@ -11,8 +12,21 @@
         <% question.answers.each do |answer| %>
         -<%= answer.content %>
         <br>
+=======
+<% textanswer = QuestionPool.where(user: current_user).last.questions.where(cat: '0') %>
+<% ratinganswer = QuestionPool.where(user: current_user).last.questions.where(cat: '1') %>
+<div class="main-container">
+  <div class="reviewtitle1"><h2>Réponses au sondage</h2></div>
+    <div class="form-review1">
+      <!-- Question with Text -->
+      <% textanswer.each do |question| %>
+        <div class="questionboxes1"><h2><%= question.name %></h2></div>
+          <% question.answers.each do |answer| %>
+          -<%= answer.content %> <br> <br>
+>>>>>>> dbaf042... t
         <% end %>
       <% end %>
+
       </div>
 
 <% @answerss = Question.last.answers %>
