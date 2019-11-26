@@ -37,10 +37,14 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    # @review = Review.find(params[review])
-    @review.user = current_user
-    # save answers to DB
-    p params
+    @review = Review.find_by(token: review_params[:token])
+    @review.update!(content_title: review_params[:content_title], content: review_params[:content], rating: review_params[:rating], username: current_user.username)
+
+    puts "je suis la"
+    p answer_params[:answers].first[:content]
+    answer_params[:answers].each do |answer|
+      Answer.new(content: answer[:content], question_id: answer[:question_id]).save!
+    end
   end
 
   private
@@ -50,7 +54,7 @@ class ReviewsController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:question, :content)
+    params.require(:review).permit(answers: [:question_id, :content])
   end
 
   def valid_email(email)

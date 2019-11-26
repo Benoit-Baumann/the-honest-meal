@@ -16,12 +16,24 @@
 
   <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
     <div class="input-boxes">
-      <%= f.input :restaurant, as: :hidden, input_html: { value: @review.restaurant } %>
       <%= f.input :token, as: :hidden, input_html: { value: @review.token } %>
       <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "input-type" }, required: true unless user_signed_in? %>
       <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "input-type" } %>
       <%= f.input :content, label: 'Votre avis', :input_html => { class: "input-type" } %>
       <%= f.input :rating, collection: (1..5).to_a, label: 'Votre note', :input_html => { class: "input-type" } %>
+
+      <br>
+      <br>
+
+      <% @questions.each do |question| %>
+        <p><%= question.name %></p>
+        <%= f.fields_for 'answers[]', Answer.new(question: question, content: (('a'..'z').to_a.sample * 3)) do |a| %>
+          <%= a.input :question_id %>
+          <%= a.input :content %>
+        <% end %>
+      <% end %>
+
+
     </div>
     <div class="form-actions submit">
       <%= f.submit "Publier", class: "btn-ghost" %>
