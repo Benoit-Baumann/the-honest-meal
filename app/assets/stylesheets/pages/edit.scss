@@ -55,7 +55,6 @@
 
 .form-review {
   font-size:18px;
-  margin-bottom: 40px;
 }
 
 .inputboxes {
@@ -71,9 +70,18 @@
   border-radius:8px;
 }
 
+.input-boxes {
+  font-family: $body-font !important;
+  font-size: 18px !important;
+}
+
+.form-group label {
+  font-family: $body-font !important;
+  font-size: 18px;
+}
+
 .input-type {
   border-radius:8px;
-  margin-bottom: 50px;
 }
 
 .br-theme-css-stars .br-widget a {
