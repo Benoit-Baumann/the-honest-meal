@@ -20,7 +20,7 @@ details[open] > summary::before {
     background: rgba(27,31,35,0.5);
 }
 
-details > .details-container {
+details .details-container {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
@@ -58,7 +58,7 @@ details > .details-container {
 }
 
 .tab-header.active {
-    background-color:rgb(3, 177, 3);
+    background-color: #1BCB7F;
 }
 
 .tab-container {
@@ -83,6 +83,10 @@ details > .tab-header-container {
     color: red;
     text-align: center;
     margin-bottom: 16px;
+}
+
+.form-inputs input{
+    margin-bottom: 24px;
 }
 
 .btn-submit {
