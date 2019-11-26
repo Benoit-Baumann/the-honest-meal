@@ -1,0 +1,17 @@
+document.querySelector(".newq").addEventListener("click", (event) => {
+  var node = document.querySelectorAll(".form-control.string.optional");
+  var lastnode = document.querySelectorAll(".form-control.string.optional")[node.length - 1];
+  var re = /question_pool\[questions_attributes\]\[(\d*)]\[name\]/;
+  var added = `
+    <div class="form-group hidden question_pool_restaurant_id">
+    <fieldset class="form-group boolean optional question_pool_questions_cat"><div class="form-check"><input name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" type="hidden" value="0"><input class="form-check-input boolean optional input-type" type="checkbox" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat"><label class="form-check-label boolean optional form-review" for="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">Text</label></div></fieldset>
+    <fieldset class="form-group boolean optional question_pool_questions_cat"><div class="form-check"><input name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" type="hidden" value="0"><input class="form-check-input boolean optional input-type" type="checkbox" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat"><label class="form-check-label boolean optional form-review" for="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">Rating</label></div></fieldset>
+      <input class="form-control hidden" type="hidden" name="question_pool[restaurant_id]" id="question_pool_restaurant_id">
+    </div>
+    <div class="form-group string optional question_pool_questions_name">
+      <label class="string optional form-review" for="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_name">Question</label>
+      <input class="form-control string optional input-type" type="text" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][name]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_name">
+    </div>
+  `
+  document.querySelector(".newq").insertAdjacentHTML("beforebegin", added);
+});

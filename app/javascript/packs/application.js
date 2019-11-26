@@ -32,6 +32,7 @@ import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { initStarRating } from '../plugins/init_star_rating';
 >>>>>>> 49388bf... dashboard
 =======
@@ -41,6 +42,9 @@ import '../components/hide';
 >>>>>>> 7963648... Add token column to review model
 =======
 >>>>>>> 7e376f7... delete hide.js import
+=======
+import '../components/minusq';
+>>>>>>> 2f7b7dd... t
 
 initStarRating();
 <<<<<<< HEAD
@@ -71,6 +75,7 @@ initTabListener();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
@@ -82,3 +87,6 @@ initJoinUsBtn();
 =======
 initJoinUsBtn();
 >>>>>>> 10fdf06... "update"
+=======
+initJoinUsBtn();
+>>>>>>> 2f7b7dd... t

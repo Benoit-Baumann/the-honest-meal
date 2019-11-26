@@ -11,10 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_25_103406) do
 =======
 ActiveRecord::Schema.define(version: 2019_11_25_085958) do
 >>>>>>> 19fc712... finish choice of text ou rating
+=======
+ActiveRecord::Schema.define(version: 2019_11_26_083159) do
+>>>>>>> 2f7b7dd... t
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +56,13 @@ ActiveRecord::Schema.define(version: 2019_11_25_085958) do
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.index ["restaurant_id"], name: "index_question_pools_on_restaurant_id"
+=======
+    t.bigint "user_id"
+    t.string "nameq"
+    t.index ["user_id"], name: "index_question_pools_on_user_id"
+>>>>>>> 2f7b7dd... t
   end
 
   create_table "questions", force: :cascade do |t|
