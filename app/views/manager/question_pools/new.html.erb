@@ -23,7 +23,7 @@
   <% end %>
   <% end %>
 
-  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
+  <div><h1 class="title-page">Créez votre Questionnaire</h1></div>
 
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="input-boxes">
@@ -34,7 +34,7 @@
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
         <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note', :input_html => { class: "inputtype" }, as: :boolean %>
+        <%= q_form.input :cat, label: 'Note (de 1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %>
         </div>
         <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
         <% end %>
