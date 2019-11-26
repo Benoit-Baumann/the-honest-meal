@@ -5,5 +5,5 @@
         errorMessage.insertAdjacentHTML('afterbegin', '<li><%= message %></li>')
     <% end %>
 <% else %>
-    window.location.reload();    
+    window.location.href = "<%= manager_dashboard_path %>"
 <% end %>
