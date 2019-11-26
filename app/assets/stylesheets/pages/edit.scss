@@ -62,9 +62,13 @@
   border: 1px solid $light-blue;
   border-radius: 8px;
   padding: 20px 30px;
-  background-color: $light-gray;
+  background-color: $white;
   margin: 0 auto;
 
+}
+
+.form-control {
+  background-color: $light-gray !important;
 }
 
 .input-boxes input {
@@ -143,6 +147,10 @@
   margin-left: 5px;
 }
 
+.form-check {
+  text-align: center;
+}
+
 .check-input {
   display: flex;
   justify-content: space-around;
@@ -194,6 +202,11 @@
   display: flex;
   justify-content: flex-end;
   margin: 0 auto 16px auto;
+  background-color: white;
+}
+
+.questions {
+  margin: auto;
 }
 
 .questions a {
@@ -206,17 +219,22 @@
 }
 
 .type-of-input {
-  margin-left: 16px;
-  background-color: $green;
-  padding: 1px 5px;
-  border-radius: 4px;
-  color: white;
-  font-family: $body-font;
+  // margin-left: 16px;
+  // padding: 1px 5px;
+  // border-radius: 4px;
+  // color: black;
+  // font-family: $body-font;
+  // font-size: 8px;
+  height: 10px;
+  width: 10px;
+  background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
+  background-size: cover;
 }
 
 .delete-bin {
   margin-right: 5px;
   margin-left: 10px;
+  text-align: center;
 }
 
 .delete-bin a {
@@ -245,4 +263,35 @@
   margin-bottom: 20px;
   margin: 0 auto;
   text-align: center;
+}
+
+
+.check-card-1 {
+  height: 120px;
+  width: 120px;
+  background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
+  background-size: cover;
+  border: 1px solid $brown;
+  border-radius: 4px;
+}
+
+.check-card-1 fieldset {
+  background-color: white;
+  margin-top: 91px;
+  border-radius:4px;
+}
+
+.check-card-2 {
+  height: 120px;
+  width: 120px;
+  background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
+  background-size: cover;
+  border: 1px solid $brown;
+  border-radius: 4px;
+}
+
+.check-card-2 fieldset {
+  background-color: white;
+  margin-top: 91px;
+  border-radius:4px;
 }
