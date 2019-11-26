@@ -3,6 +3,7 @@ import "bootstrap";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import initLoadingAnimation from './loading_animation';
 =======
 >>>>>>> eb54c2e... Delete unnecessary js files
@@ -53,6 +54,11 @@ import '../components/minusq';
 =======
 // import '../components/minusq';
 >>>>>>> 8f6c2c6... Fix bug in share review modal'
+=======
+import { initTabListener, initMainSignupBtnListener, initSendReviewBtnListener } from './modal_listener';
+import { initStarRating, initStarRating2 } from '../plugins/init_star_rating';
+import '../components/drag-drop';
+>>>>>>> 4959219... Send review link modal now finished
 
 initStarRating();
 <<<<<<< HEAD

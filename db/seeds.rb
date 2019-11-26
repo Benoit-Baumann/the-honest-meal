@@ -10,6 +10,9 @@ Favorite.destroy_all
 puts "Destroying existing reviews..."
 Review.destroy_all
 
+puts "Destroying existing restaurant photos..."
+RestaurantPhoto.destroy_all
+
 puts "Destroying existing restaurants..."
 Restaurant.destroy_all
 
@@ -103,19 +106,19 @@ question_pool_john.save!
 
 puts "Creating Questions for John"
 questions_john1 = Question.new(
-  name: 'Ques pensez vous du Tiramisu',
+  name: 'Comment avez-vous trouvé le tiramisu ?',
   cat: '0',
   question_pool: question_pool_john
   )
 
 questions_john2 = Question.new(
-  name: 'Que pensez vous du service ?',
+  name: "Qu'avez-vous pensé du service ?",
   cat: '0',
   question_pool: question_pool_john
   )
 
 questions_john3 = Question.new(
-  name: 'Quel note donneriez vous a la propreté ?',
+  name: 'Quelle note donneriez-vous à la propreté ?',
   cat: '1',
   question_pool: question_pool_john
   )
@@ -158,19 +161,19 @@ question_pool_ben.save!
 
 puts "Creating Questions for Ben"
 questions_ben1 = Question.new(
-  name: 'Ques pensez vous du Risotto',
+  name: "Qu'avez-vous pensé du Risotto ?",
   cat: '0',
   question_pool: question_pool_ben
   )
 
 questions_ben2 = Question.new(
-  name: 'Les plats sont-ils assez salées ?',
+  name: 'Les plats étaient-ils assez salés ?',
   cat: '0',
   question_pool: question_pool_ben
   )
 
 questions_ben3 = Question.new(
-  name: 'Quel note donneriez vous a la serveuse ?',
+  name: 'Quelle note donneriez-vous au service ?',
   cat: '1',
   question_pool: question_pool_ben
   )
@@ -211,22 +214,22 @@ puts "Creating random restaurants for John and Ben..."
   resto.save!
 end
 
-rand_nb = rand(10..20)
-puts "Creating #{rand_nb} random restaurant owners and restaurants..."
-i =1
-rand_nb.times {
-  owner = create_new_user
-  owner.status = 1
-  resto = create_new_restaurant
-  resto.owner = owner
-  owner.save!
-  puts "---Creating owner #{i} with id:#{owner.id}"
-  resto.save!
-  puts "---Creating restaurant #{i} with id:#{resto.id}"
-  i += 1
-}
+# rand_nb = rand(10..20)
+# puts "Creating #{rand_nb} random restaurant owners and restaurants..."
+# i =1
+# rand_nb.times {
+#   owner = create_new_user
+#   owner.status = 1
+#   resto = create_new_restaurant
+#   resto.owner = owner
+#   owner.save!
+#   puts "---Creating owner #{i} with id:#{owner.id}"
+#   resto.save!
+#   puts "---Creating restaurant #{i} with id:#{resto.id}"
+#   i += 1
+# }
 
-rand_nb = rand(20..40)
+rand_nb = rand(10..20)
 puts "Creating #{rand_nb} random users..."
 i = 1
 rand_nb.times {
@@ -251,18 +254,18 @@ rand_nb.times {
     j += 1
   }
 
-  rand_nb = rand(0..3)
-  puts "-----Marking #{rand_nb} random restaurants as favorite for user_id=#{customer.id}..."
-  j = 0
-  rand_nb.times {
-    favorite = Favorite.new(value: true, user: customer)
-    favorite.restaurant = Restaurant.order('RANDOM()').first
-    favorite.save!
-    puts "-------Marking #{favorite.restaurant.name} as favorite"
-    j += 1
-  }
+#   rand_nb = rand(0..3)
+#   puts "-----Marking #{rand_nb} random restaurants as favorite for user_id=#{customer.id}..."
+#   j = 0
+#   rand_nb.times {
+#     favorite = Favorite.new(value: true, user: customer)
+#     favorite.restaurant = Restaurant.order('RANDOM()').first
+#     favorite.save!
+#     puts "-------Marking #{favorite.restaurant.name} as favorite"
+#     j += 1
+#   }
 
-  i += 1
+#   i += 1
 
 }
 

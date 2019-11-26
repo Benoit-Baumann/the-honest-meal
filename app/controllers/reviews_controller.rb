@@ -10,7 +10,11 @@ class ReviewsController < ApplicationController
 
   def create
     @email = params[:email]
-    render :new unless valid_email(@email)
+    unless valid_email(@email)
+      render :invalid_email 
+      return
+
+    end
     @restaurant = Restaurant.find(params[:restaurant])
     @review = Review.new(restaurant: @restaurant)
     if @review.save
