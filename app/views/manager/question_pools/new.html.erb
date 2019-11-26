@@ -21,8 +21,6 @@
         </div>
         <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
         <% end %>
-
-        <h2><%= link_to "+ ajouter une question", '',class: "newq" , remote: true %></h2>
       </div>
       <div class="publier-div">
         <%= f.submit "Ajouter la question", class: "publier-questionnaire", remote: true %>
