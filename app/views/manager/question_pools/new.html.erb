@@ -23,9 +23,21 @@
   <% end %>
   <% end %>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
   <% if QuestionPool.where(user: current_user).first.nameq.nil? %>
 
   <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
+
+=======
+  <div><h1 class="title-page">Créez votre Questionnaire</h1></div>
+  
+>>>>>>> d57faa97f336cac31d07d7e16232eb79fcc6543f
+=======
+  <% if QuestionPool.where(user: current_user).first.nameq.nil? %>
+
+  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
+>>>>>>> 89a744601508bc1852a6064f34a630f4486073e4
   <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
       <div class="input-boxes">
         <div class="questionnaire-nom">
