@@ -85,6 +85,116 @@ axel = User.new(
 )
 axel.save!
 
+puts "Creating Question Pool for John"
+question_pool_john = QuestionPool.new(
+  user: john,
+  nameq: 'Le questionnaire de John'
+  )
+question_pool_john.save!
+
+puts "Creating Questions for John"
+questions_john1 = Question.new(
+  name: 'Ques pensez vous du Tiramisu',
+  cat: '0',
+  question_pool: question_pool_john
+  )
+
+questions_john2 = Question.new(
+  name: 'Que pensez vous du service ?',
+  cat: '0',
+  question_pool: question_pool_john
+  )
+
+questions_john3 = Question.new(
+  name: 'Quel note donneriez vous a la propreté ?',
+  cat: '1',
+  question_pool: question_pool_john
+  )
+
+questions_john1.save!
+questions_john2.save!
+questions_john3.save!
+
+puts "Creating answers for John"
+5.times {
+    answer = Answer.new(
+              content: Faker::Restaurant.review,
+             question: questions_john1
+            )
+    answer.save!
+}
+
+5.times {
+    answer2 = Answer.new(
+              content: Faker::Restaurant.review,
+             question: questions_john2
+            )
+    answer2.save!
+}
+
+10.times {
+    answer3 = Answer.new(
+              content: rand(1..5).to_s,
+              question: questions_john3
+            )
+    answer3.save!
+}
+
+puts "Creating Question Pool for Ben"
+question_pool_ben = QuestionPool.new(
+  user: ben,
+  nameq: 'Le questionnaire de Ben'
+  )
+question_pool_ben.save!
+
+puts "Creating Questions for Ben"
+questions_ben1 = Question.new(
+  name: 'Ques pensez vous du Risotto',
+  cat: '0',
+  question_pool: question_pool_ben
+  )
+
+questions_ben2 = Question.new(
+  name: 'Les plats sont-ils assez salées ?',
+  cat: '0',
+  question_pool: question_pool_ben
+  )
+
+questions_ben3 = Question.new(
+  name: 'Quel note donneriez vous a la serveuse ?',
+  cat: '1',
+  question_pool: question_pool_ben
+  )
+
+questions_ben1.save!
+questions_ben2.save!
+questions_ben3.save!
+
+puts "Creating answers for Ben"
+5.times {
+    answer = Answer.new(
+              content: Faker::Restaurant.review,
+             question: questions_ben1
+            )
+    answer.save!
+}
+
+5.times {
+    answer2 = Answer.new(
+              content: Faker::Restaurant.review,
+             question: questions_ben2
+            )
+    answer2.save!
+}
+
+10.times {
+    answer3 = Answer.new(
+              content: rand(1..5).to_s,
+              question: questions_ben3
+            )
+    answer3.save!
+}
+
 puts "Creating random restaurants for John and Ben..."
 [john, ben].each do |owner|
   resto = create_new_restaurant
