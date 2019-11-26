@@ -1,0 +1,32 @@
+.details-container.share-review {
+    padding: 20px;
+    width: 40%;
+}
+
+.details-container .title-page {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: $green;
+    width: 50%; 
+    margin-bottom: 36px;
+    padding-left: 0;
+}
+
+.details-container select {
+    width: 30%;
+    margin-right: 8px;
+}
+
+.details-container input {
+    width: 40%;
+    margin-right: 8px;
+}
+
+.details-container .link-text {
+    margin: 0 !important;
+}
+
+.success-or-error-msg {
+    font-style: italic;
+    color: $green;
+}

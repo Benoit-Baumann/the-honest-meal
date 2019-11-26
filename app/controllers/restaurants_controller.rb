@@ -1,11 +1,14 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
+  before_action :set_restaurant, only: [:show, :toggle_favorites]
+
   def index
     @restaurants = Restaurant.all
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    # @restaurant = Restaurant.find(params[:id])
     @userfavorite = Favorite.where(user: current_user, restaurant: @restaurant).first
     if @userfavorite.nil?
       @toto = false
@@ -16,23 +19,30 @@ class RestaurantsController < ApplicationController
 
   def toggle_favorites
     @user = current_user
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    # @restaurant = Restaurant.find(params[:restaurant_id])
     userfavorite = Favorite.where(user: current_user, restaurant: @restaurant).first
     if userfavorite.nil?
       Favorite.create(user: current_user, restaurant: @restaurant, value: true)
     else
       userfavorite.toggle("value")
       if userfavorite.save
-      respond_to do |format|
-        format.html { redirect_to restaurant_path(@restaurant) }
-        format.js  # <-- will render `app/views/reviews/toggle_favorites.js.erb`
+        respond_to do |format|
+          format.html { redirect_to restaurant_path(@restaurant) }
+          format.js  # <-- will render `app/views/reviews/toggle_favorites.js.erb`
+        end
+      else
+        respond_to do |format|
+          format.html { render 'restaurants/show' }
+          format.js  # <-- idem
+        end
       end
-    else
-      respond_to do |format|
-        format.html { render 'restaurants/show' }
-        format.js  # <-- idem
-      end
-    end
     end
   end
+
+  private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
 end

@@ -6,16 +6,15 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
-    @answer = Answer.new
   end
-
+  
   def create
-    @review = Review.new(review_params)
-    @review.save
+    @email = params[:email]
+    render :new unless valid_email(@email)
+    @restaurant = Restaurant.find(params[:restaurant])
+    @review = Review.new(restaurant: @restaurant)
     if @review.save
-      ReviewMailer.with(review: @review).send_link.deliver_now
-      redirect_to profile_path
+      ReviewMailer.with(review: @review, email: @email).send_link.deliver_now
     else
       render :new
     end
@@ -46,10 +45,16 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:user, :restaurant, :username, :content_title, :content, :rating, :token)
+    params.require(:review).permit(:user, :restaurant, :username, :content_title, :content, :rating, :token, :email)
   end
 
   def answer_params
     params.require(:answer).permit(:question, :content)
   end
+
+  def valid_email(email)
+    check = email =~ URI::MailTo::EMAIL_REGEXP
+    return check == 0
+  end
+
 end
