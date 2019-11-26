@@ -3,7 +3,7 @@
    <%= link_to root_path, class: "navbar-brand" do %>
      <%= image_tag "theHonestMeal.png", class: "logo" %>
    <% end %>
-       <p> The Honest Meal </p>
+    <p> The Honest Meal </p>
  </li>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -14,8 +14,8 @@
          <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard'}" %>
          <%= link_to "Créer un Questionnaire", new_manager_question_pool_path, class: "connected-btn" %>
           <details id="share-review-details-form">
-            <summary class="connected-btn">Envoyer un Questionnaire</summary>
-            <%= render partial: 'reviews/share_review_form', locals: { restaurants: current_user.restaurants} %>
+            <summary id="share-review-summary" class="connected-btn">Envoyer un Questionnaire</summary>
+            <%= render partial: 'reviews/share_review_form' %>
           </details>
          <%= link_to "Ajouter un Restaurant", new_manager_restaurant_path, class: "connected-btn #{'active' if params[:action] == 'home'}" %>
        <li class="nav-item dropdown">

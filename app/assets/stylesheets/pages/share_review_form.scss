@@ -1,24 +1,24 @@
 .details-container.share-review {
     padding: 20px;
-    width: 40%;
+    width: auto;
 }
 
 .details-container .title-page {
     font-size: 1.3em;
     font-weight: bold;
     color: $green;
-    width: 50%; 
+    width: 300px; 
     margin-bottom: 36px;
     padding-left: 0;
 }
 
 .share-review-form-container select {
-    width: 30%;
+    width: 200px;
     margin-right: 8px;
 }
 
 .share-review-form-container input {
-    width: 40%;
+    width: 250px;
     margin-right: 8px;
 }
 
@@ -26,18 +26,35 @@
     margin: 0 !important;
 }
 
-.success-or-error-msg {
+.feedback-msg {
     font-style: italic;
-    color: $green !important;
     margin: 0 !important;
     visibility: hidden;
 }
 
-#close-share-modal {
-    text-align: center;
-    margin-top: 24px;
+.feedback-msg.fail {
+    color: red !important;
+    visibility: visible;
+}
+
+.feedback-msg.success {
+    color: $green !important;
+    visibility: visible;
 }
 
 .link-text {
     margin: 0;
+}
+
+#email.fail {
+    background-color: rgba(224, 106, 106, 0.2);
+}
+
+#email.success {
+    background-color: $green;
+}
+
+// Restaurant dropdown hidden as it is considered that a owner has only one restaurant
+.share-review-form-container #restaurant {
+    display: none;
 }
