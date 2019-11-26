@@ -12,12 +12,12 @@
    <ul class="navbar-nav" style="align-items: baseline">
      <% if user_signed_in? %>
          <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard'}" %>
-         <%= link_to "Créer un Questionnaire", new_manager_question_pool_path, class: "connected-btn" %>
+         <%= link_to "Créer mon Questionnaire", new_manager_question_pool_path, class: "connected-btn" %>
           <details id="share-review-details-form">
             <summary class="connected-btn">Envoyer un Questionnaire</summary>
             <%= render partial: 'reviews/share_review_form', locals: { restaurants: current_user.restaurants} %>
           </details>
-         <%= link_to "Ajouter un Restaurant", new_manager_restaurant_path, class: "connected-btn #{'active' if params[:action] == 'home'}" %>
+         <%= link_to "Mes Questionnaires", new_manager_restaurant_path, class: "connected-btn #{'active' if params[:action] == 'home'}" %>
        <li class="nav-item dropdown">
          <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% if current_user.status == 'customer' %>
