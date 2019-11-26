@@ -1,11 +1,11 @@
 <div class="main-container">
 <div class="review">
 
-  <% if QuestionPool.find(user: current_user).empty? %>
+  <% if QuestionPool.where(user: current_user).empty? %>
     <h1 class="title-page">Créez votre Questionnaire</h1>
     <br>
   <% else %>
-    <% QuestionPool.find(user: current_user).questions.each do |question| %>
+    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
   <p class="questions">
     <% @question = question %>
     <%= question.name %>
