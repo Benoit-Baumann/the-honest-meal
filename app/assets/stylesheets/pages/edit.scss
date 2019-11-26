@@ -35,8 +35,8 @@
 
 .review {
   width: 1120px;
-  margin: 0 auto;
-  // opacity:0.8;
+  display:flex;
+  margin-top: 40px;
 }
 
 .review-title {
@@ -62,8 +62,9 @@
   border: 1px solid $light-blue;
   border-radius: 8px;
   padding: 20px 30px;
-  margin: 40px auto;
   background-color: $light-gray;
+  margin: 0 auto;
+
 }
 
 .input-boxes input {
@@ -170,4 +171,75 @@
 
 .form-group {
   margin-bottom: 0rem !important;
+}
+
+.mes-questions {
+  width: 40%;
+
+}
+
+.mes-questions p {
+  margin: auto 0 !important;
+
+}
+
+.une-question {
+  width: 450px;
+  border: 1px solid $light-blue;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.questions a {
+  display: flex;
+}
+
+
+.mon-questionnaire {
+  width: 60%;
+}
+
+.type-of-input {
+  margin-left: 16px;
+  background-color: $green;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: white;
+  font-family: $body-font;
+}
+
+.delete-bin {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.delete-bin a {
+  color: $brown;
+}
+
+#titre-crer-formulaire {
+  font-family: $headers-font;
+  font-size: 32px;
+  color: black;
+  border-bottom: 1px solid black !important;
+  width:400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#mes-question-en-cours {
+  font-family: $headers-font;
+  font-size: 32px;
+  color: black;
+  border-bottom: 1px solid black !important;
+  width:400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
