@@ -5,5 +5,18 @@
 }
 
 .main-container-bis {
-  padding-bottom: 60px;
+  padding-bottom: 45px;
 }
+
+@media all and (max-width: 600px) {
+.main-container-bis {
+  padding-bottom: 260px !important;
+  }
+}
+
+@media all and (max-width: 350px) {
+.main-container-bis {
+  padding-bottom: 280px !important;
+  }
+}
+

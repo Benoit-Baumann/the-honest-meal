@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding-bottom: 160px;
   min-height: 100%;
+  height: auto;
 }
 
 #footer {
@@ -28,9 +29,10 @@ body {
   font-size:14px;
 }
 
-.footer-category {
-display: inline-block;
+.footer-category h4{
+  text-align: center;
 }
+
 .footer-links a {
   color: black;
   font-size: 20px;
@@ -70,4 +72,30 @@ display: inline-block;
 
 .social-logos {
   list-style: none;
+}
+
+.footer_infos {
+  display: flex;
+  justify-content: space-between;
+}
+@media all and (max-width: 1024px) {
+  .footer_infos {
+    display: block;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .footer-category h4{
+  text-align: left;
+}
+.main-container-bis {
+  padding-bottom: 240px !important;
+  }
+}
+
+
+@media all and (max-width: 600px) {
+.main-container-bis {
+  padding-bottom: 260px !important;
+  }
 }
