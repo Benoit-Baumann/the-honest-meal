@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def new
   end
-  
+
   def create
     @email = params[:email]
     render :new unless valid_email(@email)
@@ -19,13 +19,13 @@ class ReviewsController < ApplicationController
       render :invalid_email
     end
   end
-  
+
   def edit
     @review = Review.find_by(token: params[:id])
     if @review.nil?
       render :invalid_review
     elsif (Time.now - @review.created_at.to_time)/1.day > 7
-      render :expired_review, locals: { review: @review } 
+      render :expired_review, locals: { review: @review }
     else
       if @review.restaurant.owner.question_pools.empty?
         @questions = nil
@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
       end
     end
   end
-  
+
   def update
     # @review = Review.find(params[review])
     @review.user = current_user
