@@ -27,7 +27,11 @@ import '../components/chart';
 =======
 import { initTabListener, initJoinUsBtn} from './modal_login_form';
 import { initStarRating, initStarRating2 } from '../plugins/init_star_rating';
+<<<<<<< HEAD
 >>>>>>> fcc88e9... Fix login modal tab bug
+=======
+import { closeShareReviewModal } from './modal_share_review'
+>>>>>>> b62ce1a... Add functionality to send a link for a review by mail
 import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
