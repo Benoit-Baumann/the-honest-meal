@@ -7,11 +7,11 @@
         -<%= answer.content %>
         <% end %>
       <% end %>
-    </div>
+      </div>
 
 <% @answerss = Question.last.answers %>
 
-<div class="charts">
+    <div class="charts">
     <% @answer1 = @answerss.where(content: '1').length %>
     <% @answer2 = @answerss.where(content: '2').length %>
     <% @answer3 = @answerss.where(content: '3').length %>
@@ -41,6 +41,6 @@
         }
   } %>
 <%= pie_chart @data, @options %>
+    </div>
   </div>
-</div>
 </div>
