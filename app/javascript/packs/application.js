@@ -37,6 +37,7 @@ import '../components/drag-drop';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { initStarRating } from '../plugins/init_star_rating';
 >>>>>>> 49388bf... dashboard
 =======
@@ -49,6 +50,9 @@ import '../components/hide';
 =======
 import '../components/minusq';
 >>>>>>> 2f7b7dd... t
+=======
+// import '../components/minusq';
+>>>>>>> 8f6c2c6... Fix bug in share review modal'
 
 initStarRating();
 <<<<<<< HEAD
