@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @answer = Answer.new
     @review = Review.find_by(token: params[:id])
     if @review.nil?
       render :invalid_review
@@ -30,7 +31,7 @@ class ReviewsController < ApplicationController
       if @review.restaurant.owner.question_pools.empty?
         @questions = nil
       else
-        @questions = QuestionPool.find(user_id: @review.restaurant.owner).questions
+        @questions = QuestionPool.find_by(user_id: @review.restaurant.owner.id).questions
       end
     end
   end
