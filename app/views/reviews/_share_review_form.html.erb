@@ -1,20 +1,24 @@
-<details>
+<details id="share-review-details-form">
   <summary class="connected-btn">+</summary>
 
-  <div class="details-container">
+  <div class="details-container share-review">
 
-    <%= form_tag restaurants_path, class: "", method: :get do |f| %>
-        <div class="search-bar">
-            <%= text_field_tag :name,
-            params[:name],
-            class: error ? "search-bar-city invalid-search-bar": "search-bar-city",
-            placeholder: "John.doe@example.com"
-            %>
-            <p class="invalid-search-message"><%= error %></p>
+    <h2 class="title-page">Envoyer un nouveau lien</h2>
+
+    <%= form_tag reviews_path, class: "", method: :post, remote: true do |f| %>
+        <div class="share-review-form-container">
+            <%= select_tag :restaurant, options_from_collection_for_select(@restaurants, "id", "name") %>
+            <%= text_field_tag :email, placeholder: "John.doe@example.com" %>
+            <%= button_tag(type: "submit", class: "btn-flat") do %>
+              <p class="link-text">Envoyer lien</p>
+            <% end %>
+            <p class="success-or-error-msg"></p>
         </div>
-        <%= button_tag(type: "submit", class: "search-bar-button") do %>
-            <p>Go!</p>
-        <% end %>
+        <div id="close-share-modal">
+          <%= button_tag(type: 'button', onclick: "javascript:closeShareReviewModal()", id: "close_share_review_modal_btn") do %>
+            <p class="link-text">Fermer</p>
+          <% end %>
+        </div>
     <% end %>
 
   </div>
