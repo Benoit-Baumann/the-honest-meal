@@ -1,9 +1,11 @@
 .restaurant-summary {
-  width:410px;
+  width:785px;
   display: flex;
   margin: 0 auto;
-  margin-top:20px;
+  margin-top:40px;
+  margin-bottom: 30px;
   justify-content: space-between;
+  height: 220px;
 }
 
 .restaurant-info {
@@ -11,20 +13,22 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width:720px;
 }
 
 .restaurant-info > h2 {
-  font-size: 18px;
+  font-size: 32px;
   font-weight: bold;
+  color: $green;
 }
 
 .restaurant-info > p {
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .restaurant-photo {
-  width:190px;
-  height: 100px;
+  width:1400px;
+  height: 100%;
 }
 
 .restaurant-photo img{
@@ -49,6 +53,27 @@
   color: black !important;
 }
 
+.review-title2 {
+  border-bottom: 1px solid black;
+  width:100%;
+  padding: 10px;
+  margin-bottom:50px;
+  font-family: $headers-font;
+  color: black !important;
+}
+
+.review-title3 {
+  border-bottom: 1px solid black;
+  width:100%;
+  padding: 10px;
+  margin-bottom:10px;
+  font-family: $headers-font;
+  color: black !important;
+}
+ .btn-padding {
+  margin-top: 60px;
+ }
+
 .italic-green-text {
   font-style: italic;
   color: $green;
@@ -65,7 +90,26 @@
   padding: 20px 30px;
   background-color: $white;
   margin: 0 auto;
+}
 
+.disclaimer {
+  font-size: 10px;
+  margin-bottom:50px;
+}
+
+.input-space {
+  margin-bottom:30px;
+}
+
+.input-boxes-review {
+  width: 825px;
+  border: 1px solid $light-blue;
+  border-radius: 8px;
+  padding: 20px 30px;
+  background-color: $white;
+  margin: 0 auto;
+  height: 100%;
+  padding-bottom: 40px;
 }
 
 .form-control {
