@@ -53,11 +53,14 @@ def create_new_restaurant
 end
 
 def create_new_review
+  updated_date = rand(Date.civil(2019, 1, 1)..Date.civil(2019, 12, 31)) 
+  created_date = updated_date - (rand(1..7))
   Review.new(
     content: Faker::Restaurant.review,
     rating: rand(0..5),
     content_title: 'Titre du contenu',
-    created_at: rand(Date.civil(2019, 1, 1)..Date.civil(2019, 12, 31))
+    updated_at: updated_date,
+    created_at: created_date
   )
 end
 
