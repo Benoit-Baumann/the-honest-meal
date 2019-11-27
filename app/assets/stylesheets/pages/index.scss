@@ -1,0 +1,46 @@
+.form-review1 {
+  width: 78%;
+  border: 1px solid $light-blue;
+  border-radius: 8px;
+  padding: 20px 30px;
+  background-color: $white;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-bottom:50px;
+  text-align: center;
+}
+
+.answer{
+  border-bottom: 1px solid $light-gray;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  height:100%;
+}
+
+.hidden {
+  display:none;
+}
+
+.review-title4 {
+  border-bottom: 1px solid black;
+  width:100%;
+  padding: 10px;
+  margin-bottom:20px;
+  font-family: $headers-font;
+  color: black !important;
+  font-size: 22px;
+  text-align: center;
+}
+
+.fa-plus-circle:before {
+  color: $green;
+}
+
+.fa-minus-circle:before {
+  padding-top:40px;
+  color: $green;
+}
+
+.charts1 {
+  height:500px;
+}
