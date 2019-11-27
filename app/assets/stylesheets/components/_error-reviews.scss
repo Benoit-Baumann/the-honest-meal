@@ -1,0 +1,18 @@
+.error li {
+  display: flex;
+  align-items: center;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+.fa-exclamation-triangle {
+  color: red;
+}
+
+.error img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
