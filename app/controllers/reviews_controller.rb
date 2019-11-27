@@ -29,24 +29,32 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(token: params[:id])
     if @review.nil?
       render :invalid_review
+    elsif @review.updated_at > @review.created_at
+      render :invalid_review
     elsif (Time.now - @review.created_at.to_time)/1.day > 7
       render :expired_review, locals: { review: @review }
-    else
-      if @review.restaurant.owner.question_pools.empty?
-        @questions = nil
-      else
-        @questions = QuestionPool.find_by(user_id: @review.restaurant.owner.id).questions
-      end
     end
   end
 
   def update
     @review = Review.find_by(token: review_params[:token])
-    @review.update!(content_title: review_params[:content_title], content: review_params[:content], rating: review_params[:rating], username: current_user.username)
+    username = review_params[:username].nil? ? '' : review_params[:username]
+    if review_params[:username].nil?
+      @review.user = current_user
+    else
+      @review.username = review_params[:username]
+    end
+    if @review.update(content_title: review_params[:content_title], 
+                      content: review_params[:content], 
+                      rating: review_params[:rating])
+        redirect_to root_path
+    else
+      render :edit, locals: { review: @review }
+    end
 
-    p answer_params[:answers].last[:content]
+    # p answer_params[:answers].last[:content]
     answer_params[:answers].each do |answer|
-      Answer.new(content: answer[:content], question_id: answer[:question_id]).save!
+      Answer.new(content: answer[:content], question_id: answer[:question_id]).save
     end
   end
 
