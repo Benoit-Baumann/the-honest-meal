@@ -3,11 +3,20 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
+
+     p {
+      font-family: $body-font;
+      font-size: 16px;
+     }
       /* Email styles need to be inline */
     </style>
   </head>
 
   <body>
     <%= yield %>
+    <footer>
+      <hr>
+      <div style="display: -webkit-inline-box;"><img style="width: 40px;" src="https://i.ibb.co/wdDwKbC/The-Honest-Meal.png"><h4 style="margin-left: 10px;">The Honest Meal</h4></div>
+    </footer>
   </body>
 </html>

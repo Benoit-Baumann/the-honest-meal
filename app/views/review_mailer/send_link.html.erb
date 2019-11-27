@@ -1,11 +1,8 @@
 <p>Bonjour,</p>
 
-<p>Veuillez-trouver ci-dessous votre lien unique pour laisser un avis concernant le restaurant <%= @review.restaurant.name %>:
-</p>
+<div style="display: -webkit-inline-box;"><p>Veuillez-trouver ci-dessous votre lien unique pour laisser un avis concernant le restaurant <strong><p style="color: #9adba3; margin-left: 5px; size: 18px;"><%= @review.restaurant.name %>:</p></strong></div>
 
 <p>Lien : <%= link_to @review_link, @review_link %></p>
 
 
 <p>A bientôt !</p>
-
-<p>The Honest Meal</p>
