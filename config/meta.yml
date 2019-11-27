@@ -1,0 +1,5 @@
+meta_product_name: "The Honest Meal"
+meta_title: "The Honest Meal - Product tagline"
+meta_description: "Relevant description"
+meta_image: "theHonestMeal.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"
