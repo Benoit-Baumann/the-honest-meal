@@ -7,13 +7,13 @@
         <img src="https://images.sudouest.fr/2018/02/26/5a940e6b66a4bde56f80a0e1/widescreen/1000x500/le-wrap-a-ete-retire-au-drive-du-mcdo-de-la-sauve.jpg" />
         <div class="card-restaurant-infos">
             <div class="card-restaurant-infos-left">
-                <h2>name resto</h2>
-                <p class="restaurant-category">category</p>
+                <h2><%= restaurant.name %></h2>
+                <p class="restaurant-category"><%= restaurant.category %></p>
             </div>
             <div class="card-restaurant-infos-right">
-                <p class="restaurant-phone">Tél: 0677</p>
+                <p class="restaurant-phone"><%= restaurant.phone_number %></p>
                   <div class="restaurant-rating">
-                    <p>40 avis</p>
+                    <p><%= restaurant.reviews.count %> avis</p>
                   </div>
             </div>
         </div>
