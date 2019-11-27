@@ -10,7 +10,7 @@
 <p>Vous trouverez ci-dessous un lien vous permettant de laisser anonymement votre avis ainsi que des remarques destinées au restaurateur.</p>
 <br>
 <br>
-<p><strong><%= link_to "Laissez mon avis", @review_link %></strong></p>
+<p><strong><%= link_to "Laissez mon avis", edit_review_url(@review.token) %></strong></p>
 <br>
 <br>
 <p>A noter que ce lien est à usage unique et valable pour une durée de 7 jours. Passé ce délai, il sera trop tard :)</p>
