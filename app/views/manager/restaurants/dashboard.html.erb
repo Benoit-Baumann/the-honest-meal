@@ -1,40 +1,38 @@
 <div class="main-container">
    <h1 class="title-page">Mon Dashboard</h1>
-   <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
+   <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', updated_at)") %>
    <div class="dashbord-container">
       <% unless current_user.restaurants.first.nil? %>
       <div id="drag-1" class="draggable">
          <div class="charts-border">
             <div class="charts">
                <% @reviews = sorted_group_reviews.average(:rating).sort %>
-               <% if @reviews.any?{ |review| review.nil? } %>
-               <% @data = {
-                  labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
-                  datasets: [{
-                      label: 'note moyenne',
-                      # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
-                      data: [@reviews[0][1], @reviews[1][1], @reviews[2][1], @reviews[3][1], @reviews[4][1], @reviews[5][1], @reviews[6][1], @reviews[7][1], @reviews[8][1], @reviews[9][1], @reviews[10][1], @reviews[11][1]],
-                      backgroundColor: 'rgba(143, 214, 148, 0.4)',
-                      borderColor:'rgba(143, 214, 148, 0.4)',
-                      fill: false,
-                      borderWidth: 4
-                  }]
+               <%# Handle case when a month has 0 reviews %>
+               <% @reviews = (0..11).to_a.map{ |i| @reviews[i].nil? ? [0,0] : @reviews[i] } %>
+                  <% @data = {
+                     labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+                     datasets: [{
+                        label: 'note moyenne',
+                        # @reviews est une array, la ligne ci dessous récupère la note moyenne (index[1]) contenue pour chaque mois[0..11]
+                        data: [@reviews[0][1]||0, @reviews[1][1]||0, @reviews[2][1]||0, @reviews[3][1]||0, @reviews[4][1]||0, @reviews[5][1]||0, @reviews[6][1]||0, @reviews[7][1]||0, @reviews[8][1]||0, @reviews[9][1]||0, @reviews[10][1]||0, @reviews[11][1]||0],
+                        backgroundColor: 'rgba(143, 214, 148, 0.4)',
+                        borderColor:'rgba(143, 214, 148, 0.4)',
+                        fill: false,
+                        borderWidth: 4
+                     }]
+                     } %>
+                  <% @options = {
+                     responsive: true,
+                     maintainAspectRatio: false,
+                     scales: {
+                        # yAxes: [{
+                        #       ticks: {
+                        #       beginAtZero: true
+                        #       }
+                        # }]
+                     }
                   } %>
-               <% @options = {
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  scales: {
-                     # yAxes: [{
-                     #       ticks: {
-                     #       beginAtZero: true
-                     #       }
-                     # }]
-                  }
-               } %>
-               <%= line_chart @data, @options %>
-               <% else %>
-               <h3>Pas assez de data</h3>
-               <% end %>
+                  <%= line_chart @data, @options %>
             </div>
             <div class="draggable-content">
                <p>Note moyenne des reviews</p>
@@ -93,7 +91,7 @@
          <div class="charts-border">
             <div class="charts">
                <% @number = sorted_group_reviews.count.sort %>
-               <% if @reviews.any?{ |review| review.nil? } %>
+               <% @number = (0..11).to_a.map{ |i| @number[i].nil? ? [0,0] : @number[i] } %>
                <% @data = {
                   labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
                   datasets: [{
@@ -118,9 +116,6 @@
                   # }
                } %>
                <%= bar_chart @data, @options %>
-               <% else %>
-               <h3>Pas assez de data</h3>
-               <% end %>
             </div>
             <div class="draggable-content">
                <p>Nombre de reviews</p>
