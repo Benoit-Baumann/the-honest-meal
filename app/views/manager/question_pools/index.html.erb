@@ -39,13 +39,13 @@
 <% @options = {
     responsive: true,
     maintainAspectRatio: false,
-        scales: {
-          yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-          }]
-        }
+        # scales: {
+        #   yAxes: [{
+        #       ticks: {
+        #         beginAtZero: true
+        #       }
+        #   }]
+        # }
   } %>
 <%= pie_chart @data, @options %>
       </div>

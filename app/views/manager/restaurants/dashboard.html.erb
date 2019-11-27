@@ -23,14 +23,14 @@
                <% @options = {
                   responsive: true,
                   maintainAspectRatio: false,
-                      scales: {
-                        yAxes: [{
-                            ticks: {
-                              beginAtZero: true
-                            }
-                        }]
-                      }
-                  } %>
+                  scales: {
+                     # yAxes: [{
+                     #       ticks: {
+                     #       beginAtZero: true
+                     #       }
+                     # }]
+                  }
+               } %>
                <%= line_chart @data, @options %>
                <% else %>
                <h3>Pas assez de data</h3>
@@ -65,14 +65,14 @@
                <% @options = {
                   responsive: true,
                   maintainAspectRatio: false,
-                  scales: {
-                  yAxes: [{
-                     ticks: {
-                       beginAtZero: true
-                     }
-                  }]
-                  }
-                  } %>
+                  # scales: {
+                  #    yAxes: [{
+                  #       ticks: {
+                  #       beginAtZero: true
+                  #       }
+                  #    }]
+                  # }
+               } %>
                <%= pie_chart @data, @options %>
             </div>
             <div class="draggable-content">
@@ -109,14 +109,14 @@
                <% @options = {
                   responsive: true,
                   maintainAspectRatio: false,
-                      scales: {
-                        yAxes: [{
-                            ticks: {
-                              beginAtZero: true
-                            }
-                        }]
-                      }
-                  } %>
+                  # scales: {
+                  #    yAxes: [{
+                  #          ticks: {
+                  #          beginAtZero: true
+                  #          }
+                  #    }]
+                  # }
+               } %>
                <%= bar_chart @data, @options %>
                <% else %>
                <h3>Pas assez de data</h3>
