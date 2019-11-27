@@ -1,8 +1,14 @@
-<p>Bonjour,</p>
-
-<div style="display: -webkit-inline-box;"><p>Veuillez-trouver ci-dessous votre lien unique pour laisser un avis concernant le restaurant <strong><p style="color: #9adba3; margin-left: 5px; size: 18px;"><%= @review.restaurant.name %>:</p></strong></div>
-
-<p>Lien : <%= link_to @review_link, @review_link %></p>
-
-
+<p>Hello!</p>
+<br>
+<div style="display: -webkit-inline-box;"><p>J'espère que tu as passé un agréable moment à <strong><p style="color: #9adba3; margin-left: 5px; margin-bottom: 10px; size: 18px;"><%= @review.restaurant.name %> !</p></strong></div>
+<br>
+<p>On te remercie pour ta venue et afin de continuer de nous améliorer on t'invite à répondre à notre questionnaire.
+<p>Cela te prendra 2 minutes, c'est anonyme et aucune inscription est nécessaire!</p>
+<br>
+<p>Tu peux y accéder en cliquant sur le lien ci-dessous:</p>
+<br>
+<br>
+<p>Clique ici :<%= link_to @review_link, @review_link %></p>
+<br>
+<br>
 <p>A bientôt !</p>
