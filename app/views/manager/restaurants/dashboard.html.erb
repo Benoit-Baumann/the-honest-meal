@@ -7,6 +7,7 @@
          <div class="charts-border">
             <div class="charts">
                <% @reviews = sorted_group_reviews.average(:rating).sort %>
+               <% if @reviews.any?{ |review| review.nil? } %>
                <% @data = {
                   labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
                   datasets: [{
@@ -31,6 +32,9 @@
                       }
                   } %>
                <%= line_chart @data, @options %>
+               <% else %>
+               <h3>Pas assez de data</h3>
+               <% end %>
             </div>
             <div class="draggable-content">
                <p>Note moyenne des reviews</p>
@@ -89,6 +93,7 @@
          <div class="charts-border">
             <div class="charts">
                <% @number = sorted_group_reviews.count.sort %>
+               <% if @reviews.any?{ |review| review.nil? } %>
                <% @data = {
                   labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
                   datasets: [{
@@ -113,6 +118,9 @@
                       }
                   } %>
                <%= bar_chart @data, @options %>
+               <% else %>
+               <h3>Pas assez de data</h3>
+               <% end %>
             </div>
             <div class="draggable-content">
                <p>Nombre de reviews</p>
