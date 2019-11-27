@@ -44,11 +44,17 @@ const initSendReviewBtnListener = () => {
 
     if (sendReviewBtn){
         sendReviewBtn.addEventListener('click', () => {
-            let feedbackMsg = document.querySelector('.feedback-msg');
 
+            if (sendReviewBtn.parentNode.hasAttribute("open")){
+                sendReviewBtn.classList.remove('active');
+            } else {
+                sendReviewBtn.classList.add('active');
+            }
+
+            let feedbackMsg = document.querySelector('.feedback-msg');
             if (feedbackMsg){
-                msg.innerHTML = ""
-                msg.className = "feedback-msg";
+                feedbackMsg.innerHTML = "";
+                feedbackMsg.className = "feedback-msg";
             }
         })
     }
