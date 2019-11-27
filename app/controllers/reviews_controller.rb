@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :update]
 
   def index
     @reviews = current_user.reviews
@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   def create
     @email = params[:email]
     unless valid_email(@email)
-      render :invalid_email 
+      render :invalid_email
       return
 
     end
@@ -44,8 +44,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(token: review_params[:token])
     @review.update!(content_title: review_params[:content_title], content: review_params[:content], rating: review_params[:rating], username: current_user.username)
 
-    puts "je suis la"
-    p answer_params[:answers].first[:content]
+    p answer_params[:answers].last[:content]
     answer_params[:answers].each do |answer|
       Answer.new(content: answer[:content], question_id: answer[:question_id]).save!
     end

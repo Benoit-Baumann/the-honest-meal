@@ -8,41 +8,49 @@
   </div>
 </div>
 
-<div class="review">
+<div class="main-container">
+  <div class="review2">
 
-  <div class="review-title">
-    <h2>Laissez un avis concernant le restaurant <span class='italic-green-text'><%= @review.restaurant.name %></span></h2>
-  </div>
+    <div class="review-title2">
+      <h2>Laissez un avis concernant le restaurant <span class='italic-green-text'><%= @review.restaurant.name %></span></h2>
+    </div>
 
 
-  <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
-    <div class="input-boxes">
-      <%= f.input :token, as: :hidden, input_html: { value: @review.token } %>
-      <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "input-type" }, required: true unless user_signed_in? %>
-      <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "input-type" } %>
-      <%= f.input :content, label: 'Votre avis', :input_html => { class: "input-type" } %>
-      <%= f.input :rating, collection: (1..5).to_a, label: 'Votre note', :input_html => { class: "input-type" } %>
+    <%= simple_form_for [@review], html: { class: "form-review"} do |f| %>
+      <div class="input-boxes-review">
+        <div class="review-title2">
+          <h3>Commentaire</h3>
+        </div>
+        <%= f.input :token, as: :hidden, input_html: { value: @review.token } %>
+        <%= f.input :username, label: "Nom d'utilisateur", :input_html => { class: "input-type input-space" }, required: true unless user_signed_in? %>
+        <%= f.input :content_title, label: 'Titre de votre avis', :input_html => { class: "input-type input-space" } %>
+        <%= f.input :content, label: 'Votre avis', :input_html => { class: "input-type input-space" } %>
+        <%= f.input :rating, collection: (1..5).to_a, label: 'Votre note', :input_html => { class: "input-type input-space" } %>
 
-      <br>
-      <br>
-
-      <% @questions.each do |question| %>
-          <%= f.fields_for 'answers[]', Answer.new(question: question) do |a| %>
-            <% if question.cat == '0' %>
-              <%= a.input :question_id, as: :hidden %>
-              <%= a.input :content, label: question.name %>
-            <% else %>
-              <%= a.input :question_id, as: :hidden %>
-              <%= f.input :content, collection: (1..5).to_a, label: question.name, :input_html => { class: "input-type starquestion" } %>
+        <br>
+        <br>
+        <div class="review-title3">
+          <h3>Nous souhaiterions avoir votre retour sur certains points</h3>
+        </div>
+        <p class='disclaimer'>*Les questions ci-dessous sont uniquement destinées au restaurateur et ne seront pas rendues publiques</p>
+        <% @questions.each do |question| %>
+            <%= f.fields_for 'answers[]', Answer.new(question: question) do |a| %>
+              <% if question.cat == '0' %>
+                <%= a.input :question_id, as: :hidden %>
+                <%= a.input :content, label: question.name, :input_html => { class: "input-type input-space" } %>
+              <% else %>
+                <%= a.input :question_id, as: :hidden %>
+                <%= a.input :content, collection: (1..5).to_a, label: question.name, :input_html => { class: "input-type starquestion input-space" } %>
+              <% end %>
             <% end %>
-          <% end %>
-      <% end %>
+        <% end %>
 
+      <div class="form-actions submit">
+        <%= f.submit "Publier", class: "join-us-btn btn-padding" %>
+      </div>
 
-    </div>
-    <div class="form-actions submit">
-      <%= f.submit "Publier", class: "btn-ghost" %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
 
+  </div>
 </div>
