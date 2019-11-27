@@ -41,7 +41,7 @@
       <div id="drag-4" class="draggable">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Réponse dernier sondage</p>
+               <p>Note moyenne</p>
             </div>
             <div class="charts">
                <% @answer1 = @reviews.where(rating: 1).length %>
@@ -50,7 +50,7 @@
                <% @answer4 = @reviews.where(rating: 4).length %>
                <% @answer5 = @reviews.where(rating: 5).length %>
                <% @data = {
-                  labels: ['Mauvais', 'Moyen', 'Assez bien', 'Bien', 'Très bien'],
+                  labels: ['1', '2', '3', '4', '5'],
                   datasets: [{
                   label: 'note moyenne',
                   # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
@@ -88,7 +88,7 @@
       <div id="drag-5" class="draggable" style="margin: 0 auto; margin-bottom: 10px;">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Note moyenne des reviews</p>
+               <p>Note moyenne par mois</p>
             </div>
             <div class="charts">
                <% @reviews = sorted_group_reviews.average(:rating).sort %>
