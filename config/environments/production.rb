@@ -4,12 +4,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: ENV['SMTP_ADDRESS'], # example: 'smtp.sendgrid.net'
-    authentication: :plain,
-    domain: ENV['SMTP_DOMAIN'], # example: 'toto.herokuapp.com'
-    enable_starttls_auto: true,
+    domain: ENV['SMTP_DOMAIN'], # example: 'www.thehonestmeal.com'
     password: ENV['SENDGRID_PASSWORD'],
-    port: '587',
     user_name: ENV['SENDGRID_USERNAME']
+    enable_starttls_auto: true,
+    authentication: :plain,
+    port: '587',
   }
 
   # Code is not reloaded between requests.
