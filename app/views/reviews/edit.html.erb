@@ -29,20 +29,22 @@
 
         <br>
         <br>
-        <div class="review-title3">
-          <h3>Nous souhaiterions avoir votre retour sur certains points</h3>
-        </div>
-        <p class='disclaimer'>*Les questions ci-dessous sont uniquement destinées au restaurateur et ne seront pas rendues publiques</p>
-        <% @questions.each do |question| %>
-            <%= f.fields_for 'answers[]', Answer.new(question: question) do |a| %>
-              <% if question.cat == '0' %>
-                <%= a.input :question_id, as: :hidden %>
-                <%= a.input :content, label: question.name, :input_html => { class: "input-type input-space" } %>
-              <% else %>
-                <%= a.input :question_id, as: :hidden %>
-                <%= a.input :content, collection: (1..5).to_a, label: question.name, :input_html => { class: "input-type starquestion input-space" } %>
+        <% unless @review.restaurant.owner.question_pools.empty? %>
+          <div class="review-title3">
+            <h3>Nous souhaiterions avoir votre retour sur certains points</h3>
+          </div>
+          <p class='disclaimer'>*Les questions ci-dessous sont uniquement destinées au restaurateur et ne seront pas rendues publiques</p>
+          <% QuestionPool.find_by(user_id: @review.restaurant.owner.id).questions.each do |question| %>
+              <%= f.fields_for 'answers[]', Answer.new(question: question) do |a| %>
+                <% if question.cat == '0' %>
+                  <%= a.input :question_id, as: :hidden %>
+                  <%= a.input :content, label: question.name, :input_html => { class: "input-type input-space" } %>
+                <% else %>
+                  <%= a.input :question_id, as: :hidden %>
+                  <%= a.input :content, collection: (1..5).to_a, label: question.name, :input_html => { class: "input-type starquestion input-space" } %>
+                <% end %>
               <% end %>
-            <% end %>
+          <% end %>
         <% end %>
 
       <div class="form-actions submit">
