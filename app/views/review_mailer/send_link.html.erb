@@ -1,14 +1,19 @@
-<p>Hello!</p>
-<br>
-<div style="display: -webkit-inline-box;"><p>J'espère que tu as passé un agréable moment à <strong><p style="color: #9adba3; margin-left: 5px; margin-bottom: 10px; size: 18px;"><%= @review.restaurant.name %> !</p></strong></div>
-<br>
-<p>On te remercie pour ta venue et afin de continuer de nous améliorer on t'invite à répondre à notre questionnaire.
-<p>Cela te prendra 2 minutes, c'est anonyme et aucune inscription est nécessaire!</p>
-<br>
-<p>Tu peux y accéder en cliquant sur le lien ci-dessous:</p>
+<p>Hello,</p>
 <br>
 <br>
-<p>Clique ici :<%= link_to @review_link, @review_link %></p>
+<div style="display: -webkit-inline-box;">
+    <p>Vous recevez ce mail suite à votre visite au restaurant <strong><span style="color: #9adba3; margin-left: 5px; margin-bottom: 10px; size: 18px;">
+        <%= @review.restaurant.name %></span></strong>.</p>
+</div>
 <br>
 <br>
-<p>A bientôt !</p>
+<p>Vous trouverez ci-dessous un lien vous permettant de laisser anonymement votre avis ainsi que des remarques destinées au restaurateur.</p>
+<br>
+<br>
+<p><strong><%= link_to "Laissez mon avis", @review_link %></strong></p>
+<br>
+<br>
+<p>A noter que ce lien est à usage unique et valable pour une durée de 7 jours. Passé ce délai, il sera trop tard :)</p>
+<br>
+<p>A très bientôt !</p>
+<br>
