@@ -47,9 +47,12 @@ class ReviewsController < ApplicationController
     if @review.update(content_title: review_params[:content_title], 
                       content: review_params[:content], 
                       rating: review_params[:rating])
-        redirect_to root_path
+      render :validated_review
     else
       render :edit, locals: { review: @review }
+    end
+
+    def validated_review
     end
 
     # p answer_params[:answers].last[:content]
