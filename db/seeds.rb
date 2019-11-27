@@ -164,19 +164,31 @@ question_pool_ben.save!
 
 puts "Creating Questions for Ben"
 questions_ben1 = Question.new(
-  name: "Qu'avez-vous pensé du Risotto ?",
+  name: "Que pensez-vous de la nouvelle décoration du restaurant ?",
   cat: '0',
   question_pool: question_pool_ben
   )
 
 questions_ben2 = Question.new(
-  name: 'Les plats étaient-ils assez salés ?',
+  name: 'Comment avez-vous trouvé la propreté des lieux ?',
   cat: '0',
   question_pool: question_pool_ben
   )
 
 questions_ben3 = Question.new(
-  name: 'Quelle note donneriez-vous au service ?',
+  name: 'Avez-vous été satifsait du service lors de votre visite ?',
+  cat: '0',
+  question_pool: question_pool_ben
+  )
+
+  questions_ben4 = Question.new(
+  name: 'Avez-vous trouvé les quantités suffisantes ?',
+  cat: '0',
+  question_pool: question_pool_ben
+  )
+
+  questions_ben5 = Question.new(
+  name: 'Comment noteriez-vous le rapport qualité/prix ?',
   cat: '1',
   question_pool: question_pool_ben
   )
@@ -184,31 +196,42 @@ questions_ben3 = Question.new(
 questions_ben1.save!
 questions_ben2.save!
 questions_ben3.save!
+questions_ben4.save!
+questions_ben5.save!
 
 puts "Creating answers for Ben"
-5.times {
-    answer = Answer.new(
-              content: Faker::Restaurant.review,
-             question: questions_ben1
-            )
-    answer.save!
+rand(5..10).times {
+  answer = Answer.create!(
+            content: Faker::Restaurant.review,
+            question: questions_ben1
+          )
+}
+rand(5..10).times {
+  answer = Answer.create!(
+            content: Faker::Restaurant.review,
+            question: questions_ben2
+          )
+}
+rand(5..10).times {
+  answer = Answer.create!(
+            content: Faker::Restaurant.review,
+            question: questions_ben3
+          )
+}
+rand(5..10).times {
+  answer = Answer.create!(
+            content: Faker::Restaurant.review,
+            question: questions_ben4
+          )
 }
 
-5.times {
-    answer2 = Answer.new(
-              content: Faker::Restaurant.review,
-             question: questions_ben2
-            )
-    answer2.save!
-}
-
-10.times {
-    answer3 = Answer.new(
+rand(5..10).times {
+    answer3 = Answer.create!(
               content: rand(1..5).to_s,
-              question: questions_ben3
+              question: questions_ben5
             )
-    answer3.save!
 }
+
 
 puts "Creating random restaurants for John and Ben..."
 [john, ben].each do |owner|
