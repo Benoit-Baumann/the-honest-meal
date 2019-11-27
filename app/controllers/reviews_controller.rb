@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     if @review.nil?
       render :invalid_review
     elsif @review.updated_at > @review.created_at
-      render :invalid_review
+      render :burnt_review
     elsif (Time.now - @review.created_at.to_time)/1.day > 7
       render :expired_review, locals: { review: @review }
     end
