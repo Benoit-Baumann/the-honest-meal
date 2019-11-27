@@ -3,7 +3,7 @@
 <p>Veuillez-trouver ci-dessous votre lien unique pour laisser un avis concernant le restaurant <%= @review.restaurant.name %>:
 </p>
 
-<p>Lien : <%= @review_link %></p>
+<p>Lien : <%= link_to @review_link, @review_link %></p>
 
 
 <p>A bientôt !</p>

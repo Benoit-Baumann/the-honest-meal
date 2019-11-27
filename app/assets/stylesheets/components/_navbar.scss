@@ -46,7 +46,6 @@
   height: 50px;
 }
 
-
 .dropdown-menu {
   opacity: 0.9;
   border-radius: 6px;
@@ -60,14 +59,11 @@
 
 .dropdown-menu a:hover {
   color: $green !important;
-  transform:scale(1.02) !important;
-  border-radius: 8px;
 }
 
 .avatar {
   margin-left: 10px;
 }
-
 
 @keyframes disapear{
   99% {
@@ -103,11 +99,18 @@
   padding: 0 1rem;
 }
 
+.nav-item.dropdown {
+    cursor: pointer;
+}
+
+#navbarDropdown {
+  cursor: pointer;
+}
+
 li.nav-logo {
   display: flex;
   align-items: center;
 }
-
 
 // Responsive sur tablette
 @media all and (max-width: 768px) {
@@ -126,4 +129,3 @@ li.nav-logo {
     left: 0 !important;
   }
 }
-
