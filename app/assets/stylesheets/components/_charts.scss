@@ -4,8 +4,8 @@
 }
 
 #drag-1 .charts {
-  width: 400px;
-  height: 250px;
+  width: 490px;
+  height: 300px;
   background-color: white;
   color: black;
   touch-action: none;
@@ -13,11 +13,13 @@
   text-align: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 #drag-5 .charts {
-  width: 450px;
-  height: 250px;
+  width: 750px;
+  height: 350px;
   background-color: white;
   color: black;
   touch-action: none;
@@ -25,26 +27,28 @@
   text-align: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
-#drag-3 .charts{
-  width: 400px;
-  height: 150px;
-  color: black;
-  border-radius: 8px;
-  touch-action: none;
-  user-select: none;
-  text-align: center;
-}
+// #drag-3 .charts{
+//   width: 400px;
+//   height: 150px;
+//   color: black;
+//   border-radius: 8px;
+//   touch-action: none;
+//   user-select: none;
+//   text-align: center;
+// }
 
-#drag-3 .charts-border{
-  background-image: url('https://i.ibb.co/ZGqjZDm/review.jpg');
-  background-size: cover;
-}
+// #drag-3 .charts-border{
+//   background-image: url('https://i.ibb.co/ZGqjZDm/review.jpg');
+//   background-size: cover;
+// }
 
 #drag-4 .charts{
-  width: 400px;
-  height: 250px;
+  width: 490px;
+  height: 300px;
   color: black;
   border-radius: 8px;
   touch-action: none;
