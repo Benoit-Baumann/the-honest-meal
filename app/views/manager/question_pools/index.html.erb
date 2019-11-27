@@ -28,12 +28,10 @@
 >>>>>>> dbaf042... t
         <% end %>
       <% end %>
-      <!-- Question with Text -->
+      <!-- Question with Rating -->
       <% ratinganswer.each do |question| %>
         <div class="questionboxes1"><h2><%= question.name %></h2></div>
           <% @answerss = question.answers %>
-      <% end %>
-
     <div class="charts">
     <% @answer1 = @answerss.where(content: '1').length %>
     <% @answer2 = @answerss.where(content: '2').length %>
@@ -65,6 +63,8 @@
   } %>
 <%= pie_chart @data, @options %>
       </div>
+      <% end %>
+
 
     </div>
   </div>
