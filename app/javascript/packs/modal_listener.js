@@ -56,6 +56,11 @@ const initSendReviewBtnListener = () => {
                 feedbackMsg.innerHTML = "";
                 feedbackMsg.className = "feedback-msg";
             }
+
+            let emailInput = document.querySelector('#email');
+            if (emailInput){
+                emailInput.value = "";
+            }
         })
     }
 }

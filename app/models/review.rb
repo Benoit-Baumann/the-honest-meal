@@ -2,7 +2,7 @@ class Review < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :restaurant
 
-  before_save :generate_token
+  before_create :generate_token
 
   # validates :user, presence: true
   validates :username, presence: true, unless: :user_id?, on: :update #Username requis si user_id absent (user non connecté ou ne possédant pas de compte)
