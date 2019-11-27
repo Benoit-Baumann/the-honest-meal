@@ -16,8 +16,8 @@
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
         <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note (1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %>
+        <div class="check-card-1"><%= q_form.input :cat, label: 'Texte', :input_html => { class: "inputtype" }, as: :boolean %></div>
+        <div class="check-card-2"><%= q_form.input :cat, label: 'Note (1 à 5)', :input_html => { class: "inputtype" }, as: :boolean %></div>
         </div>
         <%= q_form.input :name, label:'Question:', :input_html => { class: "inputtype" } %>
         <% end %>
@@ -37,9 +37,9 @@
     <% @question = question %>
     <div class="questions"><p><%= question.name %></p></div>
     <% if question.cat == '0' %>
-    <div class="type-of-input"><p>Texte</p></div>
+    <div class="type-of-input-1"><p></p></div>
     <% else %>
-    <div class="type-of-input"><p>Note</p></div>
+    <div class="type-of-input-2"><p></p></div>
     <% end %>
 
 
