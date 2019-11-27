@@ -60,7 +60,7 @@
                 <% @answer4 = @answerss.where(content: '4').length %>
                 <% @answer5 = @answerss.where(content: '5').length %>
                  <% @data = {
-                    labels: ['Mauvais', 'Assez Mauvais', 'Pas mal', 'Bien', 'Très bien'],
+                    labels: ['1', '2', '3', '4', '5'],
                     datasets: [{
                         label: 'note moyenne',
                         # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
