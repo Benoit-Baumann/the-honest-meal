@@ -218,16 +218,29 @@
   width: 50%;
 }
 
-.type-of-input {
+.type-of-input-1 {
   // margin-left: 16px;
   // padding: 1px 5px;
   // border-radius: 4px;
   // color: black;
   // font-family: $body-font;
   // font-size: 8px;
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 30px;
   background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
+  background-size: cover;
+}
+
+.type-of-input-2 {
+  // margin-left: 16px;
+  // padding: 1px 5px;
+  // border-radius: 4px;
+  // color: black;
+  // font-family: $body-font;
+  // font-size: 8px;
+  height: 20px;
+  width: 30px;
+  background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
   background-size: cover;
 }
 
