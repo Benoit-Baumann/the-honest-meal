@@ -6,14 +6,14 @@ var added = `
   <fieldset class="form-group boolean optional question_pool_questions_cat">
     <div class="form-check">
       <input name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" type="hidden" value="0">
-      <input class="form-check-input boolean optional input-type" type="radio" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">
+      <input class="form-check-input boolean optional input-type" type="checkbox" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">
       <label class="form-check-label boolean optional form-review" for="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">Texte</label>
     </div>
   </fieldset>
   <fieldset class="form-group boolean optional question_pool_questions_cat">
   <div class="form-check">
     <input name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" type="hidden" value="0">
-    <input class="form-check-input boolean optional input-type" type="radio" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">
+    <input class="form-check-input boolean optional input-type" type="checkbox" value="1" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][cat]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">
     <label class="form-check-label boolean optional form-review" for="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_cat">Note (1 à 5)</label>
     </div>
   </fieldset>
@@ -24,5 +24,5 @@ var added = `
     <input class="form-control string optional input-type" type="text" name="question_pool[questions_attributes][${lastnode.name.match(re)[1]+1}][name]" id="question_pool_questions_attributes_${lastnode.name.match(re)[1]+1}_name">
   </div>
   `
-
+  
 document.querySelector(".newq").insertAdjacentHTML("beforebegin", added);
