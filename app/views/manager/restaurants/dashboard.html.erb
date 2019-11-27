@@ -1,12 +1,11 @@
 <div class="main-container">
-   <h1 class="title-page">Mon Dashboard</h1>
    <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', updated_at)") %>
    <div class="dashbord-container">
       <% unless current_user.restaurants.first.nil? %>
       <div id="drag-1" class="draggable">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Note moyenne des reviews</p>
+               <p>Nombre de reviews</p>
                <% @reviews = current_user.restaurants.first.reviews %>
             </div>
             <div class="charts">
@@ -89,7 +88,7 @@
       <div id="drag-5" class="draggable" style="margin: 0 auto; margin-bottom: 10px;">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Nombre de reviews</p>
+               <p>Note moyenne des reviews</p>
             </div>
             <div class="charts">
                <% @reviews = sorted_group_reviews.average(:rating).sort %>
