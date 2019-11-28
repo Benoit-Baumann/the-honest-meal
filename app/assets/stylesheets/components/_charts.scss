@@ -1,11 +1,12 @@
 .charts-border {
   border: 1px solid $light-blue;
   border-radius: 8px;
+  height: 100%;
 }
 
 .charts {
   position: relative;
-  // padding: 8px;
+  padding: 8px;
   // height: 100%;
   // width: 100% !important;
   // canvas {
@@ -116,6 +117,13 @@
 
 }
 
-
-
-
+#average-rating {
+  color: $dark;
+  font-size: 42px;
+  font-weight: bold;
+  position: relative;
+  top: -33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
