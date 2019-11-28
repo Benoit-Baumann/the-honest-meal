@@ -6,17 +6,17 @@
       <div class="input-boxes" style="margin-top: 40px;">
   <% if QuestionPool.where(user: current_user).first.nil? %>
         <div class="questionnaire-nom">
-        <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "input-type" } %>
+          <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "input-type" } %>
         </div>
   <% else %>
         <div class="questionnaire-nom">
-        <%= QuestionPool.where(user: current_user).first.nameq %>
+          <%= QuestionPool.where(user: current_user).first.nameq %>
         </div>
   <% end %>
         <p>Type de réponse souhaité:</p>
         <div class="check-input">
         <%= f.simple_fields_for :questions do |q_form| %>
-        <div class="check-card-1"><%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %></div>
+        <div class="check-card-1 selected"><%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %></div>
         <div class="check-card-2"><%= q_form.input :cat, label: 'Note (1 à 5)', :input_html => { class: "input-type" }, as: :boolean %></div>
         </div>
         <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
@@ -37,9 +37,9 @@
     <% @question = question %>
     <div class="questions"><p><%= question.name %></p></div>
     <% if question.cat == '0' %>
-    <div class="type-of-input-1"><p></p></div>
+      <div class="type-of-input-1"><p></p></div>
     <% else %>
-    <div class="type-of-input-2"><p></p></div>
+      <div class="type-of-input-2"><p></p></div>
     <% end %>
 
 
