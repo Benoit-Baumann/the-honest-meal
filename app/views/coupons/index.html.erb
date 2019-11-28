@@ -1,46 +1,62 @@
-<div class="main-container">
+<div class="med-main-container">
+  <div class="review-title">Coupons proches de l'expiration</div>
+      <div class="card-product1">
+        <%= image_tag "cafe.jpeg" %>
+          <div class="card-product-infos">
+            <h2>mackwolves@hotmail.com</h2>
+            <p>Expire dans <strong>1 jours</strong></p>
+          </div>
+          <div class="envoyercoupon">
+            <%= link_to "Envoyer un mail", coupons_path, class: "connected-btn2" %>
+          </div>
+      </div>
 
-  <h1>Mes coupons</h1>
+      <div class="card-product1">
+        <%= image_tag "cafe.jpeg" %>
+          <div class="card-product-infos">
+            <h2>benotaries@outlook.com</h2>
+            <p>Expire dans <strong>1 jours</strong></p>
+          </div>
+          <div class="envoyercoupon">
+            <%= link_to "Envoyer un mail", coupons_path, class: "connected-btn2" %>
+          </div>
+      </div>
 
-  <% @coupons.each do |coupon| %>
-      <%= coupon.restaurant.name %>
-      <%= coupon.details %>
-      <%= coupon.is_valid? %>
-  <% end %>
+      <div class="card-product1">
+        <%= image_tag "choco.jpg" %>
+          <div class="card-product-infos">
+            <h2>axelephant@outlook.com</h2>
+            <p>Expire dans <strong>3 jours</strong></p>
+          </div>
+          <div class="envoyercoupon">
+            <%= link_to "Envoyer un mail", coupons_path, class: "connected-btn2" %>
+          </div>
+      </div>
 
-<% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', created_at)") %>
+      <div class="review-title">Coupons expirés récemment</div>
+      <div class="card-product2">
+        <%= image_tag "choco.jpg" %>
+          <div class="card-product-infos">
+            <h2>julienlemo@hotmail.com</h2>
+            <p>Expiré il y a <strong>3 jours</strong></p>
+          </div>
+          <div class="envoyercoupon">
+            <%= link_to "Envoyer un mail", coupons_path, class: "connected-btn2" %>
+          </div>
+      </div>
 
-<!--   <div class="charts">
-  <canvas id="myRate" width="50" height="50"></canvas>
-  </div>> -->
-  <div class="charts">
-    <% @reviews = sorted_group_reviews.average(:rating).sort %>
-     <% @data = {
-        labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
-        datasets: [{
-            label: 'note moyenne',
-            # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
-            data: [@reviews[0][1], @reviews[1][1], @reviews[2][1], @reviews[3][1], @reviews[4][1], @reviews[5][1], @reviews[6][1], @reviews[7][1], @reviews[8][1], @reviews[9][1], @reviews[10][1], @reviews[11][1]],
-            backgroundColor: 'rgba(143, 214, 148, 0.4)',
-            borderColor:'rgba(143, 214, 148, 0.4)',
-            fill: false,
-            borderWidth: 4
-        }]
-    } %>
-<% @options = {
-    responsive: true,
-    maintainAspectRatio: false,
-        scales: {
-          yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-          }]
-        }
-  } %>
-<%= line_chart @data, @options %>
-  </div>
+      <div class="card-product2">
+        <%= image_tag "choco.jpg" %>
+          <div class="card-product-infos">
+            <h2>marinlotau@outlook.com</h2>
+            <p>Expiré il y a <strong>2 jours</strong></p>
+          </div>
+          <div class="envoyercoupon">
+            <%= link_to "Envoyer un mail", coupons_path, class: "connected-btn2" %>
+          </div>
+      </div>
 
+<<<<<<< HEAD
     <div class="charts">
     <% @number = sorted_group_reviews.count.sort %>
      <% @data = {
@@ -75,5 +91,7 @@
   } %>
 <%= bar_chart @data, @options %>
   </div>
+=======
+>>>>>>> 94b022a... t
 
 </div>
