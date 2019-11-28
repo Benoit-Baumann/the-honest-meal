@@ -57,12 +57,18 @@ import '../components/minusq';
 =======
 import { initTabListener, initMainSignupBtnListener, initSendReviewBtnListener } from './modal_listener';
 import { initStarRating, initStarRating2 } from '../plugins/init_star_rating';
+<<<<<<< HEAD
 import '../components/drag-drop';
 <<<<<<< HEAD
 >>>>>>> 4959219... Send review link modal now finished
 =======
 import '../components/showqs';
 >>>>>>> c947834... reponses au questionnaire
+=======
+// import '../components/drag-drop';
+import '../components/showqs';
+import { initQuestionTypeBtnListener } from "./question_type_btn_listener";
+>>>>>>> beeaf4e... Add style to question type btn on edit questions page
 
 initStarRating();
 <<<<<<< HEAD
