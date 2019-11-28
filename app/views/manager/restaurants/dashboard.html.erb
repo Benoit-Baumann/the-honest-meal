@@ -46,7 +46,7 @@
          <div class="charts-border">
             <div class="draggable-content">
                <p>Nombre de questionnaire envoyé</p>
-               <% @reviews = current_user.restaurants.first.reviews %>
+               <%= current_user.restaurants.first.reviews.count %>
             </div>
             <div class="charts">
               <%= image_tag"sondageenvoye.jpg" %>
