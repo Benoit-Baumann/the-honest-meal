@@ -67,6 +67,7 @@ import '../components/showqs';
 =======
 // import '../components/drag-drop';
 import '../components/showqs';
+import '../components/sendmail';
 import { initQuestionTypeBtnListener } from "./question_type_btn_listener";
 >>>>>>> beeaf4e... Add style to question type btn on edit questions page
 
