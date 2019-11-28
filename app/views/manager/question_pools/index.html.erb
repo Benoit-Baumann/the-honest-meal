@@ -16,6 +16,7 @@
 <% textanswer = QuestionPool.where(user: current_user).last.questions.where(cat: '0') %>
 <% ratinganswer = QuestionPool.where(user: current_user).last.questions.where(cat: '1') %>
 <div class="main-container">
+<<<<<<< HEAD
 
       <!-- Question with Text -->
       <% textanswer.each do |question| %>
@@ -32,12 +33,43 @@
           <i class="fas fa-plus-circle fa-2x chart-text"></i>
           <div class="hidden">
             <% question.answers.each do |answer| %>
-              <div class="answer">
-                <%= answer.content %>
-              </div>
-            <% end %>
-            <i class="fas fa-minus-circle fa-2x chart-text"></i>
+=======
+   <!-- Question with Text -->
+   <% textanswer.each do |question| %>
+   <div class="form-review1">
+      <h2 class='review-title4'><%= question.name %><%= image_tag "writting.jpg" %></h2>
+      <i class="fas fa-plus-circle fa-2x chart-text"></i>
+      <div class="hidden">
+         <% if question.answers.empty? %>
+          <div class="answer">
+              <p class="answer-italic"><%= "Aucune réponse disponible pour le moment..." %></p>
           </div>
+        <% else %>
+          <% question.answers.each do |answer| %>
+            <% unless answer.content.empty? %>
+>>>>>>> 3316537... Add css style
+              <div class="answer">
+                  <p class="text-left"><%= answer.content %></p>
+              </div>
+              <% end %>
+            <% end %>
+        <% end %>
+        <i class="fas fa-minus-circle fa-2x chart-text"></i>
+      </div>
+   </div>
+   <% end %>
+   <!-- Question with Rating -->
+   <% ratinganswer.each do |question| %>
+   <div class="form-review1">
+      <h2 class='review-title4'><%= question.name %><%= image_tag "stars.jpg" %></h2>
+      <i class="fas fa-plus-circle fa-2x chart-rating"></i>
+      <% @answerss = question.answers %>      
+      <div class="hidden">
+        <% if @answerss.empty? %>
+            <div class="answer">
+              <p class="answer-italic"><%= "Aucune réponse disponible pour le moment..." %></p>
+          </div>
+<<<<<<< HEAD
         </div>
 >>>>>>> c947834... reponses au questionnaire
       <% end %>
@@ -82,6 +114,37 @@
               </div>
               <i class="fas fa-minus-circle fa-2x chart-rating"></i>
             </div>
+=======
+        <% else %>
+          <div class="charts1">
+            <% @answer1 = @answerss.where(content: '1').length %>
+            <% @answer2 = @answerss.where(content: '2').length %>
+            <% @answer3 = @answerss.where(content: '3').length %>
+            <% @answer4 = @answerss.where(content: '4').length %>
+            <% @answer5 = @answerss.where(content: '5').length %>
+            <% @data = {
+                labels: ['1', '2', '3', '4', '5'],
+                datasets: [{
+                    label: 'note moyenne',
+                    # @reviews est une array, la ligne ci dessous recupere la note moyenne (index[1]) contenue pour chaque mois[0..11]
+                    data: [@answer1, @answer2, @answer3, @answer4, @answer5],
+                    backgroundColor: ['rgba(143, 214, 148, 0.4)','rgba(255, 255, 148, 0.4)', 'rgba(0, 0, 120, 0.4)', 'rgba(50, 25, 255, 0.4)', 'rgba(50, 255, 255, 0.4)'],
+                    borderColor:['rgba(143, 214, 148, 0.4)','rgba(255, 255, 148, 0.4)', 'rgba(0, 0, 120, 0.4)', 'rgba(50, 25, 255, 0.4)', 'rgba(50, 255, 255, 0.4)'],
+                    fill: false,
+                    borderWidth: 1
+                    }]
+                } %>
+            <% @options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                } %>
+            <%= pie_chart @data, @options %>
+>>>>>>> 3316537... Add css style
           </div>
-      <% end %>
+        <% end %>
+        <i class="fas fa-minus-circle fa-2x chart-rating"></i>
+      </div>
+   </div>
+   <% end %>
 </div>
+
