@@ -5,8 +5,7 @@
    <% textanswer.each do |question| %>
    <div class="form-review1">
       <h2 class='review-title4'><%= question.name %><%= image_tag "writting.jpg" %></h2>
-      <i class="fas fa-plus-circle fa-2x chart-text"></i>
-      <div class="hidden">
+      <div class="review-content-smooth height0">
          <% if question.answers.empty? %>
           <div class="answer">
               <p class="answer-italic"><%= "Aucune réponse disponible pour le moment..." %></p>
@@ -20,17 +19,17 @@
               <% end %>
             <% end %>
         <% end %>
-        <i class="fas fa-minus-circle fa-2x chart-text"></i>
       </div>
+      <i class="fas fa-minus-circle fa-2x chart-text hidden"></i>
+      <i class="fas fa-plus-circle fa-2x chart-text"></i>
    </div>
    <% end %>
    <!-- Question with Rating -->
    <% ratinganswer.each do |question| %>
    <div class="form-review1">
       <h2 class='review-title4'><%= question.name %><%= image_tag "stars.jpg" %></h2>
-      <i class="fas fa-plus-circle fa-2x chart-rating"></i>
-      <% @answerss = question.answers %>      
-      <div class="hidden">
+      <% @answerss = question.answers %>
+      <div class="review-content-smooth height0">
         <% if @answerss.empty? %>
             <div class="answer">
               <p class="answer-italic"><%= "Aucune réponse disponible pour le moment..." %></p>
@@ -61,8 +60,9 @@
             <%= pie_chart @data, @options %>
           </div>
         <% end %>
-        <i class="fas fa-minus-circle fa-2x chart-rating"></i>
       </div>
+      <i class="fas fa-minus-circle fa-2x chart-rating hidden"></i>
+      <i class="fas fa-plus-circle fa-2x chart-rating"></i>
    </div>
    <% end %>
 </div>
