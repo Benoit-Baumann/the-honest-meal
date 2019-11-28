@@ -278,6 +278,13 @@ end
     else
       review.username = Faker::Internet.username
     end
+      updated_date = rand(Date.civil(2019, 1, 1)..Date.civil(2019, 12, 31))
+    # Randomize if a review is answered by a customer (with true_ratio = 0.91)
+    if Faker::Boolean.boolean(true_ratio: 0.2)
+      created_date = updated_date - (rand(1..7))
+    else
+      create_date = updated_date
+    end
     review.save!
     # Randomize if a review is answered by a customer (with true_ratio = 0.91)
     review.created_at = rand(Date.civil(2019, 1, 1)..Date.civil(2019, 11, 29))
