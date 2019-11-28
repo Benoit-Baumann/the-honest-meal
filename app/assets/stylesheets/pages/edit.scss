@@ -313,23 +313,32 @@
   text-align: center;
 }
 
+.check-input input {
+  display: none;
+}
+
 .check-card-1 {
+  display: flex;
   height: 120px;
   width: 120px;
   background-image: image-url('writting.jpg');
   background-size: cover;
   border: 1px solid $green;
   border-radius: 4px;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   &:hover {
     cursor: pointer;  
   }
 
-  fieldset {
+  span {
+    width: 100%;
+    text-align: center;
+    align-content: flex-end;
     background-color: white;
     margin-top: 91px;
     border-radius: 0 0 4px 4px;
+    font-size: 16px !important;
   }
 
   &.selected {
@@ -337,36 +346,43 @@
     border-width: 2px;  
   }
 
-  &.selected fieldset {
+  &.selected span {
     background-color: $green;
+    border-radius: 0;
   }
 }
 
 .check-card-2 {
+  display: flex;
   height: 120px;
   width: 120px;
   background-image: image-url('stars.jpg');
   background-size: cover;
-  border: 1px solid lightgrey;
+  border: 1px solid $green;
   border-radius: 4px;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   &:hover {
     cursor: pointer;  
   }
 
-  fieldset {
+  span {
+    width: 100%;
+    text-align: center;
+    align-content: flex-end;
     background-color: white;
     margin-top: 91px;
     border-radius: 0 0 4px 4px;
+    font-size: 16px !important;
   }
 
   &.selected {
-    transform: scale(1.1);
     border-width: 2px;  
+    transform: scale(1.1);
   }
 
-  &.selected fieldset {
+  &.selected span {
     background-color: $green;
+    border-radius: 0;
   }
 }
