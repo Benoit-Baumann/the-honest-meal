@@ -94,6 +94,10 @@
   padding: 20px 30px;
   background-color: $white;
   margin: 0 auto;
+
+  p {
+    margin-bottom: 32px;
+  }
 }
 
 .disclaimer {
@@ -267,7 +271,6 @@
   height: 20px;
   width: 30px;
   background-image: image-url('writting.jpg');
-  // background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
   background-size: cover;
 }
 
@@ -275,7 +278,6 @@
   height: 20px;
   width: 30px;
   background-image: image-url('stars.jpg');
-  // background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
   background-size: cover;
 }
 
@@ -289,48 +291,44 @@
   }
 }
 
-#titre-crer-formulaire {
+.title-question {
   font-family: $headers-font;
   font-size: 32px;
-  color: black;
+  color: $gray;
   border-bottom: 1px solid black !important;
   width:400px;
   padding: 10px;
   margin-bottom: 20px;
   margin: 0 auto;
   text-align: center;
-}
-
-#mes-question-en-cours {
-  font-family: $headers-font;
-  font-size: 32px;
-  color: black;
-  border-bottom: 1px solid black !important;
-  width:400px;
-  padding: 10px;
-  margin-bottom: 20px;
-  margin: 0 auto;
-  text-align: center;
+  margin-bottom: 40px;
 }
 
 .check-input input {
   display: none;
 }
 
-.check-card-1 {
+.check-card {
   display: flex;
   height: 120px;
   width: 120px;
-  background-image: image-url('writting.jpg');
   background-size: cover;
   border: 1px solid $green;
   border-radius: 4px;
   transition: 0.3s ease-in-out;
 
+  &.stars {
+    background-image: image-url('stars.jpg');
+  }
+  
+  &.writting {
+    background-image: image-url('writting.jpg');
+  }
+
   &:hover {
     cursor: pointer;  
   }
-
+  
   span {
     width: 100%;
     text-align: center;
@@ -340,47 +338,12 @@
     border-radius: 0 0 4px 4px;
     font-size: 16px !important;
   }
-
+  
   &.selected {
     transform: scale(1.1);
     border-width: 2px;  
   }
-
-  &.selected span {
-    background-color: $green;
-    border-radius: 0;
-  }
-}
-
-.check-card-2 {
-  display: flex;
-  height: 120px;
-  width: 120px;
-  background-image: image-url('stars.jpg');
-  background-size: cover;
-  border: 1px solid $green;
-  border-radius: 4px;
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    cursor: pointer;  
-  }
-
-  span {
-    width: 100%;
-    text-align: center;
-    align-content: flex-end;
-    background-color: white;
-    margin-top: 91px;
-    border-radius: 0 0 4px 4px;
-    font-size: 16px !important;
-  }
-
-  &.selected {
-    border-width: 2px;  
-    transform: scale(1.1);
-  }
-
+  
   &.selected span {
     background-color: $green;
     border-radius: 0;

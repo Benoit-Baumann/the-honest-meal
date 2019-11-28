@@ -7,11 +7,11 @@
   margin: 0 auto;
   margin-bottom:50px;
   text-align: center;
-}
 
-.form-review1 img {
-  width: 30px;
-  height: 30px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .answer{
@@ -19,8 +19,11 @@
   margin-top: 20px;
   padding-bottom: 20px;
   height:100%;
-  font-family: $body-font;
-  font-size: 12px;
+  padding-left: 24px;
+}
+
+.answer-italic {
+  font-style: italic;
 }
 
 .hidden {
@@ -34,7 +37,7 @@
   margin-bottom:20px;
   font-family: $headers-font;
   color: black !important;
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
 }
 

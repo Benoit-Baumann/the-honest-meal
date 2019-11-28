@@ -1,9 +1,9 @@
 <div class="main-container">
    <div class="review">
       <div class="mon-questionnaire">
-         <h1 id="titre-crer-formulaire">Ajouter nouvelle question</h1>
+         <h2 class="title-question">Ajouter nouvelle question</h2>
          <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
-         <div class="input-boxes" style="margin-top: 40px;">
+         <div class="input-boxes">
             <% if QuestionPool.where(user: current_user).first.nil? %>
             <div class="questionnaire-nom">
                <%= f.input :nameq, label:'Nom du Questionnaire:', :input_html => { class: "input-type" } %>
@@ -16,11 +16,11 @@
             <p>Type de réponse souhaité :</p>
             <%= f.simple_fields_for :questions, remote: true do |q_form| %>
                <div class="check-input">
-                  <label id="check-card-text" class="check-card-1">
+                  <label id="check-card-text" class="check-card writting">
                      <input type="radio" name="question_pool[questions_attributes][0][cat]" value="0">
                      <span>Texte</span>
                   </label>
-                  <label id="check-card-rating" class="check-card-2">
+                  <label id="check-card-rating" class="check-card stars">
                      <input type="radio" name="question_pool[questions_attributes][0][cat]" value="1">
                      <span>Note de 1 à 5</span>
                   </label>
@@ -34,7 +34,7 @@
          <% end %>
       </div>
       <div class="mes-questions">
-         <h1 id="mes-question-en-cours" style="margin-bottom: 40px;">Vos questions en cours</h1>
+         <h2 class="title-question">Vos questions en cours</h2>
          <% if QuestionPool.where(user: current_user).empty? %>
          <% else %>
          <% QuestionPool.where(user: current_user).last.questions.each do |question| %>

@@ -11,10 +11,10 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav">
      <% if user_signed_in? %>
-         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard'}" %>
-         <%= link_to "Mon Questionnaire", new_manager_question_pool_path, class: "connected-btn #{'active' if params[:action] == 'new'}" %>
-         <%= link_to "Résultats Questionnaire", manager_question_pools_path, class: "connected-btn #{'active' if params[:action] == 'index'}" %>
-         <%= link_to "Coupons", coupons_path, class: "connected-btn" %>
+         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard' and params[:controller] == 'manager/restaurants'}" %>
+         <%= link_to "Mon Questionnaire", new_manager_question_pool_path, class: "connected-btn #{'active' if params[:action] == 'new' and params[:controller] == 'manager/question_pools'}" %>
+         <%= link_to "Résultats Questionnaire", manager_question_pools_path, class: "connected-btn #{'active' if params[:action] == 'index' and params[:controller] == 'manager/question_pools'}" %>
+         <%= link_to "Coupons", coupons_path, class: "connected-btn #{'active' if params[:action] == 'index' and params[:controller] == 'coupons'}" %>
           <details id="share-review-details-form">
             <summary id="share-review-summary" class="connected-btn">Envoyer Questionnaire</summary>
             <%= render partial: 'reviews/share_review_form' %>
