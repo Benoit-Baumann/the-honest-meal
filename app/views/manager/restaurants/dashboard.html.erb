@@ -33,6 +33,7 @@
                } %>
                <%= doughnut_chart @data, @options %>
             </div>
+            <h2><%= current_user.restaurants.first.reviews.average(:rating).round(1) %></h2>
          </div>
       </div>
       <div id="drag-2" class="draggable">
@@ -44,23 +45,6 @@
                <div class="surveys-sent">
                   <% @reviews_sent = current_user.restaurants.first.reviews.count %>
                   <h2><%= @reviews_sent %></h2>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div id="drag-6" class="draggable">
-         <div class="charts-border">
-            <div class="draggable-content">
-               <p>Note moyenne du questionnaire</p>
-            </div>
-            <div class="charts">
-               <div class="surveys-sent">
-                <% @rev = 0 %>
-                  <% current_user.restaurants.first.reviews.each do |review| %>
-                  <% @rev += review.rating.nil? ? 0 : review.rating %>
-                  <% end %>
-                  <h2><%= (@rev/current_user.restaurants.first.reviews.length).round %></h2>
                </div>
             </div>
          </div>

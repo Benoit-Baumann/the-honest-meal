@@ -53,19 +53,11 @@ def create_new_restaurant
 end
 
 def create_new_review
-  # updated_date = rand(Date.civil(2019, 1, 1)..Date.civil(2019, 12, 31))
-  # # Randomize if a review is answered by a customer (with true_ratio = 0.91)
-  # if Faker::Boolean.boolean(true_ratio: 0.2)
-  #   created_date = updated_date - (rand(1..7))
-  # else
-  #   create_date = updated_date
-  # end
+  @rating = rand < 0.7 ? rand(4..5) : rand(1..5)
   Review.new(
     content: Faker::Restaurant.review,
-    rating: rand(1..5),
+    rating: @rating,
     content_title: 'Titre du contenu',
-    # updated_at: updated_date,
-    # created_at: created_date
   )
 end
 
@@ -112,53 +104,53 @@ question_pool_john = QuestionPool.new(
   )
 question_pool_john.save!
 
-puts "Creating Questions for John"
-questions_john1 = Question.new(
-  name: 'Comment avez-vous trouvé le tiramisu ?',
-  cat: '0',
-  question_pool: question_pool_john
-  )
+# puts "Creating Questions for John"
+# questions_john1 = Question.new(
+#   name: 'Comment avez-vous trouvé le tiramisu ?',
+#   cat: '0',
+#   question_pool: question_pool_john
+#   )
 
-questions_john2 = Question.new(
-  name: "Qu'avez-vous pensé du service ?",
-  cat: '0',
-  question_pool: question_pool_john
-  )
+# questions_john2 = Question.new(
+#   name: "Qu'avez-vous pensé du service ?",
+#   cat: '0',
+#   question_pool: question_pool_john
+#   )
 
-questions_john3 = Question.new(
-  name: 'Quelle note donneriez-vous à la propreté ?',
-  cat: '1',
-  question_pool: question_pool_john
-  )
+# questions_john3 = Question.new(
+#   name: 'Quelle note donneriez-vous à la propreté ?',
+#   cat: '1',
+#   question_pool: question_pool_john
+#   )
 
-questions_john1.save!
-questions_john2.save!
-questions_john3.save!
+# questions_john1.save!
+# questions_john2.save!
+# questions_john3.save!
 
-puts "Creating answers for John"
-5.times {
-    answer = Answer.new(
-              content: Faker::Restaurant.review,
-             question: questions_john1
-            )
-    answer.save!
-}
+# puts "Creating answers for John"
+# 5.times {
+#     answer = Answer.new(
+#               content: Faker::Restaurant.review,
+#              question: questions_john1
+#             )
+#     answer.save!
+# }
 
-5.times {
-    answer2 = Answer.new(
-              content: Faker::Restaurant.review,
-             question: questions_john2
-            )
-    answer2.save!
-}
+# 5.times {
+#     answer2 = Answer.new(
+#               content: Faker::Restaurant.review,
+#              question: questions_john2
+#             )
+#     answer2.save!
+# }
 
-10.times {
-    answer3 = Answer.new(
-              content: rand(1..5).to_s,
-              question: questions_john3
-            )
-    answer3.save!
-}
+# 10.times {
+#     answer3 = Answer.new(
+#               content: rand(1..5).to_s,
+#               question: questions_john3
+#             )
+#     answer3.save!
+# }
 
 puts "Creating Question Pool for Ben"
 question_pool_ben = QuestionPool.new(
@@ -239,7 +231,7 @@ rand(5..10).times {
 
 
 puts "Creating random restaurants for John and Ben..."
-[john, ben].each do |owner|
+[ben].each do |owner|
   resto = create_new_restaurant
   resto.owner = owner
   resto.save!
