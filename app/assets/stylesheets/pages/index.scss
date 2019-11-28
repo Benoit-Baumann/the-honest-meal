@@ -1,13 +1,17 @@
 .form-review1 {
-  width: 78%;
+  width: 65%;
   border: 1px solid $light-blue;
   border-radius: 8px;
-  padding: 20px 30px;
+  padding: 10px 10px;
   background-color: $white;
   margin: 0 auto;
-  padding-bottom: 40px;
   margin-bottom:50px;
   text-align: center;
+}
+
+.form-review1 img {
+  width: 30px;
+  height: 30px;
 }
 
 .answer{
@@ -15,6 +19,8 @@
   margin-top: 20px;
   padding-bottom: 20px;
   height:100%;
+  font-family: $body-font;
+  font-size: 12px;
 }
 
 .hidden {
@@ -28,7 +34,7 @@
   margin-bottom:20px;
   font-family: $headers-font;
   color: black !important;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
 }
 
