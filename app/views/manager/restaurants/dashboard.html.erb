@@ -45,11 +45,13 @@
       <div id="drag-2" class="draggable">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Nombre de questionnaire envoyé</p>
-               <%= current_user.restaurants.first.reviews.count %>
+               <p>Nombre de questionnaires envoyé</p>
             </div>
             <div class="charts">
-              <%= image_tag"sondageenvoye.jpg" %>
+               <div class="surveys-sent">
+                  <% @reviews_sent = current_user.restaurants.first.reviews.count %>
+                  <h2><%= @reviews_sent %></h2>
+               </div>
             </div>
          </div>
       </div>
@@ -59,7 +61,12 @@
                <p>Taux de réponse</p>
             </div>
             <div class="charts">
-              <%= image_tag "tauxrep.jpg" %>
+              <%#= image_tag "tauxrep.jpg" %>
+               <div class="surveys-sent">
+                  <%= @response_rate = (current_user.restaurants.first.reviews.where('created_at <> updated_at').count) %>
+                  <% @response_rate = (current_user.restaurants.first.reviews.where('created_at != updated_at').count - @reviews_sent) * 100 %>
+                  <h2><%= @response_rate.round(1) %>%</h2>
+               </div>
             </div>
          </div>
       </div>

@@ -5,6 +5,7 @@
 
 .charts {
   position: relative;
+  // padding: 8px;
   // height: 100%;
   // width: 100% !important;
   // canvas {
@@ -33,20 +34,20 @@
   color: $dark;
   touch-action: none;
   user-select: none;
-  text-align: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+
   .charts {
     height: 250px;
     background-size: contain;
     // background-size: contain;
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
-  align-self: center;
-  justify-self: center;
+    align-self: center;
+    justify-self: center;
   }
 }
 
@@ -58,13 +59,36 @@ background-repeat: no-repeat;
   touch-action: none;
   user-select: none;
   text-align: center;
-    .charts {
+
+  .charts {
     height: 250px;
     // background-image: url('https://i.ibb.co/VxpMcQ1/tauxrep.jpg');
     background-size: contain;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
+  }
 }
+
+.surveys-sent {
+  display: flex;
+  background-image: image-url('surveys_sent_blank');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 8px;
+  
+  h2 {
+    // text-align: center;
+    // align-items: center;
+    font-weight: bold;
+    color: $dark;
+    font-size: 70px;
+    margin: auto auto;
+    // justify-content: center;
+    // align-items: center;
+    // position: 50% 50%;
+  }
 }
 
 #drag-4 {
