@@ -2,15 +2,11 @@
 <% ratinganswer = QuestionPool.where(user: current_user).last.questions.where(cat: '1') %>
 <div class="main-container">
 
-  <div class="reviewtitle1">
-  <h2>Réponses au sondage</h2>
-  </div>
-
       <!-- Question with Text -->
       <% textanswer.each do |question| %>
 
         <div class="form-review1">
-          <div class='review-title4'><%= question.name %></div>
+          <div class='review-title4'><%= question.name %><img src="https://i.ibb.co/MhcKVzQ/writting.jpg"></div>
           <i class="fas fa-plus-circle fa-2x chart-text"></i>
           <div class="hidden">
             <% question.answers.each do |answer| %>
@@ -26,7 +22,7 @@
       <!-- Question with Rating -->
       <% ratinganswer.each do |question| %>
         <div class="form-review1">
-          <div class='review-title4'><%= question.name %></div>
+          <div class='review-title4'><%= question.name %><img src="https://i.ibb.co/Tb3pmnP/starsmini.jpg"></div>
           <i class="fas fa-plus-circle fa-2x chart-rating"></i>
           <% @answerss = question.answers %>
             <div class="hidden">
