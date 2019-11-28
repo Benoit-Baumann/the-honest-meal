@@ -5,10 +5,10 @@
 
  header h2 {
   font-family: $body-font;
-  color: black;
+  color: $dark;
   margin-bottom: 24px;
   text-align: center;
-  color: black;
+  color: $dark;
   font-size: 17px;
   font-weight: normal;
   line-height: 0px;
@@ -17,7 +17,7 @@
 
  .profile-bio h4 {
   font-family: $body-font;
-  color: black;
+  color: $dark;
   text-align: center;
  }
 
@@ -63,7 +63,7 @@ header {
 header h1 {
   position: relative;
   text-align: center;
-  color: black;
+  color: $dark;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
   font-size: 25px;
   line-height: 25px;
