@@ -203,6 +203,7 @@
 .check-input {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 24px;
 }
 
 .questionnaire-nom {
@@ -210,7 +211,7 @@
   padding: 10px;
   border-radius: 8px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .questionnaire-nom input {
@@ -234,12 +235,10 @@
 
 .mes-questions {
   width: 50%;
-
 }
 
 .mes-questions p {
   margin: auto 0 !important;
-
 }
 
 .une-question {
@@ -262,18 +261,11 @@
   display: flex;
 }
 
-
 .mon-questionnaire {
   width: 50%;
 }
 
 .type-of-input-1 {
-  // margin-left: 16px;
-  // padding: 1px 5px;
-  // border-radius: 4px;
-  // color: black;
-  // font-family: $body-font;
-  // font-size: 8px;
   height: 20px;
   width: 30px;
   background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
@@ -281,12 +273,6 @@
 }
 
 .type-of-input-2 {
-  // margin-left: 16px;
-  // padding: 1px 5px;
-  // border-radius: 4px;
-  // color: black;
-  // font-family: $body-font;
-  // font-size: 8px;
   height: 20px;
   width: 30px;
   background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
@@ -297,10 +283,10 @@
   margin-right: 5px;
   margin-left: 10px;
   text-align: center;
-}
 
-.delete-bin a {
-  color: $brown;
+  a {
+    color: $green;
+  }
 }
 
 #titre-crer-formulaire {
@@ -327,20 +313,33 @@
   text-align: center;
 }
 
-
 .check-card-1 {
   height: 120px;
   width: 120px;
   background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
   background-size: cover;
-  border: 1px solid $brown;
+  border: 1px solid $green;
   border-radius: 4px;
-}
+  transition: 0.4s ease-in-out;
 
-.check-card-1 fieldset {
-  background-color: white;
-  margin-top: 91px;
-  border-radius:4px;
+  &:hover {
+    cursor: pointer;  
+  }
+
+  fieldset {
+    background-color: white;
+    margin-top: 91px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &.selected {
+    transform: scale(1.1);
+    border-width: 2px;  
+  }
+
+  &.selected fieldset {
+    background-color: $green;
+  }
 }
 
 .check-card-2 {
@@ -348,12 +347,26 @@
   width: 120px;
   background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
   background-size: cover;
-  border: 1px solid $brown;
+  border: 1px solid lightgrey;
   border-radius: 4px;
-}
+  transition: 0.4s ease-in-out;
 
-.check-card-2 fieldset {
-  background-color: white;
-  margin-top: 91px;
-  border-radius:4px;
+  &:hover {
+    cursor: pointer;  
+  }
+
+  fieldset {
+    background-color: white;
+    margin-top: 91px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &.selected {
+    transform: scale(1.1);
+    border-width: 2px;  
+  }
+
+  &.selected fieldset {
+    background-color: $green;
+  }
 }
