@@ -1,8 +1,8 @@
-.dashbord-container {
+.dashboard-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   // grid-template-rows: 300px 300px 300px;
-  grid-gap: 20px;
+  grid-gap: 40px;
   border: 2px solid $light-blue;
   border-radius: 4px;
   max-width: 100%;
