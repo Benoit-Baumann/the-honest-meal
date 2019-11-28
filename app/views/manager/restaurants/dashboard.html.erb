@@ -1,6 +1,6 @@
 <div class="main-container">
    <% sorted_group_reviews = Review.all.group("DATE_TRUNC('month', updated_at)") %>
-   <div class="dashbord-container">
+   <div class="dashboard-container">
       <% unless current_user.restaurants.first.nil? %>
       <div id="drag-1" class="draggable">
          <div class="charts-border">
@@ -33,7 +33,7 @@
                } %>
                <%= doughnut_chart @data, @options %>
             </div>
-            <h2><%= current_user.restaurants.first.reviews.average(:rating).round(1) %></h2>
+            <h2 id="average-rating"><%= current_user.restaurants.first.reviews.average(:rating).round(1) %></h2>
          </div>
       </div>
       <div id="drag-2" class="draggable">
