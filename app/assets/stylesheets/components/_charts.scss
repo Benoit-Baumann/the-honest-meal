@@ -3,9 +3,18 @@
   border-radius: 8px;
 }
 
-#drag-1 .charts {
-  width: 490px;
-  height: 300px;
+.charts {
+  position: relative;
+  height: 100%;
+  width: 100% !important;
+  canvas {
+    width: 100% !important;
+  }
+}
+
+#drag-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
   background-color: white;
   color: black;
   touch-action: none;
@@ -17,9 +26,9 @@
   border-bottom-left-radius: 8px;
 }
 
-#drag-5 .charts {
-  width: 750px;
-  height: 350px;
+#drag-2 {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 1;
   background-color: white;
   color: black;
   touch-action: none;
@@ -29,31 +38,58 @@
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+  .charts {
+    height: 250px;
+    background-image: url('https://i.ibb.co/d5yL66z/sondageenvoye.jpg');
+    background-size: cover;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
 }
 
-// #drag-3 .charts{
-//   width: 400px;
-//   height: 150px;
-//   color: black;
-//   border-radius: 8px;
-//   touch-action: none;
-//   user-select: none;
-//   text-align: center;
-// }
+#drag-3 {
+  grid-column: 5 / span 2;
+  grid-row: 1 / span 1;
+  color: black;
+  border-radius: 8px;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+    .charts {
+    height: 250px;
+    background-image: url('https://i.ibb.co/VxpMcQ1/tauxrep.jpg');
+    background-size: cover;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+}
 
-// #drag-3 .charts-border{
-//   background-image: url('https://i.ibb.co/ZGqjZDm/review.jpg');
-//   background-size: cover;
-// }
-
-#drag-4 .charts{
-  width: 490px;
-  height: 300px;
+#drag-4 {
+  grid-column: 2 / span 4;
+  grid-row: 2 / span 1;
   color: black;
   border-radius: 8px;
   touch-action: none;
   user-select: none;
   text-align: center;
 }
+
+#drag-5 {
+  grid-column: 2 / span 4;
+  grid-row: 3 / span 1;
+  background-color: white;
+  color: black;
+  touch-action: none;
+  user-select: none;
+  text-align: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+
+
+
 
 
