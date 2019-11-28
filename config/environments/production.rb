@@ -6,7 +6,7 @@ Rails.application.configure do
     address: ENV['SMTP_ADDRESS'], # example: 'smtp.sendgrid.net'
     domain: ENV['SMTP_DOMAIN'], # example: 'www.thehonestmeal.com'
     password: ENV['SENDGRID_PASSWORD'],
-    user_name: ENV['SENDGRID_USERNAME']
+    user_name: ENV['SENDGRID_USERNAME'],
     enable_starttls_auto: true,
     authentication: :plain,
     port: '587',
