@@ -1,7 +1,7 @@
 <div class="main-container">
    <div class="review">
       <div class="mon-questionnaire">
-         <h1 id="titre-crer-formulaire">Ajoutez vos questions</h1>
+         <h1 id="titre-crer-formulaire">Ajouter nouvelle question</h1>
          <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
          <div class="input-boxes" style="margin-top: 40px;">
             <% if QuestionPool.where(user: current_user).first.nil? %>
@@ -25,7 +25,7 @@
                      <span>Note de 1 à 5</span>
                   </label>
                </div>
-               <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
+               <%= q_form.input :name, label:'Question :', :input_html => { class: "input-type" } %>
             <% end %>
          </div>
          <div class="publier-div">
