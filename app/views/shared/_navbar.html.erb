@@ -14,6 +14,7 @@
          <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard'}" %>
          <%= link_to "Mon Questionnaire", new_manager_question_pool_path, class: "connected-btn #{'active' if params[:action] == 'new'}" %>
          <%= link_to "Résultats Questionnaire", manager_question_pools_path, class: "connected-btn #{'active' if params[:action] == 'index'}" %>
+         <%= link_to "Coupons", coupons_path, class: "connected-btn" %>
           <details id="share-review-details-form">
             <summary id="share-review-summary" class="connected-btn">Envoyer Questionnaire</summary>
             <%= render partial: 'reviews/share_review_form' %>
