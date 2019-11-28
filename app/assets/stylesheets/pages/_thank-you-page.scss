@@ -1,0 +1,22 @@
+.Checked-Green {
+  text-align: center;
+  color: $green;
+  font-size: 105px;
+}
+
+.title-page-thank-you {
+  font-family: $headers-font;
+  font-size: 50px !important;
+  color: $dark;
+  border-bottom: 1px solid black !important;
+  width:40%;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.main-page-thank-you {
+  font-family: $body-font;
+  font-size: 16px;
+  color: $dark;
+  text-align: center;
+}
