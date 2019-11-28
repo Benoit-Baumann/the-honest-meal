@@ -41,12 +41,17 @@ class ReviewsController < ApplicationController
     username = review_params[:username].nil? ? '' : review_params[:username]
     if review_params[:username].nil?
       @review.user = current_user
+      @username = current_user.username
     else
       @review.username = review_params[:username]
+      @username = review_params[:username]
     end
-    if @review.update(content_title: review_params[:content_title], 
-                      content: review_params[:content], 
+    if @review.update(content_title: review_params[:content_title],
+                      content: review_params[:content],
                       rating: review_params[:rating])
+      @coupon = Coupon.new(restaurant: @review.restaurant,
+        details: ['Un café gratuit au choix', 'Un dessert maison gratuit', "Une boisson fraîche gratuite"].sample,
+        username: @username).save!
       render :validated_review
     else
       render :edit, locals: { review: @review }
