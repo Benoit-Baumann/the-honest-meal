@@ -42,7 +42,7 @@ details .details-container {
 .tab-header-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: $brown;
+    background-color: rgba(154, 219, 163, 0.6);
 }
 
 .tab-header h2 {
