@@ -7,11 +7,6 @@
   margin: 0 auto;
   margin-bottom:50px;
   text-align: center;
-
-  img {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 .answer{
@@ -28,6 +23,21 @@
 
 .hidden {
   display:none;
+}
+
+.review-content-smooth {
+  transition: max-height 2s;
+  height: auto;
+  max-height:1600px;
+  overflow: hidden;
+}
+
+.review-title4 img {
+  height: 35px;
+}
+
+.height0 {
+  max-height: 0px;
 }
 
 .review-title4 {
