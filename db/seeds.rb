@@ -255,22 +255,23 @@ end
 #   i += 1
 # }
 
-rand_nb = rand(10..20)
-puts "Creating #{rand_nb} random users..."
-i = 1
-rand_nb.times {
+# rand_nb = rand(10..20)
+# puts "Creating #{rand_nb} random users..."
+# i = 1
+# rand_nb.times {
 
-  customer = create_new_user
-  customer.save!
-  puts "---Creating customer #{i} with id:#{customer.id}"
+#   customer = create_new_user
+#   customer.save!
+#   puts "---Creating customer #{i} with id:#{customer.id}"
 
-  rand_nb = rand(3..5)
-  puts "-----Creating #{rand_nb} random reviews for user_id=#{customer.id}..."
+  # rand_nb = rand(3..5)
+  # puts "-----Creating #{rand_nb} random reviews for user_id=#{customer.id}..."
   j = 0
-  rand_nb.times {
+  121.times {
     review = create_new_review
-    review.restaurant = Restaurant.order('RANDOM()').first
-    if Faker::Boolean.boolean
+    # review.restaurant = Restaurant.order('RANDOM()').first
+    review.restaurant = ben.restaurants.first
+    if Faker::Boolean.boolean(true_ratio: 0.75)
       review.user = User.order('RANDOM()').first
     else
       review.username = Faker::Internet.username
@@ -293,6 +294,6 @@ rand_nb.times {
 
 #   i += 1
 
-}
+# }
 
 puts "Seed finished in #{ (Time.now - start_time).round(1) }s !"
