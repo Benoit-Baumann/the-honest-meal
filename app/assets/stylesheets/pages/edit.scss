@@ -268,14 +268,16 @@
 .type-of-input-1 {
   height: 20px;
   width: 30px;
-  background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
+  background-image: image-url('writting.jpg');
+  // background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
   background-size: cover;
 }
 
 .type-of-input-2 {
   height: 20px;
   width: 30px;
-  background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
+  background-image: image-url('stars.jpg');
+  // background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
   background-size: cover;
 }
 
@@ -316,7 +318,7 @@
 .check-card-1 {
   height: 120px;
   width: 120px;
-  background-image: url('https://i.ibb.co/FD93f0J/writting.jpg');
+  background-image: image-url('writting.jpg');
   background-size: cover;
   border: 1px solid $green;
   border-radius: 4px;
@@ -345,7 +347,7 @@
 .check-card-2 {
   height: 120px;
   width: 120px;
-  background-image: url('https://i.ibb.co/88WqhjC/stars.jpg');
+  background-image: image-url('stars.jpg');
   background-size: cover;
   border: 1px solid lightgrey;
   border-radius: 4px;
