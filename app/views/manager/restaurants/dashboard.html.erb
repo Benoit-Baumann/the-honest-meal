@@ -5,7 +5,7 @@
       <div id="drag-1" class="draggable">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Détail des notes des reviews</p>
+               <p>Répartition des notes</p>
                <% @reviews = current_user.restaurants.first.reviews %>
             </div>
             <div class="charts">
@@ -67,7 +67,7 @@
       <div id="drag-4" class="draggable">
          <div class="charts-border">
             <div class="draggable-content">
-               <p>Nombre de reviews</p>
+               <p>Nombre de reviews par mois</p>
             </div>
             <div class="charts">
                <% @number = sorted_group_reviews.count.sort %>
@@ -85,6 +85,7 @@
                   }]
                   } %>
                <% @options = {
+                  legend: { display: false },
                   responsive: true,
                   maintainAspectRatio: false,
                   height: '250px'
@@ -115,6 +116,7 @@
                      }]
                      } %>
                   <% @options = {
+                     legend: { display: false },
                      responsive: true,
                      maintainAspectRatio: false,
                      height: '250px',
