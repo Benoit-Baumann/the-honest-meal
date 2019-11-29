@@ -178,7 +178,7 @@ questions_ben3 = Question.new(
   question_pool: question_pool_ben
   )
 
-  questions_ben4 = Question.new(
+questions_ben4 = Question.new(
   name: 'Avez-vous trouvé les quantités suffisantes ?',
   cat: '1',
   question_pool: question_pool_ben
