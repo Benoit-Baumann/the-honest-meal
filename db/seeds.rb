@@ -161,40 +161,40 @@ question_pool_ben.save!
 
 puts "Creating Questions for Ben"
 questions_ben1 = Question.new(
-  name: "Que pensez-vous de la nouvelle décoration du restaurant ?",
+  name: 'Avez-vous été satifsait du service lors de votre visite ?',
   cat: '0',
   question_pool: question_pool_ben
   )
 
 questions_ben2 = Question.new(
-  name: 'Comment avez-vous trouvé la propreté des lieux ?',
-  cat: '0',
+  name: 'Comment noteriez-vous le rapport qualité/prix ?',
+  cat: '1',
   question_pool: question_pool_ben
   )
 
 questions_ben3 = Question.new(
-  name: 'Avez-vous été satifsait du service lors de votre visite ?',
+  name: "Qu'avez-vous pensé du menu de la semaine ?",
   cat: '0',
   question_pool: question_pool_ben
   )
 
   questions_ben4 = Question.new(
   name: 'Avez-vous trouvé les quantités suffisantes ?',
-  cat: '0',
-  question_pool: question_pool_ben
-  )
-
-  questions_ben5 = Question.new(
-  name: 'Comment noteriez-vous le rapport qualité/prix ?',
   cat: '1',
   question_pool: question_pool_ben
   )
+
+  # questions_ben5 = Question.new(
+  # name: 'Comment noteriez-vous le rapport qualité/prix ?',
+  # cat: '1',
+  # question_pool: question_pool_ben
+  # )
 
 questions_ben1.save!
 questions_ben2.save!
 questions_ben3.save!
 questions_ben4.save!
-questions_ben5.save!
+# questions_ben5.save!
 
 # puts "Creating answers for Ben"
 # rand(5..10).times {
