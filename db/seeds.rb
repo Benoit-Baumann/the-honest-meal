@@ -196,38 +196,38 @@ questions_ben3.save!
 questions_ben4.save!
 questions_ben5.save!
 
-puts "Creating answers for Ben"
-rand(5..10).times {
-  answer = Answer.create!(
-            content: Faker::Restaurant.review,
-            question: questions_ben1
-          )
-}
-rand(5..10).times {
-  answer = Answer.create!(
-            content: Faker::Restaurant.review,
-            question: questions_ben2
-          )
-}
-rand(5..10).times {
-  answer = Answer.create!(
-            content: Faker::Restaurant.review,
-            question: questions_ben3
-          )
-}
-rand(5..10).times {
-  answer = Answer.create!(
-            content: Faker::Restaurant.review,
-            question: questions_ben4
-          )
-}
+# puts "Creating answers for Ben"
+# rand(5..10).times {
+#   answer = Answer.create!(
+#             content: Faker::Restaurant.review,
+#             question: questions_ben1
+#           )
+# }
+# rand(5..10).times {
+#   answer = Answer.create!(
+#             content: Faker::Restaurant.review,
+#             question: questions_ben2
+#           )
+# }
+# rand(5..10).times {
+#   answer = Answer.create!(
+#             content: Faker::Restaurant.review,
+#             question: questions_ben3
+#           )
+# }
+# rand(5..10).times {
+#   answer = Answer.create!(
+#             content: Faker::Restaurant.review,
+#             question: questions_ben4
+#           )
+# }
 
-rand(5..10).times {
-    answer3 = Answer.create!(
-              content: rand(1..5).to_s,
-              question: questions_ben5
-            )
-}
+# rand(5..10).times {
+#     answer3 = Answer.create!(
+#               content: rand(1..5).to_s,
+#               question: questions_ben5
+#             )
+# }
 
 
 puts "Creating random restaurants for John and Ben..."
