@@ -234,6 +234,11 @@ puts "Creating random restaurants for John and Ben..."
 [ben].each do |owner|
   resto = create_new_restaurant
   resto.owner = owner
+  if owner.username.downcase == "ben"
+    resto.name = "Le Bouchon du Wagon"
+    resto.category = "Cuisine française"
+    resto.address = "20 rue des Capucins, 69001 Lyon"
+  end
   resto.save!
 end
 

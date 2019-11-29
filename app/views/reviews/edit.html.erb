@@ -1,6 +1,6 @@
 <div class="restaurant-summary">
   <div class="restaurant-photo">
-    <%= image_tag "dinard-restaurant.jpg"%>
+    <%= image_tag "lebouchonduwagon"%>
   </div>
   <div class="restaurant-info">
     <h2><%= @review.restaurant.name %></h2>
@@ -33,9 +33,9 @@
         <br>
         <% unless @review.restaurant.owner.question_pools.empty? %>
           <div class="review-title3">
-            <h3>Nous souhaiterions avoir votre retour sur certains points</h3>
+            <h3>Donnez-nous votre avis sur les points suivants</h3>
           </div>
-          <p class='disclaimer'>*Les questions ci-dessous sont uniquement destinées au restaurateur et ne seront pas rendues publiques</p>
+          <p class='disclaimer'>Les questions ci-dessous sont uniquement destinées au restaurateur et ne seront pas rendues publiques</p>
           <% QuestionPool.find_by(user_id: @review.restaurant.owner.id).questions.each do |question| %>
               <%= f.fields_for 'answers[]', Answer.new(question: question) do |a| %>
                 <% if question.cat == '0' %>
