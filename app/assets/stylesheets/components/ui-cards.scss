@@ -8,7 +8,10 @@
   margin-bottom:25px;
   border-radius: 5px;
   border: 1px solid $green;
-  // justify-content: space-between;
+
+  &.expired {
+    opacity: 0.5;
+  }
 }
 
 .card-product1 img {
@@ -20,7 +23,6 @@
 .card-product1 h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
 }
 
 .card-product1 p {
@@ -33,44 +35,8 @@
 
 .card-product1 .card-product-infos {
   padding: 16px;
-}
-
-.card-product2 {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-bottom:25px;
-  border-radius: 5px;
-  border: 1px solid $green;
-  justify-content: between;
-  opacity:0.5;
-}
-
-.card-product2 img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product2 h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product2 p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product2 .card-product-infos {
-  padding: 16px;
+  flex-grow: 1;
+  margin-left: 30px;
 }
 
 .med-main-container {
@@ -81,7 +47,7 @@
 }
 
 .envoyercoupon{
-  margin-left: 370px;
+  margin-right: 30px;
 }
 
 .connected-btn2 {
