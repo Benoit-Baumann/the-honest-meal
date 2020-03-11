@@ -57,10 +57,6 @@ class ReviewsController < ApplicationController
       render :edit, locals: { review: @review }
     end
 
-    def validated_review
-    end
-
-    # p answer_params[:answers].last[:content]
     answer_params[:answers].each do |answer|
       Answer.new(content: answer[:content], question_id: answer[:question_id]).save
     end
