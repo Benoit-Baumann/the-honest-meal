@@ -2,8 +2,8 @@
       <h1><%= @restaurant.name %></h1>
       <p><%= @restaurant.category %></p>
       <p><%= @restaurant.description %></p>
-      <h2><%= link_to("Créer un sondage", new_manager_restaurant_question_pool_path(@restaurant)) %></h2>
-      <h2><%= link_to("Réponses du sondage", manager_restaurant_question_pools_path(@restaurant)) %></h2>
+      <h2><%= link_to("Créer un sondage", new_manager_question_pool_path) %></h2>
+      <h2><%= link_to("Réponses du sondage", manager_question_pools_path) %></h2>
       <h2><%= link_to("Editer restaurant", edit_manager_restaurant_path) %></h2>
       <h2><%= link_to "Supprimer restaurant", manager_restaurant_path(@restaurant),
             method: :delete,

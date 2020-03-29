@@ -1,63 +1,4 @@
 <div class="main-container">
-<<<<<<< HEAD
-<div class="review">
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <% QuestionPool.where(restaurant_id: params[:restaurant_id]).last.questions.each do |question| %>
-=======
-  <% if QuestionPool.where(user: current_user).empty? %>
-    <h1 class="title-page">Créez votre Questionnaire</h1>
-    <br>
-  <% else %>
-    <% QuestionPool.where(user: current_user).last.questions.each do |question| %>
->>>>>>> ef26b0c... modif faite avec john
-=======
-  <% if QuestionPool.find(user: current_user).empty? %>
-    <h1 class="title-page">Créez votre Questionnaire</h1>
-    <br>
-  <% else %>
-    <% QuestionPool.find(user: current_user).questions.each do |question| %>
->>>>>>> 181263b... Add style to review edit form
-  <p class="questions">
-    <% @question = question %>
-    <%= question.name %>
-    <% if question.cat == '0' %>
-    (text)
-    <% else %>
-    (rating)
-    <% end %>
-
-
-  <%= link_to 'DELETE', manager_restaurant_question_pool_path(@restaurant, question),
-        method: :delete,
-        class: "deleteajax", remote:true %>
-  </p>
-  <% end %>
-
-  <div class="reviewtitle"><h2>Créer votre Questionnaire</h2></div>
-
-<<<<<<< HEAD
-  <%= simple_form_for [:manager, @restaurant, @question_pool], html: { class: "form-review"} do |f| %>
-      <div class="inputboxes">
-<<<<<<< HEAD
-        <%= f.input :restaurant_id, as: :hidden %>
-
-=======
-=======
-  <%= simple_form_for [:manager, @question_pool], html: { class: "form-review"} do |f| %>
-      <div class="input-boxes">
->>>>>>> 181263b... Add style to review edit form
-        <p>Type de réponse souhaité:</p>
->>>>>>> d9d881c... modif page création questionnaire
-        <%= f.simple_fields_for :questions do |q_form| %>
-        <%= q_form.input :cat, label: 'Texte', :input_html => { class: "input-type" }, as: :boolean %>
-        <%= q_form.input :cat, label: 'Note', :input_html => { class: "input-type" }, as: :boolean %>
-        <%= q_form.input :name, label:'Question:', :input_html => { class: "input-type" } %>
-        <% end %>
-
-        <h2><%= link_to "+ ajoutez une question", '',class: "newq" , remote: true %></h2>
-=======
    <div class="review">
       <div class="mon-questionnaire">
          <h2 class="title-question">Ajouter nouvelle question</h2>
@@ -91,7 +32,6 @@
             <%= f.submit "Ajouter la question", class: "publier-questionnaire", remote: true %>
          </div>
          <% end %>
->>>>>>> 47115e1... modif questionnaire
       </div>
       <div class="mes-questions">
          <h2 class="title-question">Vos questions en cours</h2>

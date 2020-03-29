@@ -1,109 +1,16 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b54b8f8... Add pop-up login (not finished yet)
 <div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://i.ibb.co/6mj3QjW/fonddd.jpg)">
-=======
-<%= render 'shared/login_form' %>
-
-<div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://www.lyonresto.com/contenu/photo_restaurant/0_photo_automatique/victoire_et_thomas/03_Victoire-et-selection-Thomas-restaurant-bar-a-vin-gastronomie-Lyon.jpg)">
->>>>>>> 7db2142... Add pop-up for sign-in and sign-up
   <div class="home-title">
     <h1>The Honest Meal</h1>
     <h3>Votre business commence par des feedbacks</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  </div>
-<<<<<<< HEAD
-  <div class="join-us-btn">
-    <%= link_to "Rejoignez-nous", new_user_registration_path, class: "" %>
-  </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="search-bar">
-    <p>Entrez une ville ou un restaurant</p>
-    <p>Entrez une catégorie</p>
-    <h3>Search</h3>
-  </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  <div class="cities">
-    <div class="cards">
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lyon.jpg' %>)">
-      <h2>Lyon</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Rennes.jpg' %>)">
-      <h2>Rennes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Toulouse.jpg' %>)">
-      <h2>Toulouse</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Paris.jpg' %>)">
-      <h2>Paris</h2> </div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Nantes.jpg' %>)">
-      <h2>Nantes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Marseille.jpg' %>)">
-      <h2>Marseille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Strasbourg.jpg' %>)">
-      <h2>Strasbourg</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lille.jpg' %>)">
-      <h2>Lille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Bordeaux.jpg' %>)">
-      <h2>Bordeaux</h2></div>
-    </div>
-  </div>
->>>>>>> 0fd4804... test2
-=======
-  <%= render partial: 'search_bar' %>
->>>>>>> efac292... searchbar
-</div>
-
-<div class="main-container">
-=======
-=======
->>>>>>> 3df9299... nouveau départ modif home page et navbar
-=======
-    <details class="join-us-details">
-      <summary class="join-us-btn">Rejoignez-nous</summary>
-      <%= render partial: 'shared/login_form' %>
-    </details>
->>>>>>> 35c01df... Home page button "join-us" calls the login modal
-=======
-    <% if user_signed_in? %>
-
-    <% else %>
-      <details class="join-us-details">
-      <summary class="join-us-btn">Rejoignez-nous</summary>
-      <%= render partial: 'shared/login_form' %>
-    </details>
-=======
     <% unless user_signed_in? %>
         <p class="join-us-btn" id="main-login-opener">Rejoignez-nous</p>
->>>>>>> fcc88e9... Fix login modal tab bug
     <% end %>
   </div>
-<<<<<<< HEAD
-
-
->>>>>>> c008df7... centrage de join us en fonction de connecté/pas connecté
-=======
->>>>>>> fcc88e9... Fix login modal tab bug
 </div>
 
 
 <div class="main-container">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
->>>>>>> a7a2c6d... Fix cards order on homepage
-=======
-  <h1>Pourquoi nous faire confiance?</h1>
->>>>>>> a7c73e2... modif block text et image
-=======
-  <h1>Nous rejoindre</h1>
->>>>>>> 12fb59c... modification de la partie join us
-=======
   <h1>Pourquoi nous rejoindre?</h1>
->>>>>>> b819aa2... modif ok
   <div class="block-text-image">
     <div class="text-main-page">
       <div class="images-main-page">
@@ -116,73 +23,11 @@
           <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/1024px-Twitter_Verified_Badge.svg.png"></p>
         </div>
         <div class="images-main-page">
-<<<<<<< HEAD
-          <p> Avoir le suivi des retours et accès a un tableau de bord personalisable.</p>
-=======
-         <p> Avoir le suivi des retours et accès à un tableau de bord personnalisable.
-         </p>
->>>>>>> b819aa2... modif ok
+          <p> Avoir le suivi des retours et accès à un tableau de bord personnalisable.</p>
           <p><img src="https://www.repugen.com/Images/positive-review.png"></p>
         </div>
     </div>
 
   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div class="cities">
-      <div class="cards-grid">
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Lyon.jpg' %>)">
-        <h2>Lyon</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Rennes.jpg' %>)">
-        <h2>Rennes</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Toulouse.jpg' %>)">
-        <h2>Toulouse</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Paris.jpg' %>)">
-        <h2>Paris</h2> </div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Nantes.jpg' %>)">
-        <h2>Nantes</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Marseille.jpg' %>)">
-        <h2>Marseille</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Strasbourg.jpg' %>)">
-        <h2>Strasbourg</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Lille.jpg' %>)">
-        <h2>Lille</h2></div>
-        <div class="city-cards" style="background-image: url(<%= cl_image_path '/assets/Bordeaux.jpg' %>)">
-        <h2>Bordeaux</h2></div>
-      </div>
-  </div>
-
-=======
-
-    <div class="cities">
-    <div class="cards-grid">
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lyon.jpg' %>)">
-      <h2>Lyon</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Rennes.jpg' %>)">
-      <h2>Rennes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Toulouse.jpg' %>)">
-      <h2>Toulouse</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Paris.jpg' %>)">
-      <h2>Paris</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Nantes.jpg' %>)">
-      <h2>Nantes</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Marseille.jpg' %>)">
-      <h2>Marseille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Strasbourg.jpg' %>)">
-      <h2>Strasbourg</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Lille.jpg' %>)">
-      <h2>Lille</h2></div>
-      <div class="city-cards" style="background-image: url(<%= image_path 'Bordeaux.jpg' %>)">
-      <h2>Bordeaux</h2></div>
-    </div>
-  </div>
-<<<<<<< HEAD
-  
->>>>>>> a7a2c6d... Fix cards order on homepage
-=======
-
->>>>>>> 38a9c78... modification pour que les images soient sur heroku
-=======
->>>>>>> 3df9299... nouveau départ modif home page et navbar
 </div>
 

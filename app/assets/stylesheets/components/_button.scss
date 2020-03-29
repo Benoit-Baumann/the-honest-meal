@@ -75,45 +75,12 @@
 
 .connected-btn.active {
   background-color: $green;
+  font-weight: bold;
   color: white;
-<<<<<<< HEAD
-}
-=======
 }
 
 .connected-btn.active:hover {
   background-color: $green;
   font-weight: bold;
   color: white !important;
-<<<<<<< HEAD
 }
-
-.close {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
-  opacity: 0.3;
-}
-.close:hover {
-  opacity: 1;
-}
-.close:before, .close:after {
-  position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 2px;
-  background-color: #333;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
-}
->>>>>>> 4959219... Send review link modal now finished
-=======
-}
->>>>>>> 722fe31... "update"
