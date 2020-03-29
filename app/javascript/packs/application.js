@@ -101,6 +101,7 @@ initTabListener();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a8c7b8c... Fix bug with modal tabs
 //initLoadingAnimation();
 >>>>>>> 19fc712... finish choice of text ou rating
@@ -115,3 +116,8 @@ initJoinUsBtn();
 =======
 initJoinUsBtn();
 >>>>>>> 2f7b7dd... t
+=======
+initMainSignupBtnListener();
+initSendReviewBtnListener();
+initQuestionTypeBtnListener();
+>>>>>>> ff1f996... update

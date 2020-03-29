@@ -13,6 +13,7 @@
      <% if user_signed_in? %>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn" %>
 =======
          <%= link_to "Dashboard", new_user_session_path, class: "connected-btn" %>
@@ -27,6 +28,16 @@
 >>>>>>> 9f01a78... add lien vers add resto dans navbar
          <%= link_to "Créer un Questionnaire", new_user_session_path, class: "connected-btn" %>
          <%= link_to "Ajouter un restaurant", new_manager_restaurant_path, class: "connected-btn #{'active' if params[:action] == 'home'}" %>
+=======
+         <%= link_to "Dashboard", manager_dashboard_path, class: "connected-btn #{'active' if params[:action] == 'dashboard' and params[:controller] == 'manager/restaurants'}" %>
+         <%= link_to "Mon Questionnaire", new_manager_question_pool_path, class: "connected-btn #{'active' if params[:action] == 'new' and params[:controller] == 'manager/question_pools'}" %>
+         <%= link_to "Résultats Questionnaire", manager_question_pools_path, class: "connected-btn #{'active' if params[:action] == 'index' and params[:controller] == 'manager/question_pools'}" %>
+         <%= link_to "Coupons", coupons_path, class: "connected-btn #{'active' if params[:action] == 'index' and params[:controller] == 'coupons'}" %>
+          <details id="share-review-details-form">
+            <summary id="share-review-summary" class="connected-btn">Envoyer Questionnaire</summary>
+            <%= render partial: 'reviews/share_review_form' %>
+          </details>
+>>>>>>> ff1f996... update
        <li class="nav-item dropdown">
          <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% if current_user.status == 'customer' %>
